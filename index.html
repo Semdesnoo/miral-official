@@ -7,27 +7,24 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
-        fontFamily: { serif: ['Fraunces', 'Georgia', 'serif'], sans: ['Inter', 'system-ui', 'sans-serif'] },
-        colors: { ink: '#141311', clay: '#b5432f', sand: '#f4efe7' },
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
         maxWidth: { '8xl': '1440px' },
-        borderRadius: { DEFAULT: '10px' },
       }
     }
   }
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', system-ui, sans-serif; }
-  h1, h2, .serif { font-family: 'Fraunces', Georgia, serif; }
-  .reveal { opacity: 0; transform: translateY(24px) scale(1.01); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
-  .reveal.in { opacity: 1; transform: translateY(0) scale(1); }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
     html { scroll-behavior: auto; }
@@ -37,7 +34,7 @@
   .underline-hover { position: relative; }
   .underline-hover::after {
     content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px;
-    background: currentColor; transition: width .35s cubic-bezier(.16,1,.3,1);
+    background: currentColor; transition: width .3s ease;
   }
   .underline-hover:hover::after { width: 100%; }
   input[type="range"].compare-slider { -webkit-appearance: none; appearance: none; background: transparent; }
@@ -52,162 +49,236 @@
   }
 </style>
 </head>
-<body class="bg-white text-ink antialiased">
+<body class="bg-white text-ink antialiased font-sans">
+
+<!-- UTILITY BAR -->
+<div class="bg-[#f7f6f4] border-b border-black/5 text-xs">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-9 flex items-center justify-end gap-3 text-ink/70">
+    <a href="#" class="hover:text-ink transition-colors">Klantenservice</a>
+    <span class="text-ink/20">|</span>
+    <span>Nederland (EUR €)</span>
+  </div>
+</div>
 
 <!-- ANNOUNCEMENT -->
-<div class="bg-ink text-white/90 text-center text-xs tracking-wide py-2.5">
-  Professionele reiniging voor thuis en bedrijf — gratis verzending vanaf €45
+<div class="bg-ink text-white text-center text-xs font-medium tracking-wide py-2.5">
+  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="#producten" class="underline">BEKIJK NU</a>
 </div>
 
 <!-- NAV -->
-<header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-ink/10">
-  <div class="max-w-8xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
-    <a href="#" class="serif text-2xl tracking-tight">Miral</a>
-    <nav class="hidden md:flex items-center gap-9 text-sm">
-      <a href="#producten" class="underline-hover">Producten</a>
-      <a href="#werking" class="underline-hover">Advies &amp; gebruik</a>
-      <a href="#diensten" class="underline-hover">Diensten</a>
-      <a href="#over" class="underline-hover">Over Miral</a>
+<header class="sticky top-0 z-30 bg-white border-b border-black/10">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-16 grid grid-cols-3 items-center">
+    <nav class="hidden md:flex items-center gap-7 text-[13px] font-medium uppercase tracking-wide">
+      <a href="#producten" class="underline-hover">Alles bekijken</a>
+      <a href="#producten" class="underline-hover text-red">Bestsellers</a>
+      <a href="#diensten" class="underline-hover">Bundels</a>
       <a href="#faq" class="underline-hover">Veelgestelde vragen</a>
     </nav>
-    <div class="flex items-center gap-5 text-lg">
+    <a href="#" class="text-xl font-700 tracking-[0.15em] text-center">MIRAL</a>
+    <div class="flex items-center justify-end gap-5 text-lg">
+      <button aria-label="Account" class="hover:opacity-60 transition-opacity"><i class="ph ph-user"></i></button>
       <button aria-label="Zoeken" class="hover:opacity-60 transition-opacity"><i class="ph ph-magnifying-glass"></i></button>
-      <button aria-label="Winkelmand" class="hover:opacity-60 transition-opacity"><i class="ph ph-shopping-bag"></i></button>
+      <button aria-label="Winkelmand" class="hover:opacity-60 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
     </div>
   </div>
 </header>
 
-<!-- HERO — full-bleed, minimal copy -->
-<section class="relative h-[80vh] min-h-[560px] overflow-hidden">
-  <img src="https://picsum.photos/seed/miral-editorial-hero/2200/1500" alt="Strakke, glanzende PVC spanvloer in een minimalistisch interieur" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
-  <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent"></div>
-  <div class="reveal absolute inset-x-0 bottom-0 px-6 md:px-10 pb-14 md:pb-20 max-w-8xl mx-auto">
-    <h1 class="serif text-white text-4xl md:text-6xl leading-[1.05] max-w-xl">Professioneel schoon.<br/>Zonder gedoe.</h1>
-    <p class="mt-5 text-white/80 max-w-sm text-[15px] leading-relaxed">Eén reiniger. Talloze vloeren. Speciaal ontwikkeld voor een streeploze PVC spanvloer.</p>
-    <a href="#producten" class="mt-7 inline-flex items-center gap-2 bg-white text-ink text-sm font-medium px-7 py-3.5 rounded hover:bg-white/90 transition-colors">Ontdek Miral <i class="ph ph-arrow-right"></i></a>
+<!-- HERO — full-bleed lifestyle photo, badge + heading bottom-left -->
+<section class="relative h-[85vh] min-h-[600px] overflow-hidden">
+  <img src="https://picsum.photos/seed/miral-editorial-hero/2200/1500" alt="Strak, glanzend interieur met een schone PVC spanvloer" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent"></div>
+  <div class="reveal absolute inset-x-0 bottom-0 px-6 md:px-14 pb-14 md:pb-16">
+    <p class="flex items-center gap-2 text-white text-sm">
+      <span class="text-amber-400 tracking-tighter">★★★★★</span> Vertrouwd door 5.000+ klanten
+    </p>
+    <h1 class="mt-4 text-white text-4xl md:text-6xl font-700 leading-[1.05] max-w-2xl">Chocolate Shine Vloer</h1>
   </div>
 </section>
 
-<!-- ONZE FAVORIETEN — product carousel, photo-dominant -->
-<section id="producten" class="max-w-8xl mx-auto px-6 md:px-10 py-24 md:py-32">
-  <div class="flex items-end justify-between mb-12 gap-6">
-    <h2 class="serif text-3xl md:text-5xl">Onze favorieten</h2>
-    <a href="#" class="hidden sm:inline-flex items-center gap-1.5 text-sm underline-hover shrink-0">Alles bekijken <i class="ph ph-arrow-right"></i></a>
+<!-- BESTSELLERS grid — tabs, badges, swatches, hover add-to-cart -->
+<section id="producten" class="max-w-8xl mx-auto px-6 md:px-10 py-20 md:py-28">
+  <h2 class="text-3xl md:text-4xl font-700">Bestsellers</h2>
+  <div class="flex items-center gap-7 mt-5 text-sm font-medium border-b border-black/10">
+    <button class="pb-3 border-b-2 border-ink">Bestsellers</button>
+    <button class="pb-3 text-ink/40 hover:text-ink transition-colors">Nieuw</button>
+    <button class="pb-3 text-ink/40 hover:text-ink transition-colors">Reinigers</button>
+    <button class="pb-3 text-ink/40 hover:text-ink transition-colors">Accessoires</button>
   </div>
-  <div class="flex gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory">
-    <a href="#" class="group snap-start shrink-0 w-[78%] sm:w-[380px]">
-      <div class="aspect-[4/5] bg-sand rounded overflow-hidden">
-        <img src="https://picsum.photos/seed/miral-daily-cleaner-blue/700/875" alt="Dagelijkse Reiniger" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out" />
+
+  <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+    <a href="#" class="group">
+      <div class="relative aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
+        <span class="absolute top-3 left-3 z-10 bg-ink text-white text-[11px] font-700 px-2.5 py-1">BESPAAR 20%</span>
+        <img src="https://picsum.photos/seed/miral-daily-cleaner-blue/700/875" alt="Dagelijkse Reiniger" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+        <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
       </div>
-      <p class="mt-5 text-[13px] uppercase tracking-wide text-ink/50">Dagelijks onderhoud</p>
-      <p class="mt-1 font-medium">Dagelijkse Reiniger</p>
-      <p class="mt-1 text-ink/60 text-sm">€14,95</p>
+      <div class="flex gap-1.5 mt-3">
+        <span class="w-4 h-4 rounded-full bg-blue-400 border border-black/10"></span>
+        <span class="w-4 h-4 rounded-full bg-ink border border-black/10"></span>
+        <span class="text-xs text-ink/50">+2</span>
+      </div>
+      <p class="mt-2 font-medium">Dagelijkse Reiniger</p>
+      <p class="text-sm text-ink/50">500ml flacon</p>
+      <p class="mt-1 text-sm"><span class="line-through text-ink/40 mr-1.5">€18,95</span>€14,95</p>
     </a>
-    <a href="#" class="group snap-start shrink-0 w-[78%] sm:w-[380px]">
-      <div class="aspect-[4/5] bg-sand rounded overflow-hidden">
-        <img src="https://picsum.photos/seed/miral-extreme-cleaner-orange/700/875" alt="Dieptereiniger" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out" />
+    <a href="#" class="group">
+      <div class="relative aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
+        <span class="absolute top-3 left-3 z-10 bg-white text-ink text-[11px] font-700 px-2.5 py-1 border border-black/10">MIX &amp; MATCH</span>
+        <img src="https://picsum.photos/seed/miral-extreme-cleaner-orange/700/875" alt="Dieptereiniger" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+        <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
       </div>
-      <p class="mt-5 text-[13px] uppercase tracking-wide text-ink/50">Diepe reiniging</p>
-      <p class="mt-1 font-medium">Dieptereiniger</p>
-      <p class="mt-1 text-ink/60 text-sm">€18,95</p>
+      <div class="flex gap-1.5 mt-3">
+        <span class="w-4 h-4 rounded-full bg-orange-400 border border-black/10"></span>
+        <span class="text-xs text-ink/50">+1</span>
+      </div>
+      <p class="mt-2 font-medium">Dieptereiniger</p>
+      <p class="text-sm text-ink/50">500ml flacon</p>
+      <p class="mt-1 text-sm">€18,95</p>
     </a>
-    <a href="#" class="group snap-start shrink-0 w-[78%] sm:w-[380px]">
-      <div class="aspect-[4/5] bg-sand rounded overflow-hidden">
-        <img src="https://picsum.photos/seed/miral-bundel/700/875" alt="Voordeelbundel" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out" />
+    <a href="#" class="group">
+      <div class="relative aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
+        <span class="absolute top-3 left-3 z-10 bg-ink text-white text-[11px] font-700 px-2.5 py-1">BESPAAR 19%</span>
+        <img src="https://picsum.photos/seed/miral-bundel/700/875" alt="Startersbundel" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+        <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
       </div>
-      <p class="mt-5 text-[13px] uppercase tracking-wide text-ink/50">Compleet pakket</p>
-      <p class="mt-1 font-medium">Startersbundel</p>
-      <p class="mt-1 text-ink/60 text-sm">€29,95</p>
+      <div class="flex gap-1.5 mt-3">
+        <span class="w-4 h-4 rounded-full bg-blue-400 border border-black/10"></span>
+        <span class="w-4 h-4 rounded-full bg-orange-400 border border-black/10"></span>
+      </div>
+      <p class="mt-2 font-medium">Startersbundel</p>
+      <p class="text-sm text-ink/50">Dagelijks + Diepte</p>
+      <p class="mt-1 text-sm"><span class="line-through text-ink/40 mr-1.5">€37,90</span>€29,95</p>
+    </a>
+    <a href="#" class="group">
+      <div class="relative aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
+        <img src="https://picsum.photos/seed/miral-microdoek/700/875" alt="Microvezeldoek set" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+        <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+      </div>
+      <div class="flex gap-1.5 mt-3">
+        <span class="w-4 h-4 rounded-full bg-gray-300 border border-black/10"></span>
+      </div>
+      <p class="mt-2 font-medium">Microvezeldoek set</p>
+      <p class="text-sm text-ink/50">Set van 3</p>
+      <p class="mt-1 text-sm">€9,95</p>
     </a>
   </div>
 </section>
 
-<!-- TWEE GROTE CATEGORIEBLOKKEN -->
-<section class="grid md:grid-cols-2">
-  <a href="#" class="reveal group relative aspect-[4/5] md:aspect-auto md:h-[640px] overflow-hidden">
-    <img src="https://picsum.photos/seed/miral-thuis/1000/1300" alt="Thuisgebruik" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-    <div class="absolute inset-0 bg-black/25"></div>
-    <div class="absolute left-8 bottom-10 md:left-12 md:bottom-14 text-white">
-      <p class="text-[13px] uppercase tracking-widest text-white/70">Thuis</p>
-      <p class="serif text-2xl md:text-3xl mt-2 max-w-[16ch]">Professionele reiniging, gewoon bij jou thuis.</p>
-      <span class="inline-flex items-center gap-1.5 mt-4 text-sm underline-hover">Ontdek <i class="ph ph-arrow-right"></i></span>
+<!-- SOCIAL / UGC strip -->
+<section class="pb-20 md:pb-28">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 mb-6">
+    <h2 class="text-2xl md:text-3xl font-700">#miralschoon</h2>
+  </div>
+  <div class="flex gap-1 overflow-x-auto no-scrollbar">
+    <div class="shrink-0 w-[45%] sm:w-[19%] aspect-[3/4]"><img src="https://picsum.photos/seed/miral-ugc-1/500/700" alt="Klantfoto van schone vloer" class="w-full h-full object-cover" /></div>
+    <div class="shrink-0 w-[45%] sm:w-[19%] aspect-[3/4]"><img src="https://picsum.photos/seed/miral-ugc-2/500/700" alt="Klantfoto tijdens het dweilen" class="w-full h-full object-cover" /></div>
+    <div class="shrink-0 w-[45%] sm:w-[19%] aspect-[3/4]"><img src="https://picsum.photos/seed/miral-ugc-3/500/700" alt="Klantfoto van resultaat" class="w-full h-full object-cover" /></div>
+    <div class="shrink-0 w-[45%] sm:w-[19%] aspect-[3/4]"><img src="https://picsum.photos/seed/miral-ugc-4/500/700" alt="Klantfoto keuken" class="w-full h-full object-cover" /></div>
+    <div class="shrink-0 w-[45%] sm:w-[19%] aspect-[3/4]"><img src="https://picsum.photos/seed/miral-ugc-5/500/700" alt="Klantfoto sportschool" class="w-full h-full object-cover" /></div>
+  </div>
+</section>
+
+<!-- TWO PROMO BLOCKS -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28 grid md:grid-cols-2 gap-5">
+  <div class="reveal relative aspect-[4/5] md:aspect-[4/3] overflow-hidden">
+    <img src="https://picsum.photos/seed/miral-thuis/1000/900" alt="Thuisgebruik" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute left-7 bottom-7 text-white max-w-[75%]">
+      <p class="text-xl font-700">Dagelijkse Reiniger</p>
+      <p class="mt-1 text-sm text-white/85">Snel, mild, perfect voor thuis.</p>
+      <a href="#producten" class="inline-block mt-4 bg-white text-ink text-xs font-700 uppercase tracking-wide px-5 py-3 hover:bg-white/90 transition-colors">Bekijk product</a>
     </div>
-  </a>
-  <a href="#" class="reveal group relative aspect-[4/5] md:aspect-auto md:h-[640px] overflow-hidden">
-    <img src="https://picsum.photos/seed/miral-professioneel/1000/1300" alt="Professioneel gebruik" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-    <div class="absolute inset-0 bg-black/25"></div>
-    <div class="absolute left-8 bottom-10 md:left-12 md:bottom-14 text-white">
-      <p class="text-[13px] uppercase tracking-widest text-white/70">Professioneel</p>
-      <p class="serif text-2xl md:text-3xl mt-2 max-w-[16ch]">Ontwikkeld voor dagelijks intensief gebruik.</p>
-      <span class="inline-flex items-center gap-1.5 mt-4 text-sm underline-hover">Bekijk producten <i class="ph ph-arrow-right"></i></span>
+  </div>
+  <div class="reveal relative aspect-[4/5] md:aspect-[4/3] overflow-hidden">
+    <img src="https://picsum.photos/seed/miral-professioneel/1000/900" alt="Professioneel gebruik" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute left-7 bottom-7 text-white max-w-[75%]">
+      <p class="text-xl font-700">Dieptereiniger</p>
+      <p class="mt-1 text-sm text-white/85">Voor zwaar vervuilde vloeren.</p>
+      <a href="#producten" class="inline-block mt-4 bg-white text-ink text-xs font-700 uppercase tracking-wide px-5 py-3 hover:bg-white/90 transition-colors">Bekijk product</a>
     </div>
-  </a>
-</section>
-
-<!-- STORYTELLING — full-bleed statement -->
-<section class="reveal relative h-[70vh] min-h-[480px] overflow-hidden">
-  <img src="https://picsum.photos/seed/miral-vloer-na/2200/1500" alt="Extreem schone, glanzende vloer" class="absolute inset-0 w-full h-full object-cover" />
-  <div class="absolute inset-0 bg-black/35 flex items-center justify-center text-center px-6">
-    <p class="serif text-white text-3xl md:text-5xl leading-tight max-w-2xl">Eén product.<br/>Talloze toepassingen.</p>
-  </div>
-</section>
-
-<!-- OVER MIRAL — text + image, generous space -->
-<section id="over" class="max-w-8xl mx-auto px-6 md:px-10 py-24 md:py-32 grid md:grid-cols-12 gap-10 items-center">
-  <div class="md:col-span-5">
-    <p class="text-[13px] uppercase tracking-widest text-ink/50">Over Miral</p>
-    <h2 class="serif text-3xl md:text-4xl mt-3 leading-tight">Schoonmaken kan beter.</h2>
-    <p class="mt-6 text-ink/65 leading-relaxed max-w-sm">Gewone allesreinigers tasten de coating van een PVC spanvloer aan. Miral is pH-gebalanceerd en specifiek ontwikkeld voor dit oppervlak — geen waas, geen strepen.</p>
-    <a href="#producten" class="mt-8 inline-flex items-center gap-2 text-sm underline-hover">Bekijk onze producten <i class="ph ph-arrow-right"></i></a>
-  </div>
-  <div class="md:col-span-7 aspect-[16/10] rounded overflow-hidden">
-    <img src="https://picsum.photos/seed/miral-team-portret/1200/750" alt="Specialist die een PVC spanvloer behandelt" class="w-full h-full object-cover" />
   </div>
 </section>
 
 <!-- VOOR/NA -->
-<section id="werking" class="max-w-8xl mx-auto px-6 md:px-10 pb-24 md:pb-32">
-  <p class="reveal text-[13px] uppercase tracking-widest text-ink/50 text-center">Zo werkt het</p>
-  <h2 class="reveal serif text-3xl md:text-5xl text-center mt-3 mb-14">Zie het verschil met eigen ogen</h2>
-  <div class="reveal relative max-w-3xl mx-auto aspect-[16/9] rounded overflow-hidden select-none">
+<section id="werking" class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28">
+  <h2 class="reveal text-3xl md:text-4xl font-700 text-center mb-12">Zie het verschil met eigen ogen</h2>
+  <div class="reveal relative max-w-3xl mx-auto aspect-[16/9] overflow-hidden select-none">
     <img src="https://picsum.photos/seed/miral-vloer-na/1400/787" alt="Vloer na reiniging met Miral" class="absolute inset-0 w-full h-full object-cover" />
     <div id="beforeWrap" class="absolute inset-0 overflow-hidden" style="width:50%">
       <img src="https://picsum.photos/seed/miral-vloer-voor/1400/787" alt="Vloer voor reiniging, met vlekken en waas" class="absolute inset-0 h-full object-cover" style="width:calc(min(100vw,48rem))" />
     </div>
     <div id="handleLine" class="absolute top-0 bottom-0 w-px bg-white" style="left:50%"></div>
     <input id="compareRange" type="range" min="0" max="100" value="50" class="compare-slider absolute inset-x-0 bottom-5 w-[calc(100%-2.5rem)] mx-5 h-11" aria-label="Vergelijk voor en na" />
-    <span class="absolute top-5 left-5 text-[11px] uppercase tracking-wide bg-black/50 text-white rounded px-3 py-1.5">Voor</span>
-    <span class="absolute top-5 right-5 text-[11px] uppercase tracking-wide bg-clay text-white rounded px-3 py-1.5">Na</span>
+    <span class="absolute top-5 left-5 text-[11px] uppercase tracking-wide bg-black/50 text-white px-3 py-1.5">Voor</span>
+    <span class="absolute top-5 right-5 text-[11px] uppercase tracking-wide bg-red text-white px-3 py-1.5">Na</span>
   </div>
 </section>
 
 <!-- DIENSTEN -->
-<section id="diensten" class="bg-sand py-24 md:py-32">
+<section id="diensten" class="bg-[#f7f6f4] py-20 md:py-28">
   <div class="max-w-8xl mx-auto px-6 md:px-10">
-    <h2 class="reveal serif text-3xl md:text-5xl mb-14">Onze diensten</h2>
-    <div class="grid md:grid-cols-3 gap-x-10 gap-y-14">
+    <h2 class="reveal text-3xl md:text-4xl font-700 mb-12">Onze diensten</h2>
+    <div class="grid md:grid-cols-3 gap-x-8 gap-y-12">
       <div class="reveal">
-        <div class="aspect-[4/3] rounded overflow-hidden"><img src="https://picsum.photos/seed/miral-diagnose/700/525" alt="Gratis vlekdiagnose" class="w-full h-full object-cover" /></div>
-        <p class="mt-5 font-medium">Gratis vlekdiagnose</p>
-        <p class="mt-1.5 text-sm text-ink/60 leading-relaxed">Stuur een foto van uw vloer, wij adviseren het juiste product.</p>
+        <div class="aspect-[4/3] overflow-hidden"><img src="https://picsum.photos/seed/miral-diagnose/700/525" alt="Gratis vlekdiagnose" class="w-full h-full object-cover" /></div>
+        <p class="mt-4 font-medium">Gratis vlekdiagnose</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Stuur een foto van uw vloer, wij adviseren het juiste product.</p>
       </div>
       <div class="reveal">
-        <div class="aspect-[4/3] rounded overflow-hidden"><img src="https://picsum.photos/seed/miral-bundel2/700/525" alt="Voordeelbundels" class="w-full h-full object-cover" /></div>
-        <p class="mt-5 font-medium">Voordeelbundels</p>
-        <p class="mt-1.5 text-sm text-ink/60 leading-relaxed">Dagelijkse Reiniger en Dieptereiniger samen met korting.</p>
+        <div class="aspect-[4/3] overflow-hidden"><img src="https://picsum.photos/seed/miral-bundel2/700/525" alt="Voordeelbundels" class="w-full h-full object-cover" /></div>
+        <p class="mt-4 font-medium">Voordeelbundels</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Dagelijkse Reiniger en Dieptereiniger samen met korting.</p>
       </div>
       <div class="reveal">
-        <div class="aspect-[4/3] rounded overflow-hidden"><img src="https://picsum.photos/seed/miral-levering/700/525" alt="Snelle levering" class="w-full h-full object-cover" /></div>
-        <p class="mt-5 font-medium">Snelle levering</p>
-        <p class="mt-1.5 text-sm text-ink/60 leading-relaxed">Voor 23:00 besteld, morgen in huis met Track &amp; Trace.</p>
+        <div class="aspect-[4/3] overflow-hidden"><img src="https://picsum.photos/seed/miral-levering/700/525" alt="Snelle levering" class="w-full h-full object-cover" /></div>
+        <p class="mt-4 font-medium">Snelle levering</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Voor 23:00 besteld, morgen in huis met Track &amp; Trace.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- TRUSTPILOT REVIEWS -->
+<section id="reviews" class="max-w-8xl mx-auto px-6 md:px-10 py-20 md:py-28">
+  <div class="flex flex-wrap items-center gap-4 mb-10">
+    <span class="text-2xl font-700">Geweldig</span>
+    <span class="flex text-trust text-xl">
+      <i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph ph-square text-ink/20"></i>
+    </span>
+    <span class="text-sm text-ink/60">Gebaseerd op <u>1.240 reviews</u> · <span class="text-trust font-700">★Trustpilot</span></span>
+  </div>
+  <div class="grid md:grid-cols-4 gap-6">
+    <div>
+      <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
+      <p class="mt-3 font-700 text-sm">F. Meijer <span class="font-normal text-ink/40">, 2 uur geleden</span></p>
+      <p class="mt-1 font-700 text-sm">Eindelijk een streeploze vloer</p>
+      <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik was bang om mijn PVC spanvloer te beschadigen. Miral voelt veilig aan en ruikt fris.</p>
+    </div>
+    <div>
+      <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
+      <p class="mt-3 font-700 text-sm">Mikey v.d. Berg <span class="font-normal text-ink/40">, 4 uur geleden</span></p>
+      <p class="mt-1 font-700 text-sm">Bleek gewoon vuil te zijn</p>
+      <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik dacht dat mijn spanvloer verkleurd was. Super blij mee met het resultaat.</p>
+    </div>
+    <div>
+      <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
+      <p class="mt-3 font-700 text-sm">Lotte <span class="font-normal text-ink/40">, 11 uur geleden</span></p>
+      <p class="mt-1 font-700 text-sm">Speciaal voor spanvloeren</p>
+      <p class="mt-1 text-sm text-ink/60 leading-relaxed">Je merkt aan alles dat dit speciaal voor spanvloeren is gemaakt. Geen waas, geen gedoe.</p>
+    </div>
+    <div>
+      <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
+      <p class="mt-3 font-700 text-sm">Sanne de Vries <span class="font-normal text-ink/40">, 15 uur geleden</span></p>
+      <p class="mt-1 font-700 text-sm">Blijvertje!</p>
+      <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik worstelde al maanden met strepen op mijn zwarte spanvloer. Blijvertje!</p>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ — dividers, no cards -->
-<section id="faq" class="max-w-3xl mx-auto px-6 md:px-10 py-24 md:py-32">
-  <h2 class="reveal serif text-3xl md:text-5xl text-center mb-14">Veelgestelde vragen</h2>
+<section id="faq" class="max-w-3xl mx-auto px-6 md:px-10 pb-20 md:pb-28">
+  <h2 class="reveal text-3xl md:text-4xl font-700 text-center mb-12">Veelgestelde vragen</h2>
   <div class="reveal divide-y divide-ink/10 border-t border-b border-ink/10">
     <details class="group py-6" open>
       <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
@@ -251,7 +322,7 @@
 <footer class="bg-ink text-white">
   <div class="max-w-8xl mx-auto px-6 md:px-10 pt-20 pb-10">
     <div class="grid md:grid-cols-2 gap-10 pb-16 border-b border-white/10">
-      <p class="serif text-2xl md:text-3xl max-w-sm">Blijf op de hoogte van Miral.</p>
+      <p class="text-2xl md:text-3xl font-700 max-w-sm">Blijf op de hoogte van Miral.</p>
       <form class="flex items-end gap-3 max-w-md md:justify-self-end w-full" onsubmit="return false">
         <div class="flex-1">
           <label class="text-xs text-white/50" for="nl-email">E-mailadres</label>

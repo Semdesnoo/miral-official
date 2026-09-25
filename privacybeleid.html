@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacybeleid — Miral</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
+        maxWidth: { '8xl': '1440px' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; letter-spacing: -0.035em; }
+  body, p, a, button { font-family: "Manrope", sans-serif; font-weight: 400; }
+  button { font-weight: 600; }
+  button, a.inline-flex, a.inline-block { border-radius: 8px; }
+  .underline-hover { position: relative; }
+  .underline-hover::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px; background: currentColor; transition: width .3s ease; }
+  .underline-hover:hover::after { width: 100%; background: #c0261f; }
+
+  .reveal { opacity: 0; transform: translateY(15px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  .toc-link { color: #14131160; border-left: 2px solid transparent; transition: color .2s ease, border-color .2s ease; }
+  .toc-link.active { color: #141311; border-color: #c0261f; }
+
+  #cookieBanner { transform: translateY(120%); transition: transform .4s cubic-bezier(.22,1,.36,1); }
+  #cookieBanner.visible { transform: translateY(0); }
+  #cookiePrefs.hidden-panel { display: none; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased font-sans">
+
+<!-- UTILITY BAR -->
+<div class="bg-[#f7f6f4] border-b border-black/5 text-xs">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-9 flex items-center justify-end gap-3 text-ink/70">
+    <a href="#" class="hover:text-ink transition-colors">Klantenservice</a>
+    <span class="text-ink/20">|</span>
+    <span>Nederland (EUR €)</span>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT -->
+<div class="bg-red text-white text-center text-xs font-medium tracking-wide py-2.5">
+  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="producten.html" class="underline">BEKIJK NU</a>
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-30 bg-white border-b border-black/10">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-16 grid grid-cols-3 items-center">
+    <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium uppercase tracking-wide">
+      <a href="producten.html" class="underline-hover hover:text-red transition-colors">Producten</a>
+      <a href="advies.html" class="underline-hover hover:text-red transition-colors">Advies</a>
+      <a href="over-miral.html" class="underline-hover hover:text-red transition-colors whitespace-nowrap">Over Miral</a>
+    </nav>
+    <a href="index.html" class="flex justify-center"><img src="logo.png" alt="Miral" class="h-8 w-auto" /></a>
+    <div class="flex items-center justify-end gap-5 text-lg">
+      <button aria-label="Account" class="hover:opacity-60 transition-opacity"><i class="ph ph-user"></i></button>
+      <button aria-label="Zoeken" class="hover:opacity-60 transition-opacity"><i class="ph ph-magnifying-glass"></i></button>
+      <button aria-label="Winkelmand" class="hover:opacity-60 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-16 md:pt-20 pb-8">
+  <h1 class="text-3xl md:text-5xl">Uw gegevens. Duidelijk uitgelegd.</h1>
+  <p class="mt-3 text-ink/50 text-sm">Laatst bijgewerkt: 25 september 2026</p>
+  <p class="mt-4 text-ink/65 max-w-2xl leading-relaxed">Uw privacy is belangrijk. In dit privacybeleid leggen we uit welke persoonsgegevens we via de Miral-webshop verwerken, waarom we dat doen en welke rechten u heeft.</p>
+  <button data-open-prefs class="inline-flex items-center gap-2 mt-6 border border-ink/20 text-sm font-700 uppercase tracking-wide px-6 py-3 hover:border-ink transition-colors">Cookievoorkeuren beheren <i class="ph ph-sliders-horizontal"></i></button>
+</section>
+
+<!-- TOC + CONTENT -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pb-24 md:pb-32 grid md:grid-cols-12 gap-10 md:gap-16">
+  <nav class="hidden md:block md:col-span-3">
+    <div class="sticky top-24 space-y-1 text-sm">
+      <a href="#verantwoordelijke" class="toc-link block pl-4 py-1.5">1. Verantwoordelijke</a>
+      <a href="#gegevens" class="toc-link block pl-4 py-1.5">2. Welke gegevens</a>
+      <a href="#doeleinden" class="toc-link block pl-4 py-1.5">3. Waarom verwerken wij</a>
+      <a href="#shopify" class="toc-link block pl-4 py-1.5">4. Shopify</a>
+      <a href="#bezorging" class="toc-link block pl-4 py-1.5">5. Bezorging</a>
+      <a href="#advertising" class="toc-link block pl-4 py-1.5">6. Meta, TikTok, Google</a>
+      <a href="#cookies" class="toc-link block pl-4 py-1.5">7. Cookies</a>
+      <a href="#cookiekeuze" class="toc-link block pl-4 py-1.5">8. Cookiekeuze aanpassen</a>
+      <a href="#delen" class="toc-link block pl-4 py-1.5">9. Delen met derden</a>
+      <a href="#internationaal" class="toc-link block pl-4 py-1.5">10. Internationale verwerking</a>
+      <a href="#bewaartermijn" class="toc-link block pl-4 py-1.5">11. Bewaartermijn</a>
+      <a href="#rechten" class="toc-link block pl-4 py-1.5">12. Uw privacyrechten</a>
+      <a href="#verzoek" class="toc-link block pl-4 py-1.5">13. Privacyverzoek indienen</a>
+      <a href="#beveiliging" class="toc-link block pl-4 py-1.5">14. Beveiliging</a>
+      <a href="#besluitvorming" class="toc-link block pl-4 py-1.5">15. Geautomatiseerde besluitvorming</a>
+      <a href="#klacht" class="toc-link block pl-4 py-1.5">16. Klacht over privacy</a>
+      <a href="#wijzigingen" class="toc-link block pl-4 py-1.5">17. Wijzigingen</a>
+    </div>
+  </nav>
+
+  <div class="md:col-span-9 space-y-14 text-ink/70 leading-relaxed [&_h2]:text-ink [&_h2]:text-xl [&_h2]:mb-3 [&_h3]:text-ink [&_h3]:text-base [&_h3]:mt-4 [&_h3]:mb-1 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:list-inside [&_ul]:mb-3">
+
+    <article id="verantwoordelijke" class="reveal chapter">
+      <h2>1. Wie is verantwoordelijk voor uw gegevens?</h2>
+      <p>De verantwoordelijke voor de verwerking van persoonsgegevens is <strong class="text-ink">RALF spanvloeren en schoonmaak B.V.</strong>, Discusstraat 30, 3078 XE Rotterdam, Nederland.</p>
+      <p>KvK-nummer: 42007192<br/>Vestigingsnummer: 000065107063<br/>Btw-identificatienummer: [BTW-nummer invullen]</p>
+      <p>E-mail: <a href="mailto:info@miral-official.com" class="underline-hover text-ink">info@miral-official.com</a><br/>Telefoon: <a href="tel:+31683296802" class="underline-hover text-ink">+31 6 83296802</a></p>
+      <p>Telefonisch bereikbaar: maandag t/m vrijdag van 09:00 tot 17:00 uur. Miral is een merk van RALF spanvloeren en schoonmaak B.V.</p>
+    </article>
+
+    <article id="gegevens" class="reveal chapter">
+      <h2>2. Welke persoonsgegevens verwerken wij?</h2>
+      <p>Welke gegevens wij verwerken hangt af van de manier waarop u onze webshop gebruikt. Dit kunnen onder andere zijn:</p>
+      <h3>Identiteitsgegevens</h3><p>Zoals uw naam.</p>
+      <h3>Contactgegevens</h3><ul><li>e-mailadres</li><li>telefoonnummer</li><li>factuuradres</li><li>bezorgadres</li></ul>
+      <h3>Bestelgegevens</h3><ul><li>bestelnummer</li><li>bestelde producten</li><li>hoeveelheden</li><li>orderwaarde</li><li>retourinformatie</li><li>bestelgeschiedenis</li></ul>
+      <h3>Betaalinformatie</h3><p>Wij verwerken informatie die nodig is om vast te stellen of een betaling succesvol is uitgevoerd. De daadwerkelijke betaling kan via Shopify en de in de checkout aangeboden betaaldienstverlener worden verwerkt.</p>
+      <h3>Klantenservicegegevens</h3><ul><li>e-mails</li><li>berichten</li><li>klachten</li><li>retourverzoeken</li><li>productvragen</li><li>telefonisch verstrekte informatie voor zover vastgelegd</li></ul>
+      <h3>Technische gegevens</h3><p>Afhankelijk van uw cookiekeuzes kunnen onder andere worden verwerkt:</p>
+      <ul><li>IP-adres</li><li>browserinformatie</li><li>apparaatinformatie</li><li>bezochte pagina's</li><li>klikgedrag</li><li>referrer-informatie</li><li>cookie- en vergelijkbare identifiers</li></ul>
+    </article>
+
+    <article id="doeleinden" class="reveal chapter">
+      <h2>3. Waarom verwerken wij persoonsgegevens?</h2>
+      <h3>Bestellingen verwerken</h3>
+      <p>Wij gebruiken persoonsgegevens om bestellingen te verwerken, betalingen te registreren, producten te verzenden, orderbevestigingen te sturen, retouren te verwerken en klantenservice te leveren. Grondslag: uitvoering van de overeenkomst.</p>
+      <h3>Wettelijke administratie</h3>
+      <p>Bepaalde bestel- en betalingsgegevens moeten wij bewaren om aan onze wettelijke en fiscale verplichtingen te voldoen. Grondslag: wettelijke verplichting.</p>
+      <h3>Klantenservice</h3>
+      <p>Wanneer u contact met ons opneemt gebruiken wij de verstrekte gegevens om uw vraag, klacht, retour of verzoek te behandelen. De grondslag is afhankelijk van uw verzoek, bijvoorbeeld uitvoering van de overeenkomst of ons gerechtvaardigde belang om klanten zorgvuldig te ondersteunen.</p>
+      <h3>Veiligheid en fraudepreventie</h3>
+      <p>Voor zover noodzakelijk kunnen wij gegevens gebruiken om de webshop te beveiligen, fraude te voorkomen en misbruik tegen te gaan. Grondslag: gerechtvaardigd belang, voor zover deze grondslag in de concrete situatie mag worden gebruikt.</p>
+    </article>
+
+    <article id="shopify" class="reveal chapter">
+      <h2>4. Shopify</h2>
+      <p>Onze webshop draait op Shopify. Shopify verwerkt gegevens voor het technisch functioneren van de webshop, het winkelmandje, checkout, bestellingen en aanverwante functionaliteit. Welke gegevens Shopify verwerkt kan afhangen van de gebruikte Shopify-functionaliteiten en uw interactie met de webshop.</p>
+    </article>
+
+    <article id="bezorging" class="reveal chapter">
+      <h2>5. Bezorging via PostNL of DHL</h2>
+      <p>Om uw bestelling te kunnen bezorgen kunnen noodzakelijke persoonsgegevens worden gedeeld met PostNL of DHL, bijvoorbeeld naam, bezorgadres, e-mailadres, telefoonnummer wanneer nodig voor bezorgcommunicatie en informatie die nodig is om het pakket te bezorgen. Deze gegevens worden alleen gedeeld voor zover dit nodig is voor verzending en bezorging.</p>
+    </article>
+
+    <article id="advertising" class="reveal chapter">
+      <h2>6. Meta, TikTok en Google</h2>
+      <p>Wij kunnen gebruikmaken van advertentie- en meettechnologie van Meta, TikTok en Google, bijvoorbeeld voor het meten van advertentieprestaties, campagne-attributie, het opbouwen van doelgroepen, remarketing en het tonen van relevantere advertenties.</p>
+      <p>Wanneer hiervoor trackingcookies of vergelijkbare technologie nodig is waarvoor wettelijk toestemming vereist is, activeren wij deze pas nadat u daarvoor toestemming heeft gegeven. U kunt toestemming weigeren zonder dat de normale webshop daardoor ontoegankelijk wordt. U kunt uw toestemming later weer intrekken.</p>
+      <button data-open-prefs class="inline-flex items-center gap-1.5 text-sm underline-hover text-ink">Cookievoorkeuren beheren <i class="ph ph-arrow-right"></i></button>
+    </article>
+
+    <article id="cookies" class="reveal chapter">
+      <h2>7. Cookies</h2>
+      <h3>Noodzakelijke cookies</h3>
+      <p>Deze zorgen ervoor dat de Shopify-webshop technisch kan functioneren, denk aan winkelmandje, checkout, beveiliging en sessiebeheer. Voor strikt noodzakelijke cookies is niet altijd toestemming vereist.</p>
+      <h3>Analytische cookies</h3>
+      <p>Deze kunnen worden gebruikt om inzicht te krijgen in het gebruik en functioneren van onze webshop. Of toestemming nodig is, hangt af van de concrete inrichting en impact op de privacy.</p>
+      <h3>Marketing- en trackingcookies</h3>
+      <p>Deze kunnen worden gebruikt door bijvoorbeeld Meta, TikTok en Google. Voor trackingcookies vragen wij vooraf toestemming wanneer dat wettelijk vereist is.</p>
+    </article>
+
+    <article id="cookiekeuze" class="reveal chapter">
+      <h2>8. Cookiekeuze aanpassen</h2>
+      <p>Uw keuze staat niet voor altijd vast. Vanuit het voorkeurenpaneel moet u toestemming net zo eenvoudig kunnen intrekken als deze gegeven kan worden.</p>
+      <button data-open-prefs class="inline-flex items-center gap-1.5 text-sm underline-hover text-ink">Cookievoorkeuren <i class="ph ph-arrow-right"></i></button>
+    </article>
+
+    <article id="delen" class="reveal chapter">
+      <h2>9. Met wie delen wij persoonsgegevens?</h2>
+      <p>Afhankelijk van de situatie kunnen persoonsgegevens worden gedeeld met partijen die nodig zijn om onze webshop te exploiteren, onder andere:</p>
+      <ul>
+        <li><strong class="text-ink">Webshopplatform:</strong> Shopify</li>
+        <li><strong class="text-ink">Betalingen:</strong> de betaaldienstverleners die in de Shopify-checkout beschikbaar worden gesteld</li>
+        <li><strong class="text-ink">Bezorging:</strong> PostNL en DHL</li>
+        <li><strong class="text-ink">Advertenties en marketing:</strong> Meta, TikTok en Google, uitsluitend voor zover de betreffende verwerking en eventuele toestemming dit toestaan</li>
+        <li><strong class="text-ink">Overheidsinstanties:</strong> wanneer wij wettelijk verplicht zijn gegevens te verstrekken</li>
+      </ul>
+      <p>Wij verkopen uw persoonsgegevens niet als los handelsbestand.</p>
+    </article>
+
+    <article id="internationaal" class="reveal chapter">
+      <h2>10. Internationale verwerking</h2>
+      <p>Sommige technologiebedrijven waarmee onze webshop werkt zijn internationale organisaties. Hierdoor kunnen persoonsgegevens in bepaalde situaties buiten de Europese Economische Ruimte worden verwerkt. Wanneer persoonsgegevens internationaal worden doorgegeven, moet daarvoor een geldige wettelijke doorgiftegrond of passende waarborg worden gebruikt, bijvoorbeeld een adequaatheidsbesluit of toepasselijke standaardcontractbepalingen. Wij beoordelen dit in samenhang met de daadwerkelijk gebruikte diensten en instellingen.</p>
+    </article>
+
+    <article id="bewaartermijn" class="reveal chapter">
+      <h2>11. Hoe lang bewaren we persoonsgegevens?</h2>
+      <p>Wij bewaren persoonsgegevens niet langer dan noodzakelijk voor het doel waarvoor ze zijn verzameld, tenzij een wettelijke bewaartermijn verplicht is.</p>
+      <h3>Bestel- en administratieve gegevens</h3>
+      <p>Gegevens die onderdeel zijn van onze fiscale basisadministratie worden in beginsel 7 jaar bewaard. Wanneer op bepaalde grensoverschrijdende transacties een langere wettelijke bewaarplicht, zoals een toepasselijke OSS-bewaartermijn, van toepassing is, volgen wij die termijn.</p>
+      <h3>Klantenservice</h3>
+      <p>Correspondentie bewaren we zolang dit redelijkerwijs nodig is om de vraag, klacht, garantie- of retourkwestie af te handelen en eventuele rechten of verplichtingen vast te stellen.</p>
+      <h3>Marketingtoestemming</h3>
+      <p>Gegevens over toestemming worden bewaard zolang dat nodig is om aan te tonen welke keuze u heeft gemaakt en totdat deze gegevens niet langer noodzakelijk zijn.</p>
+      <h3>Cookies</h3>
+      <p>De bewaartermijn verschilt per cookie. De actuele informatie wordt weergegeven in het cookievoorkeurenpaneel van de website.</p>
+    </article>
+
+    <article id="rechten" class="reveal chapter">
+      <h2>12. Uw privacyrechten</h2>
+      <p>U heeft afhankelijk van de situatie verschillende rechten onder de AVG:</p>
+      <ul>
+        <li><strong class="text-ink">Recht op inzage</strong> — welke persoonsgegevens wij van u verwerken</li>
+        <li><strong class="text-ink">Recht op correctie</strong> — onjuiste persoonsgegevens laten verbeteren</li>
+        <li><strong class="text-ink">Recht op verwijdering</strong> — in bepaalde situaties persoonsgegevens laten verwijderen</li>
+        <li><strong class="text-ink">Recht op beperking</strong> — in bepaalde omstandigheden de verwerking tijdelijk beperken</li>
+        <li><strong class="text-ink">Recht van bezwaar</strong> — in toepasselijke situaties bezwaar maken tegen verwerking</li>
+        <li><strong class="text-ink">Recht op gegevensoverdraagbaarheid</strong> — bepaalde gegevens in een overdraagbaar formaat ontvangen</li>
+        <li><strong class="text-ink">Toestemming intrekken</strong> — wanneer verwerking op toestemming is gebaseerd</li>
+      </ul>
+      <p>Intrekking heeft geen invloed op de rechtmatigheid van verwerking die vóór de intrekking heeft plaatsgevonden.</p>
+    </article>
+
+    <article id="verzoek" class="reveal chapter">
+      <h2>13. Een privacyverzoek indienen</h2>
+      <p>Wilt u gebruikmaken van uw privacyrechten? Neem contact op via <a href="mailto:info@miral-official.com" class="underline-hover text-ink">info@miral-official.com</a>. Vermeld duidelijk welk privacyrecht u wilt uitoefenen. Wanneer dat noodzakelijk is om te voorkomen dat persoonsgegevens aan de verkeerde persoon worden verstrekt, kunnen wij aanvullende informatie vragen om uw identiteit te controleren. We vragen daarbij niet méér informatie dan redelijkerwijs nodig is.</p>
+    </article>
+
+    <article id="beveiliging" class="reveal chapter">
+      <h2>14. Beveiliging</h2>
+      <p>Wij nemen passende technische en organisatorische maatregelen om persoonsgegevens te beschermen tegen ongeoorloofde toegang, verlies, misbruik of onrechtmatige verwerking. De beveiligingsmaatregelen worden afgestemd op de aard van de gegevens en de risico's van de verwerking.</p>
+    </article>
+
+    <article id="besluitvorming" class="reveal chapter">
+      <h2>15. Geautomatiseerde besluitvorming</h2>
+      <p>Wij nemen geen uitsluitend op geautomatiseerde verwerking gebaseerde beslissingen met rechtsgevolgen of vergelijkbare aanzienlijke gevolgen voor klanten, tenzij dit in de toekomst anders wordt ingericht en daarvoor een geldige juridische basis bestaat. Advertentieplatforms kunnen wel geautomatiseerde systemen gebruiken voor advertentieselectie en doelgroepvorming wanneer daarvoor toestemming is gegeven.</p>
+    </article>
+
+    <article id="klacht" class="reveal chapter">
+      <h2>16. Klacht over privacy</h2>
+      <p>Heeft u vragen of een klacht over onze omgang met uw persoonsgegevens? Neem eerst contact met ons op via <a href="mailto:info@miral-official.com" class="underline-hover text-ink">info@miral-official.com</a>. U heeft daarnaast het recht om een klacht in te dienen bij de bevoegde privacytoezichthouder. In Nederland is dat de Autoriteit Persoonsgegevens.</p>
+    </article>
+
+    <article id="wijzigingen" class="reveal chapter">
+      <h2>17. Wijzigingen in dit privacybeleid</h2>
+      <p>Onze webshop, wetgeving en gebruikte diensten kunnen veranderen. Daarom kunnen wij dit privacybeleid aanpassen. De meest actuele versie staat altijd op deze pagina.</p>
+      <p class="text-sm text-ink/50">Laatst bijgewerkt: 25 september 2026</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- FOOTER — quiet, newsletter + columns -->
+<footer class="bg-ink text-white">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 pt-20 pb-10">
+    <div class="grid md:grid-cols-2 gap-10 pb-16 border-b border-white/10">
+      <p class="text-2xl md:text-3xl font-700 max-w-sm">Blijf op de hoogte van Miral.</p>
+      <form class="flex items-end gap-3 max-w-md md:justify-self-end w-full" onsubmit="return false">
+        <div class="flex-1">
+          <label class="text-xs text-white/50" for="nl-email">E-mailadres</label>
+          <input id="nl-email" type="email" required placeholder="naam@voorbeeld.nl" class="w-full bg-transparent border-b border-white/30 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white" />
+        </div>
+        <button type="submit" class="text-sm underline-hover pb-2 shrink-0">Inschrijven</button>
+      </form>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 py-14">
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Producten</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="producten.html" class="hover:text-white transition-colors">Alle producten</a></li>
+          <li><a href="advies.html" class="hover:text-white transition-colors">Advies</a></li>
+          <li><a href="over-miral.html" class="hover:text-white transition-colors">Over Miral</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Klantenservice</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="bestelling-volgen.html" class="hover:text-white transition-colors">Bestelling volgen</a></li>
+          <li><a href="veelgestelde-vragen.html" class="hover:text-white transition-colors">Veelgestelde vragen</a></li>
+          <li><a href="algemene-voorwaarden.html" class="hover:text-white transition-colors">Algemene voorwaarden</a></li>
+          <li><a href="verzendbeleid.html" class="hover:text-white transition-colors">Verzendbeleid</a></li>
+          <li><a href="retourneren.html" class="hover:text-white transition-colors">Retour- en restitutiebeleid</a></li>
+          <li><a href="privacybeleid.html" class="hover:text-white transition-colors">Privacybeleid</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Volg ons</p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" aria-label="Instagram" class="hover:text-white/70 transition-colors"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="Facebook" class="hover:text-white/70 transition-colors"><i class="ph ph-facebook-logo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+      <p class="text-xs text-white/40">© Miral. Alle rechten voorbehouden.</p>
+      <button data-open-prefs class="text-xs text-white/50 underline-hover">Cookievoorkeuren beheren</button>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" class="fixed inset-x-0 bottom-0 z-50 bg-ink text-white p-5 md:p-6">
+  <div class="max-w-8xl mx-auto">
+    <div id="cookieLayer1" class="flex flex-col md:flex-row md:items-center gap-4 justify-between">
+      <p class="text-sm text-white/80 max-w-2xl">Wij gebruiken cookies om de webshop te laten functioneren en, met uw toestemming, voor analytische en marketingdoeleinden (Meta, TikTok, Google).</p>
+      <div class="flex flex-wrap gap-3 shrink-0">
+        <button id="cookieReject" class="border border-white/30 text-sm px-5 py-2.5 hover:bg-white/10 transition-colors">Weigeren</button>
+        <button id="cookiePrefsBtn" class="border border-white/30 text-sm px-5 py-2.5 hover:bg-white/10 transition-colors">Voorkeuren aanpassen</button>
+        <button id="cookieAccept" class="bg-red text-white text-sm px-5 py-2.5 hover:bg-red/90 transition-colors">Accepteren</button>
+      </div>
+    </div>
+
+    <div id="cookiePrefs" class="hidden-panel mt-5 pt-5 border-t border-white/10 grid gap-4 max-w-xl">
+      <div class="flex items-center justify-between">
+        <div><p class="text-sm font-medium">Noodzakelijk</p><p class="text-xs text-white/50">Altijd actief — winkelmandje, checkout, beveiliging.</p></div>
+        <input type="checkbox" checked disabled class="w-5 h-5" />
+      </div>
+      <div class="flex items-center justify-between">
+        <div><p class="text-sm font-medium">Analytisch</p><p class="text-xs text-white/50">Inzicht in gebruik en functioneren van de webshop.</p></div>
+        <input id="prefAnalytics" type="checkbox" class="w-5 h-5" />
+      </div>
+      <div class="flex items-center justify-between">
+        <div><p class="text-sm font-medium">Marketing &amp; tracking</p><p class="text-xs text-white/50">Meta, TikTok, Google — advertenties en remarketing.</p></div>
+        <input id="prefMarketing" type="checkbox" class="w-5 h-5" />
+      </div>
+      <button id="savePrefs" class="justify-self-start bg-red text-white text-sm px-5 py-2.5 hover:bg-red/90 transition-colors">Voorkeuren opslaan</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const tocLinks = document.querySelectorAll('.toc-link');
+  const chapters = document.querySelectorAll('.chapter');
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { threshold: 0, rootMargin: '-20% 0px -70% 0px' });
+  chapters.forEach(c => spy.observe(c));
+
+  // Cookie consent: necessary cookies always on; analytics/marketing gated
+  // behind explicit opt-in, stored in localStorage. No tracking script is
+  // loaded here — this only manages the consent state a real integration
+  // would read before firing Meta/TikTok/Google pixels.
+  const CONSENT_KEY = 'miral-cookie-consent';
+  const banner = document.getElementById('cookieBanner');
+  const prefsPanel = document.getElementById('cookiePrefs');
+  const analyticsBox = document.getElementById('prefAnalytics');
+  const marketingBox = document.getElementById('prefMarketing');
+
+  function getConsent() {
+    try { return JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch { return null; }
+  }
+  function setConsent(analytics, marketing) {
+    localStorage.setItem(CONSENT_KEY, JSON.stringify({ analytics, marketing, ts: Date.now() }));
+    banner.classList.remove('visible');
+  }
+  function openBanner(showPrefs) {
+    const existing = getConsent();
+    if (existing) { analyticsBox.checked = existing.analytics; marketingBox.checked = existing.marketing; }
+    prefsPanel.classList.toggle('hidden-panel', !showPrefs);
+    banner.classList.add('visible');
+  }
+
+  if (!getConsent()) openBanner(false);
+
+  document.getElementById('cookieAccept').addEventListener('click', () => setConsent(true, true));
+  document.getElementById('cookieReject').addEventListener('click', () => setConsent(false, false));
+  document.getElementById('cookiePrefsBtn').addEventListener('click', () => prefsPanel.classList.toggle('hidden-panel'));
+  document.getElementById('savePrefs').addEventListener('click', () => setConsent(analyticsBox.checked, marketingBox.checked));
+  document.querySelectorAll('[data-open-prefs]').forEach(btn => btn.addEventListener('click', () => openBanner(true)));
+</script>
+</body>
+</html>

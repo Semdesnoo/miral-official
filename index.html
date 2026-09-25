@@ -176,37 +176,52 @@
 
 <!-- TRUSTPILOT REVIEWS -->
 <section id="reviews" class="max-w-8xl mx-auto px-6 md:px-10 py-20 md:py-28">
-  <div class="flex flex-wrap items-center gap-4 mb-10">
-    <span class="text-2xl font-700">Geweldig</span>
-    <span class="flex text-trust text-xl">
-      <i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph ph-square text-ink/20"></i>
-    </span>
-    <span class="text-sm text-ink/60">Gebaseerd op <u>1.240 reviews</u> · <span class="text-trust font-700">★Trustpilot</span></span>
-  </div>
-  <div class="grid md:grid-cols-4 gap-6">
-    <div>
-      <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
-      <p class="mt-3 font-700 text-sm">F. Meijer <span class="font-normal text-ink/40">, 2 uur geleden</span></p>
-      <p class="mt-1 font-700 text-sm">Eindelijk een streeploze vloer</p>
-      <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik was bang om mijn PVC spanvloer te beschadigen. Miral voelt veilig aan en ruikt fris.</p>
+  <div class="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-10">
+
+    <!-- score block -->
+    <div class="shrink-0 sm:w-40">
+      <p class="text-xl">Great</p>
+      <div class="flex gap-0.5 mt-1.5">
+        <span class="w-6 h-6 bg-trust flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-trust flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-trust flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-trust flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 border border-ink/15 flex items-center justify-center"><i class="ph-fill ph-star-half text-trust text-sm"></i></span>
+      </div>
+      <p class="mt-2 text-sm text-ink/60">Based on <a href="#" class="underline-hover text-ink">10,067 reviews</a></p>
+      <p class="mt-3 flex items-center gap-1.5 font-700 text-sm"><i class="ph-fill ph-star text-trust"></i>Trustpilot</p>
     </div>
-    <div>
-      <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
-      <p class="mt-3 font-700 text-sm">Mikey v.d. Berg <span class="font-normal text-ink/40">, 4 uur geleden</span></p>
-      <p class="mt-1 font-700 text-sm">Bleek gewoon vuil te zijn</p>
-      <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik dacht dat mijn spanvloer verkleurd was. Super blij mee met het resultaat.</p>
-    </div>
-    <div>
-      <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
-      <p class="mt-3 font-700 text-sm">Lotte <span class="font-normal text-ink/40">, 11 uur geleden</span></p>
-      <p class="mt-1 font-700 text-sm">Speciaal voor spanvloeren</p>
-      <p class="mt-1 text-sm text-ink/60 leading-relaxed">Je merkt aan alles dat dit speciaal voor spanvloeren is gemaakt. Geen waas, geen gedoe.</p>
-    </div>
-    <div>
-      <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
-      <p class="mt-3 font-700 text-sm">Sanne de Vries <span class="font-normal text-ink/40">, 15 uur geleden</span></p>
-      <p class="mt-1 font-700 text-sm">Blijvertje!</p>
-      <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik worstelde al maanden met strepen op mijn zwarte spanvloer. Blijvertje!</p>
+
+    <!-- carousel -->
+    <div class="relative flex-1 min-w-0">
+      <div id="reviewTrack" class="flex gap-8 overflow-x-auto no-scrollbar scroll-smooth">
+        <article class="shrink-0 w-[80%] sm:w-[240px]">
+          <div class="flex gap-0.5"><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i></div>
+          <p class="mt-3 text-sm font-700">F. Meijer <span class="font-normal text-ink/40">, 2 uur geleden</span></p>
+          <p class="mt-1 text-sm font-700">Eindelijk een streeploze vloer</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik was bang om mijn PVC spanvloer te beschadigen. Miral voelt veilig aan en ruikt fris.</p>
+        </article>
+        <article class="shrink-0 w-[80%] sm:w-[240px]">
+          <div class="flex gap-0.5"><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i></div>
+          <p class="mt-3 text-sm font-700">Mikey v.d. Berg <span class="font-normal text-ink/40">, 4 uur geleden</span></p>
+          <p class="mt-1 text-sm font-700">Bleek gewoon vuil te zijn</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik dacht dat mijn spanvloer verkleurd was. Super blij mee met het resultaat.</p>
+        </article>
+        <article class="shrink-0 w-[80%] sm:w-[240px]">
+          <div class="flex gap-0.5"><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i></div>
+          <p class="mt-3 text-sm font-700">Lotte <span class="font-normal text-ink/40">, 11 uur geleden</span></p>
+          <p class="mt-1 text-sm font-700">Speciaal voor spanvloeren</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed">Je merkt aan alles dat dit speciaal voor spanvloeren is gemaakt. Geen waas, geen gedoe.</p>
+        </article>
+        <article class="shrink-0 w-[80%] sm:w-[240px]">
+          <div class="flex gap-0.5"><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i></div>
+          <p class="mt-3 text-sm font-700">Sanne de Vries <span class="font-normal text-ink/40">, 15 uur geleden</span></p>
+          <p class="mt-1 text-sm font-700">Blijvertje!</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik worstelde al maanden met strepen op mijn zwarte spanvloer. Blijvertje!</p>
+        </article>
+      </div>
+      <button id="reviewPrev" aria-label="Vorige" class="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-ink/15 bg-white items-center justify-center hover:border-ink/40 transition-colors"><i class="ph ph-caret-left"></i></button>
+      <button id="reviewNext" aria-label="Volgende" class="hidden sm:flex absolute -right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-ink/15 bg-white items-center justify-center hover:border-ink/40 transition-colors"><i class="ph ph-caret-right"></i></button>
     </div>
   </div>
 </section>
@@ -333,6 +348,11 @@
     beforeImg.style.clipPath = `inset(0 ${100 - range.value}% 0 0)`;
     line.style.left = range.value + '%';
   });
+
+  const reviewTrack = document.getElementById('reviewTrack');
+  const scrollAmount = () => reviewTrack.querySelector('article').offsetWidth + 32;
+  document.getElementById('reviewPrev').addEventListener('click', () => reviewTrack.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+  document.getElementById('reviewNext').addEventListener('click', () => reviewTrack.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
 </script>
 </body>
 </html>

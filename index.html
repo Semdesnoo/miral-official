@@ -68,24 +68,24 @@
 <!-- UTILITY BAR -->
 <div class="bg-[#f7f6f4] border-b border-black/5 text-xs">
   <div class="max-w-8xl mx-auto px-6 md:px-10 h-9 flex items-center justify-end gap-3 text-ink/70">
-    <a href="#" class="hover:text-ink transition-colors">Klantenservice</a>
+    <a href="#" class="hover:text-ink transition-colors" data-i18n="util.service">Klantenservice</a>
     <span class="text-ink/20">|</span>
-    <span>Nederland (EUR €)</span>
+    <span data-i18n="util.country">Nederland (EUR €)</span>
   </div>
 </div>
 
 <!-- ANNOUNCEMENT -->
 <div class="bg-red text-white text-center text-xs font-medium tracking-wide py-2.5">
-  MIRAL-ACTIE: TOT 44% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="#producten" class="underline">BEKIJK NU</a>
+  <span data-i18n="announce.text">MIRAL-ACTIE: TOT 44% KORTING OP BUNDELS</span> &nbsp;|&nbsp; <a href="#producten" class="underline" data-i18n="announce.cta">BEKIJK NU</a>
 </div>
 
 <!-- NAV -->
 <header class="sticky top-0 z-30 bg-white border-b border-black/10">
   <div class="max-w-8xl mx-auto px-6 md:px-10 h-16 grid grid-cols-3 items-center">
     <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium uppercase tracking-wide">
-      <a href="producten.html" class="underline-hover hover:text-red transition-colors">Producten</a>
-      <a href="advies.html" class="underline-hover hover:text-red transition-colors">Advies</a>
-      <a href="over-miral.html" class="underline-hover hover:text-red transition-colors whitespace-nowrap">Over Miral</a>
+      <a href="producten.html" class="underline-hover hover:text-red transition-colors" data-i18n="nav.products">Producten</a>
+      <a href="advies.html" class="underline-hover hover:text-red transition-colors" data-i18n="nav.advice">Advies</a>
+      <a href="over-miral.html" class="underline-hover hover:text-red transition-colors whitespace-nowrap" data-i18n="nav.about">Over Miral</a>
     </nav>
     <a href="#" class="flex justify-center"><img src="logo.png" alt="Miral" class="h-8 w-auto" /></a>
     <div class="flex items-center justify-end gap-5 text-lg">
@@ -104,40 +104,40 @@
   </picture>
   <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent"></div>
   <div class="reveal absolute inset-x-0 bottom-0 px-6 md:px-14 pb-14 md:pb-16">
-    <h1 class="mt-4 text-white text-4xl md:text-6xl font-700 leading-[1.05] max-w-2xl">Laat uw spanvloer weer stralen</h1>
-    <p class="mt-4 text-white/85 max-w-md text-[15px] leading-relaxed">Dé veilige reiniger voor een streeploze PVC spanvloer.</p>
+    <h1 class="mt-4 text-white text-4xl md:text-6xl font-700 leading-[1.05] max-w-2xl" data-i18n="hero.h1">Laat uw spanvloer weer stralen</h1>
+    <p class="mt-4 text-white/85 max-w-md text-[15px] leading-relaxed" data-i18n="hero.p">Dé veilige reiniger voor een streeploze PVC spanvloer.</p>
     <div class="flex flex-wrap gap-x-6 gap-y-2 mt-5 text-white text-base">
-      <span class="flex items-center gap-1.5"><i class="ph ph-flask text-white"></i> Specialistische Formule</span>
-      <span class="flex items-center gap-1.5"><i class="ph ph-sparkle text-white"></i> Stralende Glans</span>
+      <span class="flex items-center gap-1.5"><i class="ph ph-flask text-white"></i> <span data-i18n="hero.feature1">Specialistische Formule</span></span>
+      <span class="flex items-center gap-1.5"><i class="ph ph-sparkle text-white"></i> <span data-i18n="hero.feature2">Stralende Glans</span></span>
     </div>
     <div class="flex flex-wrap items-center gap-5 mt-7">
-      <a href="#producten" class="inline-flex items-center gap-2 bg-white text-ink text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-white/90 transition-colors">Bekijk producten</a>
+      <a href="#producten" class="inline-flex items-center gap-2 bg-white text-ink text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-white/90 transition-colors" data-i18n="hero.cta">Bekijk producten</a>
     </div>
   </div>
 </section>
 
 <!-- BESTSELLERS grid — 2 real products, no filler tiles -->
 <section id="producten" class="max-w-8xl mx-auto px-6 md:px-10 py-20 md:py-28">
-  <h2 class="text-3xl md:text-4xl font-700">Bestsellers</h2>
+  <h2 class="text-3xl md:text-4xl font-700" data-i18n="bestsellers.h2">Bestsellers</h2>
 
   <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl">
     <a href="dagelijkse-reiniger.html" class="group">
       <div class="relative aspect-square overflow-hidden rounded-2xl bg-[#f2f1ee]">
-        <span class="absolute top-3 left-3 z-10 bg-red text-white text-[11px] font-700 px-2.5 py-1 rounded">BESPAAR 20%</span>
+        <span class="absolute top-3 left-3 z-10 bg-red text-white text-[11px] font-700 px-2.5 py-1 rounded" data-i18n="product1.badge">BESPAAR 20%</span>
         <img src="dagelijkse-reiniger-square.png" alt="Dagelijkse Reiniger" class="absolute inset-0 w-full h-full object-contain p-8 group-hover:scale-[1.05] transition-transform duration-500" />
         <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
       </div>
-      <p class="mt-3 font-medium">Dagelijkse Reiniger</p>
+      <p class="mt-3 font-medium" data-i18n="product1.name">Dagelijkse Reiniger</p>
       <p class="text-sm text-ink/50">1000ml</p>
       <p class="mt-1 text-sm"><span class="line-through text-ink/40 mr-1.5">€14,95</span>€12,45</p>
     </a>
     <a href="dieptereiniger.html" class="group">
       <div class="relative aspect-square overflow-hidden rounded-2xl bg-[#f2f1ee]">
-        <span class="absolute top-3 left-3 z-10 bg-red text-white text-[11px] font-700 px-2.5 py-1 rounded">BESPAAR 12%</span>
+        <span class="absolute top-3 left-3 z-10 bg-red text-white text-[11px] font-700 px-2.5 py-1 rounded" data-i18n="product2.badge">BESPAAR 12%</span>
         <img src="dieptereiniger-square.png" alt="Dieptereiniger" class="absolute inset-0 w-full h-full object-contain p-8 group-hover:scale-[1.05] transition-transform duration-500" />
         <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
       </div>
-      <p class="mt-3 font-medium">Dieptereiniger</p>
+      <p class="mt-3 font-medium" data-i18n="product2.name">Dieptereiniger</p>
       <p class="text-sm text-ink/50">1000ml</p>
       <p class="mt-1 text-sm"><span class="line-through text-ink/40 mr-1.5">€16,95</span>€14,95</p>
     </a>
@@ -157,9 +157,9 @@
     <img src="miral-lifestyle-banner.png" alt="Miral in gebruik op een sportschoolvloer" class="absolute inset-0 w-full h-full object-cover" />
     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
     <div class="absolute left-6 md:left-12 bottom-10 md:bottom-16 max-w-sm">
-      <h2 class="text-white text-2xl md:text-4xl">Dagelijkse Reiniger</h2>
-      <p class="mt-2 text-white/80 text-sm md:text-base leading-relaxed">Krachtige dagelijkse reiniging, veilig voor uw PVC spanvloer. Gemaakt om elke dag opnieuw te gebruiken.</p>
-      <a href="dagelijkse-reiniger.html" class="inline-flex items-center gap-2 mt-5 bg-white text-ink text-xs font-700 uppercase tracking-wide px-6 py-3.5 hover:bg-white/90 transition-colors">Shop nu</a>
+      <h2 class="text-white text-2xl md:text-4xl" data-i18n="banner.h2">Dagelijkse Reiniger</h2>
+      <p class="mt-2 text-white/80 text-sm md:text-base leading-relaxed" data-i18n="banner.p">Krachtige dagelijkse reiniging, veilig voor uw PVC spanvloer. Gemaakt om elke dag opnieuw te gebruiken.</p>
+      <a href="dagelijkse-reiniger.html" class="inline-flex items-center gap-2 mt-5 bg-white text-ink text-xs font-700 uppercase tracking-wide px-6 py-3.5 hover:bg-white/90 transition-colors" data-i18n="banner.cta">Shop nu</a>
     </div>
   </div>
 </section>
@@ -170,7 +170,7 @@
 
     <!-- score block -->
     <div class="shrink-0 sm:w-44">
-      <p class="text-xl">Great</p>
+      <p class="text-xl" data-i18n="reviews.great">Great</p>
       <div class="flex gap-0.5 mt-1.5">
         <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
         <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
@@ -181,7 +181,7 @@
           <i class="ph-fill ph-star text-white text-sm relative"></i>
         </span>
       </div>
-      <p class="mt-2 text-sm text-ink/60">Based on <a href="#" class="underline-hover text-ink">33 reviews</a></p>
+      <p class="mt-2 text-sm text-ink/60"><span data-i18n="reviews.basedOn">Based on</span> <a href="#" class="underline-hover text-ink">33 <span data-i18n="reviews.reviewsWord">reviews</span></a></p>
       <p class="mt-3 flex items-center gap-1.5 font-700 text-sm"><i class="ph-fill ph-star text-tp"></i>Trustpilot</p>
     </div>
 
@@ -191,53 +191,53 @@
         <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
           <div class="flex items-center gap-2">
             <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
-            <span class="flex items-center gap-1 text-[11px] text-ink/50"><i class="ph-fill ph-seal-check text-tp text-sm"></i>Geverifieerd</span>
+            <span class="flex items-center gap-1 text-[11px] text-ink/50"><i class="ph-fill ph-seal-check text-tp text-sm"></i><span data-i18n="reviews.verified">Geverifieerd</span></span>
           </div>
-          <p class="mt-2.5 text-xs text-ink/45">F. Meijer, 2 uur geleden</p>
-          <p class="mt-1.5 text-sm font-700">Eindelijk een streeploze vloer</p>
-          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Ik was bang om mijn PVC spanvloer te beschadigen. Miral voelt veilig aan en ruikt fris…</p>
+          <p class="mt-2.5 text-xs text-ink/45">F. Meijer, <span data-i18n="reviews.time.2h">2 uur geleden</span></p>
+          <p class="mt-1.5 text-sm font-700" data-i18n="reviews.r1.title">Eindelijk een streeploze vloer</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2" data-i18n="reviews.r1.body">Ik was bang om mijn PVC spanvloer te beschadigen. Miral voelt veilig aan en ruikt fris…</p>
         </article>
         <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
           <div class="flex items-center gap-2">
             <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
           </div>
-          <p class="mt-2.5 text-xs text-ink/45">Mikey v.d. Berg, 4 uur geleden</p>
-          <p class="mt-1.5 text-sm font-700">Bleek gewoon vuil te zijn</p>
-          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Ik dacht dat mijn spanvloer verkleurd was. Super blij mee met het resultaat…</p>
+          <p class="mt-2.5 text-xs text-ink/45">Mikey v.d. Berg, <span data-i18n="reviews.time.4h">4 uur geleden</span></p>
+          <p class="mt-1.5 text-sm font-700" data-i18n="reviews.r2.title">Bleek gewoon vuil te zijn</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2" data-i18n="reviews.r2.body">Ik dacht dat mijn spanvloer verkleurd was. Super blij mee met het resultaat…</p>
         </article>
         <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
           <div class="flex items-center gap-2">
             <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
-            <span class="flex items-center gap-1 text-[11px] text-ink/50"><i class="ph-fill ph-seal-check text-tp text-sm"></i>Geverifieerd</span>
+            <span class="flex items-center gap-1 text-[11px] text-ink/50"><i class="ph-fill ph-seal-check text-tp text-sm"></i><span data-i18n="reviews.verified">Geverifieerd</span></span>
           </div>
-          <p class="mt-2.5 text-xs text-ink/45">Lotte, 11 uur geleden</p>
-          <p class="mt-1.5 text-sm font-700">Speciaal voor spanvloeren</p>
-          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Je merkt aan alles dat dit speciaal voor spanvloeren is gemaakt. Geen waas, geen gedoe…</p>
-        </article>
-        <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
-          <div class="flex items-center gap-2">
-            <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
-          </div>
-          <p class="mt-2.5 text-xs text-ink/45">Sanne de Vries, 15 uur geleden</p>
-          <p class="mt-1.5 text-sm font-700">Blijvertje!</p>
-          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Ik worstelde al maanden met strepen op mijn zwarte spanvloer. Blijvertje!</p>
-        </article>
-        <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
-          <div class="flex items-center gap-2">
-            <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
-            <span class="flex items-center gap-1 text-[11px] text-ink/50"><i class="ph-fill ph-seal-check text-tp text-sm"></i>Geverifieerd</span>
-          </div>
-          <p class="mt-2.5 text-xs text-ink/45">Jasmijn K., 1 dag geleden</p>
-          <p class="mt-1.5 text-sm font-700">Ik had een probleem met een beschadigde fles bij…</p>
-          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Ik had een probleem met een beschadigde fles bij levering en de klantenservice loste het razendsnel op…</p>
+          <p class="mt-2.5 text-xs text-ink/45">Lotte, <span data-i18n="reviews.time.11h">11 uur geleden</span></p>
+          <p class="mt-1.5 text-sm font-700" data-i18n="reviews.r3.title">Speciaal voor spanvloeren</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2" data-i18n="reviews.r3.body">Je merkt aan alles dat dit speciaal voor spanvloeren is gemaakt. Geen waas, geen gedoe…</p>
         </article>
         <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
           <div class="flex items-center gap-2">
             <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
           </div>
-          <p class="mt-2.5 text-xs text-ink/45">Bram, 2 dagen geleden</p>
-          <p class="mt-1.5 text-sm font-700">Fijne geur en snel bezorgd</p>
-          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Bestelling kwam netjes verpakt aan, geur is prettig licht en de vloer voelt niet plakkerig…</p>
+          <p class="mt-2.5 text-xs text-ink/45">Sanne de Vries, <span data-i18n="reviews.time.15h">15 uur geleden</span></p>
+          <p class="mt-1.5 text-sm font-700" data-i18n="reviews.r4.title">Blijvertje!</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2" data-i18n="reviews.r4.body">Ik worstelde al maanden met strepen op mijn zwarte spanvloer. Blijvertje!</p>
+        </article>
+        <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
+          <div class="flex items-center gap-2">
+            <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
+            <span class="flex items-center gap-1 text-[11px] text-ink/50"><i class="ph-fill ph-seal-check text-tp text-sm"></i><span data-i18n="reviews.verified">Geverifieerd</span></span>
+          </div>
+          <p class="mt-2.5 text-xs text-ink/45">Jasmijn K., <span data-i18n="reviews.time.1d">1 dag geleden</span></p>
+          <p class="mt-1.5 text-sm font-700" data-i18n="reviews.r5.title">Ik had een probleem met een beschadigde fles bij…</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2" data-i18n="reviews.r5.body">Ik had een probleem met een beschadigde fles bij levering en de klantenservice loste het razendsnel op…</p>
+        </article>
+        <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
+          <div class="flex items-center gap-2">
+            <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
+          </div>
+          <p class="mt-2.5 text-xs text-ink/45">Bram, <span data-i18n="reviews.time.2d">2 dagen geleden</span></p>
+          <p class="mt-1.5 text-sm font-700" data-i18n="reviews.r6.title">Fijne geur en snel bezorgd</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2" data-i18n="reviews.r6.body">Bestelling kwam netjes verpakt aan, geur is prettig licht en de vloer voelt niet plakkerig…</p>
         </article>
       </div>
       <button id="reviewPrev" aria-label="Vorige" class="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-ink/15 bg-white items-center justify-center hover:border-ink/40 transition-colors"><i class="ph ph-caret-left"></i></button>
@@ -252,56 +252,56 @@
   <div class="blob-shape absolute bottom-0 -left-32 w-[420px] h-[420px] rounded-full pointer-events-none"></div>
 
   <div id="werking" class="relative max-w-8xl mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-20 md:pb-28">
-    <h2 class="reveal text-3xl md:text-4xl font-700 text-center mb-12">Zie het verschil met eigen ogen</h2>
+    <h2 class="reveal text-3xl md:text-4xl font-700 text-center mb-12" data-i18n="voorna.h2">Zie het verschil met eigen ogen</h2>
     <div class="reveal relative max-w-3xl mx-auto aspect-[16/9] overflow-hidden select-none rounded-3xl shadow-xl shadow-red/10">
       <img src="vloer-na.png" alt="Vloer na reiniging met Miral" class="absolute inset-0 w-full h-full object-cover object-center" />
       <img id="beforeImg" src="vloer-voor.png" alt="Vloer voor reiniging, met vlekken en waas" class="absolute inset-0 w-full h-full object-cover object-center" style="clip-path:inset(0 50% 0 0)" />
       <div id="handleLine" class="absolute top-0 bottom-0 w-px bg-white" style="left:50%"></div>
       <input id="compareRange" type="range" min="0" max="100" value="50" class="compare-slider absolute inset-x-0 bottom-5 w-[calc(100%-2.5rem)] mx-5 h-11" aria-label="Vergelijk voor en na" />
-      <span class="absolute top-5 left-5 text-[11px] uppercase tracking-wide bg-black/50 text-white px-3 py-1.5 rounded-full">Voor</span>
-      <span class="absolute top-5 right-5 text-[11px] uppercase tracking-wide bg-red text-white px-3 py-1.5 rounded-full">Na</span>
+      <span class="absolute top-5 left-5 text-[11px] uppercase tracking-wide bg-black/50 text-white px-3 py-1.5 rounded-full" data-i18n="voorna.before">Voor</span>
+      <span class="absolute top-5 right-5 text-[11px] uppercase tracking-wide bg-red text-white px-3 py-1.5 rounded-full" data-i18n="voorna.after">Na</span>
     </div>
   </div>
 </section>
 
 <!-- FAQ — white background, rounded cards -->
 <section id="faq" class="max-w-3xl mx-auto px-6 md:px-10 pt-4 pb-20 md:pb-28">
-  <h2 class="reveal text-3xl md:text-4xl font-700 text-center mb-12">Veelgestelde vragen</h2>
+  <h2 class="reveal text-3xl md:text-4xl font-700 text-center mb-12" data-i18n="faq.h2">Veelgestelde vragen</h2>
   <div class="reveal space-y-3">
     <details class="group py-1 px-6 bg-[#f7f6f4] rounded-2xl open:bg-white open:shadow-md open:ring-1 open:ring-red/20 transition-shadow" open>
       <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium py-5">
-          Wat is het verschil tussen de Dagelijkse Reiniger en de Dieptereiniger?
+          <span data-i18n="faq.q1">Wat is het verschil tussen de Dagelijkse Reiniger en de Dieptereiniger?</span>
           <i class="ph ph-plus text-red group-open:rotate-45 transition-transform shrink-0"></i>
         </summary>
-        <p class="pb-5 text-ink/60 text-sm leading-relaxed">De Dagelijkse Reiniger is een milde formule voor het snel verwijderen van stof en lichte vlekjes. De Dieptereiniger is krachtiger, bedoeld voor periodiek onderhoud of zwaar vervuilde vloeren.</p>
+        <p class="pb-5 text-ink/60 text-sm leading-relaxed" data-i18n="faq.a1">De Dagelijkse Reiniger is een milde formule voor het snel verwijderen van stof en lichte vlekjes. De Dieptereiniger is krachtiger, bedoeld voor periodiek onderhoud of zwaar vervuilde vloeren.</p>
       </details>
     <details class="group py-1 px-6 bg-[#f7f6f4] rounded-2xl open:bg-white open:shadow-md open:ring-1 open:ring-red/20 transition-shadow">
       <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium py-5">
-        Is Miral veilig voor alle soorten spanvloeren?
+        <span data-i18n="faq.q2">Is Miral veilig voor alle soorten spanvloeren?</span>
         <i class="ph ph-plus text-red group-open:rotate-45 transition-transform shrink-0"></i>
       </summary>
-      <p class="pb-5 text-ink/60 text-sm leading-relaxed">Miral is specifiek ontwikkeld voor PVC spanvloeren. De samenstelling is pH-gebalanceerd en tast structuur, glans of kleur niet aan.</p>
+      <p class="pb-5 text-ink/60 text-sm leading-relaxed" data-i18n="faq.a2">Miral is specifiek ontwikkeld voor PVC spanvloeren. De samenstelling is pH-gebalanceerd en tast structuur, glans of kleur niet aan.</p>
     </details>
     <details class="group py-1 px-6 bg-[#f7f6f4] rounded-2xl open:bg-white open:shadow-md open:ring-1 open:ring-red/20 transition-shadow">
       <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium py-5">
-        Laat het middel strepen achter na het dweilen?
+        <span data-i18n="faq.q3">Laat het middel strepen achter na het dweilen?</span>
         <i class="ph ph-plus text-red group-open:rotate-45 transition-transform shrink-0"></i>
       </summary>
-      <p class="pb-5 text-ink/60 text-sm leading-relaxed">Nee, bij de juiste dosering droogt Miral gegarandeerd streeploos op. Een te hoge dosering is de nummer één oorzaak van strepen.</p>
+      <p class="pb-5 text-ink/60 text-sm leading-relaxed" data-i18n="faq.a3">Nee, bij de juiste dosering droogt Miral gegarandeerd streeploos op. Een te hoge dosering is de nummer één oorzaak van strepen.</p>
     </details>
     <details class="group py-1 px-6 bg-[#f7f6f4] rounded-2xl open:bg-white open:shadow-md open:ring-1 open:ring-red/20 transition-shadow">
       <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium py-5">
-        Hoe gebruik ik de reiniger het beste?
+        <span data-i18n="faq.q4">Hoe gebruik ik de reiniger het beste?</span>
         <i class="ph ph-plus text-red group-open:rotate-45 transition-transform shrink-0"></i>
       </summary>
-      <p class="pb-5 text-ink/60 text-sm leading-relaxed">Meng een dopje met een emmer lauwwarm water. Gebruik een klamvochtige, zachte dweil. Nooit schuursponzen of agressieve borstels gebruiken.</p>
+      <p class="pb-5 text-ink/60 text-sm leading-relaxed" data-i18n="faq.a4">Meng een dopje met een emmer lauwwarm water. Gebruik een klamvochtige, zachte dweil. Nooit schuursponzen of agressieve borstels gebruiken.</p>
     </details>
     <details class="group py-1 px-6 bg-[#f7f6f4] rounded-2xl open:bg-white open:shadow-md open:ring-1 open:ring-red/20 transition-shadow">
       <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium py-5">
-        Wat is de levertijd van mijn bestelling?
+        <span data-i18n="faq.q5">Wat is de levertijd van mijn bestelling?</span>
         <i class="ph ph-plus text-red group-open:rotate-45 transition-transform shrink-0"></i>
       </summary>
-      <p class="pb-5 text-ink/60 text-sm leading-relaxed">Bestellingen vóór 23:00 op werkdagen worden dezelfde dag verwerkt. U ontvangt een Track &amp; Trace code om uw zending te volgen.</p>
+      <p class="pb-5 text-ink/60 text-sm leading-relaxed"><span data-i18n="faq.a5">Bestellingen vóór 23:00 op werkdagen worden dezelfde dag verwerkt. U ontvangt een Track &amp; Trace code om uw zending te volgen.</span></p>
     </details>
   </div>
 </section>
@@ -313,40 +313,40 @@
   </div>
   <div class="max-w-8xl mx-auto px-6 md:px-10 py-14 grid md:grid-cols-[1fr_1fr_1fr_1.2fr] gap-10">
     <div>
-      <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Producten</p>
+      <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4" data-i18n="footer.products">Producten</p>
       <ul class="space-y-2.5 text-sm text-white/70">
-        <li><a href="producten.html" class="hover:text-white transition-colors">Alle producten</a></li>
-        <li><a href="advies.html" class="hover:text-white transition-colors">Advies</a></li>
-        <li><a href="over-miral.html" class="hover:text-white transition-colors">Over Miral</a></li>
+        <li><a href="producten.html" class="hover:text-white transition-colors" data-i18n="footer.allProducts">Alle producten</a></li>
+        <li><a href="advies.html" class="hover:text-white transition-colors" data-i18n="nav.advice">Advies</a></li>
+        <li><a href="over-miral.html" class="hover:text-white transition-colors" data-i18n="nav.about">Over Miral</a></li>
       </ul>
     </div>
     <div>
-      <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Klantenservice</p>
+      <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4" data-i18n="util.service">Klantenservice</p>
       <ul class="space-y-2.5 text-sm text-white/70">
-        <li><a href="bestelling-volgen.html" class="hover:text-white transition-colors">Bestelling volgen</a></li>
-        <li><a href="veelgestelde-vragen.html" class="hover:text-white transition-colors">Veelgestelde vragen</a></li>
-        <li><a href="algemene-voorwaarden.html" class="hover:text-white transition-colors">Algemene voorwaarden</a></li>
-        <li><a href="verzendbeleid.html" class="hover:text-white transition-colors">Verzendbeleid</a></li>
-        <li><a href="retourneren.html" class="hover:text-white transition-colors">Retour- en restitutiebeleid</a></li>
-        <li><a href="privacybeleid.html" class="hover:text-white transition-colors">Privacybeleid</a></li>
-        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        <li><a href="bestelling-volgen.html" class="hover:text-white transition-colors" data-i18n="footer.trackOrder">Bestelling volgen</a></li>
+        <li><a href="veelgestelde-vragen.html" class="hover:text-white transition-colors" data-i18n="faq.h2">Veelgestelde vragen</a></li>
+        <li><a href="algemene-voorwaarden.html" class="hover:text-white transition-colors" data-i18n="footer.terms">Algemene voorwaarden</a></li>
+        <li><a href="verzendbeleid.html" class="hover:text-white transition-colors" data-i18n="footer.shipping">Verzendbeleid</a></li>
+        <li><a href="retourneren.html" class="hover:text-white transition-colors" data-i18n="footer.returns">Retour- en restitutiebeleid</a></li>
+        <li><a href="privacybeleid.html" class="hover:text-white transition-colors" data-i18n="footer.privacy">Privacybeleid</a></li>
+        <li><a href="contact.html" class="hover:text-white transition-colors" data-i18n="footer.contact">Contact</a></li>
       </ul>
     </div>
     <div>
-      <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Volg ons</p>
+      <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4" data-i18n="footer.followUs">Volg ons</p>
       <div class="flex gap-4 text-lg">
         <a href="#" aria-label="Instagram" class="hover:text-white/70 transition-colors"><i class="ph ph-instagram-logo"></i></a>
         <a href="#" aria-label="Facebook" class="hover:text-white/70 transition-colors"><i class="ph ph-facebook-logo"></i></a>
       </div>
     </div>
     <div>
-      <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Blijf op de hoogte</p>
+      <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4" data-i18n="footer.stayUpdated">Blijf op de hoogte</p>
       <form class="flex items-end gap-3" onsubmit="return false">
         <div class="flex-1">
-          <label class="text-xs text-white/50" for="nl-email">E-mailadres</label>
+          <label class="text-xs text-white/50" for="nl-email" data-i18n="footer.email">E-mailadres</label>
           <input id="nl-email" type="email" required placeholder="naam@voorbeeld.nl" class="w-full bg-transparent border-b border-white/30 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white" />
         </div>
-        <button type="submit" class="text-sm underline-hover pb-2 shrink-0">Inschrijven</button>
+        <button type="submit" class="text-sm underline-hover pb-2 shrink-0" data-i18n="footer.subscribe">Inschrijven</button>
       </form>
     </div>
   </div>
@@ -354,10 +354,10 @@
     <div class="max-w-8xl mx-auto px-6 md:px-10 py-5 flex flex-wrap items-center justify-between gap-4">
       <div class="flex flex-wrap gap-3">
         <div class="relative">
-          <select aria-label="Taal" class="appearance-none bg-transparent border border-white/20 text-xs font-700 uppercase tracking-wide pl-4 pr-8 py-2.5 focus:outline-none">
-            <option>Nederlands</option>
-            <option>English</option>
-            <option>Deutsch</option>
+          <select id="langSelect" aria-label="Taal" class="appearance-none bg-transparent border border-white/20 text-xs font-700 uppercase tracking-wide pl-4 pr-8 py-2.5 focus:outline-none">
+            <option value="nl">Nederlands</option>
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
           </select>
           <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-white/50 text-xs pointer-events-none"></i>
         </div>
@@ -368,7 +368,7 @@
           <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-white/50 text-xs pointer-events-none"></i>
         </div>
       </div>
-      <p class="text-xs text-white/40">© Miral. Alle rechten voorbehouden.</p>
+      <p class="text-xs text-white/40" data-i18n="footer.copyright">© Miral. Alle rechten voorbehouden.</p>
     </div>
   </div>
 </footer>
@@ -391,6 +391,90 @@
   const scrollAmount = () => reviewTrack.querySelector('article').offsetWidth + 32;
   document.getElementById('reviewPrev').addEventListener('click', () => reviewTrack.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
   document.getElementById('reviewNext').addEventListener('click', () => reviewTrack.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+
+  // i18n — plain dictionary, no framework: swap textContent per data-i18n key
+  const i18n = {
+    en: {
+      'util.service': 'Customer service', 'util.country': 'Netherlands (EUR €)',
+      'announce.text': 'MIRAL DEAL: UP TO 44% OFF BUNDLES', 'announce.cta': 'SHOP NOW',
+      'nav.products': 'Products', 'nav.advice': 'Advice', 'nav.about': 'About Miral',
+      'hero.h1': 'Make your stretch ceiling shine again', 'hero.p': 'The safe cleaner for a streak-free PVC stretch ceiling.',
+      'hero.feature1': 'Specialist Formula', 'hero.feature2': 'Radiant Shine', 'hero.cta': 'Shop products',
+      'bestsellers.h2': 'Bestsellers',
+      'product1.badge': 'SAVE 20%', 'product1.name': 'Daily Cleaner',
+      'product2.badge': 'SAVE 12%', 'product2.name': 'Deep Cleaner',
+      'banner.h2': 'Daily Cleaner', 'banner.p': 'Powerful daily cleaning, safe for your PVC stretch ceiling. Made to use again and again.', 'banner.cta': 'Shop now',
+      'reviews.great': 'Great', 'reviews.basedOn': 'Based on', 'reviews.reviewsWord': 'reviews', 'reviews.verified': 'Verified',
+      'reviews.time.2h': '2 hours ago', 'reviews.time.4h': '4 hours ago', 'reviews.time.11h': '11 hours ago',
+      'reviews.time.15h': '15 hours ago', 'reviews.time.1d': '1 day ago', 'reviews.time.2d': '2 days ago',
+      'reviews.r1.title': 'Finally a streak-free ceiling', 'reviews.r1.body': 'I was afraid to damage my PVC stretch ceiling. Miral feels safe and smells fresh…',
+      'reviews.r2.title': 'Turned out to just be dirt', 'reviews.r2.body': 'I thought my ceiling had discoloured. Really happy with the result…',
+      'reviews.r3.title': 'Made specifically for stretch ceilings', 'reviews.r3.body': 'You can tell it was made specifically for stretch ceilings. No haze, no hassle…',
+      'reviews.r4.title': 'A keeper!', 'reviews.r4.body': 'I struggled for months with streaks on my black stretch ceiling. A keeper!',
+      'reviews.r5.title': 'Had an issue with a damaged bottle…', 'reviews.r5.body': 'I had an issue with a damaged bottle on delivery and customer service fixed it super fast…',
+      'reviews.r6.title': 'Nice scent, delivered fast', 'reviews.r6.body': 'Order arrived neatly packaged, the scent is pleasantly light and the floor doesn\u2019t feel sticky…',
+      'voorna.h2': 'See the difference for yourself', 'voorna.before': 'Before', 'voorna.after': 'After',
+      'faq.h2': 'Frequently asked questions',
+      'faq.q1': 'What\u2019s the difference between the Daily Cleaner and the Deep Cleaner?',
+      'faq.a1': 'The Daily Cleaner is a mild formula for quickly removing dust and light stains. The Deep Cleaner is stronger, meant for periodic maintenance or heavily soiled floors.',
+      'faq.q2': 'Is Miral safe for all types of stretch ceilings?', 'faq.a2': 'Miral was developed specifically for PVC stretch ceilings. The formula is pH-balanced and won\u2019t affect texture, shine or colour.',
+      'faq.q3': 'Does the product leave streaks after mopping?', 'faq.a3': 'No, with the correct dosage Miral guarantees a streak-free dry. Using too much is the number one cause of streaks.',
+      'faq.q4': 'What\u2019s the best way to use the cleaner?', 'faq.a4': 'Mix one cap with a bucket of lukewarm water. Use a slightly damp, soft mop. Never use scouring pads or harsh brushes.',
+      'faq.q5': 'What\u2019s the delivery time for my order?', 'faq.a5': 'Orders placed before 11pm on business days are processed the same day. You\u2019ll receive a Track & Trace code to follow your shipment.',
+      'footer.products': 'Products', 'footer.allProducts': 'All products', 'footer.trackOrder': 'Track order',
+      'footer.terms': 'Terms & conditions', 'footer.shipping': 'Shipping policy', 'footer.returns': 'Returns & refund policy',
+      'footer.privacy': 'Privacy policy', 'footer.contact': 'Contact', 'footer.followUs': 'Follow us',
+      'footer.stayUpdated': 'Stay updated', 'footer.email': 'Email address', 'footer.subscribe': 'Subscribe',
+      'footer.copyright': '© Miral. All rights reserved.',
+    },
+    de: {
+      'util.service': 'Kundenservice', 'util.country': 'Niederlande (EUR €)',
+      'announce.text': 'MIRAL-AKTION: BIS ZU 44% RABATT AUF PAKETE', 'announce.cta': 'JETZT ANSEHEN',
+      'nav.products': 'Produkte', 'nav.advice': 'Beratung', 'nav.about': 'Über Miral',
+      'hero.h1': 'Bringen Sie Ihre Spanndecke wieder zum Glänzen', 'hero.p': 'Der sichere Reiniger für eine streifenfreie PVC-Spanndecke.',
+      'hero.feature1': 'Spezialformel', 'hero.feature2': 'Strahlender Glanz', 'hero.cta': 'Produkte ansehen',
+      'bestsellers.h2': 'Bestseller',
+      'product1.badge': '20% SPAREN', 'product1.name': 'Tagesreiniger',
+      'product2.badge': '12% SPAREN', 'product2.name': 'Tiefenreiniger',
+      'banner.h2': 'Tagesreiniger', 'banner.p': 'Kraftvolle tägliche Reinigung, sicher für Ihre PVC-Spanndecke. Für den täglichen Gebrauch gemacht.', 'banner.cta': 'Jetzt kaufen',
+      'reviews.great': 'Ausgezeichnet', 'reviews.basedOn': 'Basierend auf', 'reviews.reviewsWord': 'Bewertungen', 'reviews.verified': 'Verifiziert',
+      'reviews.time.2h': 'vor 2 Stunden', 'reviews.time.4h': 'vor 4 Stunden', 'reviews.time.11h': 'vor 11 Stunden',
+      'reviews.time.15h': 'vor 15 Stunden', 'reviews.time.1d': 'vor 1 Tag', 'reviews.time.2d': 'vor 2 Tagen',
+      'reviews.r1.title': 'Endlich eine streifenfreie Decke', 'reviews.r1.body': 'Ich hatte Angst, meine PVC-Spanndecke zu beschädigen. Miral fühlt sich sicher an und riecht frisch…',
+      'reviews.r2.title': 'War einfach nur Schmutz', 'reviews.r2.body': 'Ich dachte, meine Decke wäre verfärbt. Sehr zufrieden mit dem Ergebnis…',
+      'reviews.r3.title': 'Speziell für Spanndecken gemacht', 'reviews.r3.body': 'Man merkt, dass es speziell für Spanndecken entwickelt wurde. Kein Schleier, kein Aufwand…',
+      'reviews.r4.title': 'Ein Dauerbrenner!', 'reviews.r4.body': 'Ich kämpfte monatelang mit Streifen auf meiner schwarzen Spanndecke. Ein Dauerbrenner!',
+      'reviews.r5.title': 'Hatte ein Problem mit einer beschädigten Flasche…', 'reviews.r5.body': 'Ich hatte ein Problem mit einer beschädigten Flasche bei der Lieferung, der Kundenservice hat es super schnell gelöst…',
+      'reviews.r6.title': 'Angenehmer Duft, schnell geliefert', 'reviews.r6.body': 'Die Bestellung kam ordentlich verpackt an, der Duft ist angenehm leicht und der Boden fühlt sich nicht klebrig an…',
+      'voorna.h2': 'Sehen Sie selbst den Unterschied', 'voorna.before': 'Vorher', 'voorna.after': 'Nachher',
+      'faq.h2': 'Häufig gestellte Fragen',
+      'faq.q1': 'Was ist der Unterschied zwischen dem Tagesreiniger und dem Tiefenreiniger?',
+      'faq.a1': 'Der Tagesreiniger ist eine milde Formel zum schnellen Entfernen von Staub und leichten Flecken. Der Tiefenreiniger ist stärker und für die regelmäßige Pflege oder stark verschmutzte Böden gedacht.',
+      'faq.q2': 'Ist Miral für alle Arten von Spanndecken sicher?', 'faq.a2': 'Miral wurde speziell für PVC-Spanndecken entwickelt. Die Formel ist pH-neutral und beeinträchtigt Struktur, Glanz oder Farbe nicht.',
+      'faq.q3': 'Hinterlässt das Mittel nach dem Wischen Streifen?', 'faq.a3': 'Nein, bei der richtigen Dosierung trocknet Miral garantiert streifenfrei. Eine zu hohe Dosierung ist die häufigste Ursache für Streifen.',
+      'faq.q4': 'Wie benutze ich den Reiniger am besten?', 'faq.a4': 'Einen Verschlusskappe mit einem Eimer lauwarmem Wasser mischen. Einen leicht feuchten, weichen Mopp verwenden. Niemals Scheuerschwämme oder aggressive Bürsten benutzen.',
+      'faq.q5': 'Wie lange ist die Lieferzeit meiner Bestellung?', 'faq.a5': 'Bestellungen, die werktags vor 23:00 Uhr eingehen, werden noch am selben Tag bearbeitet. Sie erhalten einen Track & Trace Code, um Ihre Sendung zu verfolgen.',
+      'footer.products': 'Produkte', 'footer.allProducts': 'Alle Produkte', 'footer.trackOrder': 'Bestellung verfolgen',
+      'footer.terms': 'Allgemeine Geschäftsbedingungen', 'footer.shipping': 'Versandrichtlinie', 'footer.returns': 'Rückgabe- und Erstattungsrichtlinie',
+      'footer.privacy': 'Datenschutzrichtlinie', 'footer.contact': 'Kontakt', 'footer.followUs': 'Folgen Sie uns',
+      'footer.stayUpdated': 'Bleiben Sie informiert', 'footer.email': 'E-Mail-Adresse', 'footer.subscribe': 'Abonnieren',
+      'footer.copyright': '© Miral. Alle Rechte vorbehalten.',
+    },
+  };
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.nl = el.textContent; });
+  function setLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      el.textContent = (lang === 'nl' ? el.dataset.nl : i18n[lang]?.[key]) ?? el.dataset.nl;
+    });
+    document.documentElement.lang = lang;
+    localStorage.setItem('miral-lang', lang);
+  }
+  const langSelect = document.getElementById('langSelect');
+  const savedLang = localStorage.getItem('miral-lang') || 'nl';
+  langSelect.value = savedLang;
+  if (savedLang !== 'nl') setLang(savedLang);
+  langSelect.addEventListener('change', (e) => setLang(e.target.value));
 </script>
 </body>
 </html>

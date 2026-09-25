@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Over Miral</title>
+<title>Over Miral — Ons verhaal</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,9 +32,7 @@
     font-family: "Manrope", sans-serif;
     font-weight: 400;
   }
-  button {
-    font-weight: 600;
-  }
+  button { font-weight: 600; }
   button, a.inline-flex, a.inline-block { border-radius: 8px; }
   .underline-hover { position: relative; }
   .underline-hover::after {
@@ -42,6 +40,29 @@
     background: currentColor; transition: width .3s ease;
   }
   .underline-hover:hover::after { width: 100%; background: #c0261f; }
+
+  /* ---- animation primitives: transform + opacity only, IO-driven ---- */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-img { opacity: 0; transform: scale(1.05); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1); }
+  .reveal-img.in { opacity: 1; transform: scale(1); }
+  .stagger > * { transition-delay: calc(var(--i, 0) * 100ms); }
+
+  /* mask reveal for photography: clip-path wipes up while image nudges up slightly */
+  .mask-reveal { clip-path: inset(100% 0 0 0); transform: translateY(12px); transition: clip-path 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1); }
+  .mask-reveal.in { clip-path: inset(0 0 0 0); transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-img, .mask-reveal { opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* timeline dots + progress line */
+  .tl-dot { width: 10px; height: 10px; border-radius: 9999px; background: #14131133; transition: background .3s ease, transform .3s ease; }
+  .tl-dot.active { background: #c0261f; transform: scale(1.4); }
+  .tl-year { color: #14131140; transition: color .3s ease; }
+  .tl-year.active { color: #141311; }
+  .tl-progress-fill { height: 0%; transition: height .4s ease; }
 </style>
 </head>
 <body class="bg-white text-ink antialiased font-sans">
@@ -77,60 +98,120 @@
   </div>
 </header>
 
-<!-- ABOUT -->
-<section class="max-w-8xl mx-auto px-6 md:px-10 pt-12 md:pt-16 pb-8">
-  <h1 class="text-3xl md:text-5xl font-700">Schoonmaken kan beter.</h1>
-  <p class="mt-3 text-ink/60 max-w-lg">Waarom Miral bestaat en waar we voor staan.</p>
-</section>
-
-<section class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28 grid md:grid-cols-12 gap-10 items-center">
-  <div class="md:col-span-5">
-    <p class="text-[13px] uppercase tracking-widest text-ink/50">Onze missie</p>
-    <h2 class="text-2xl md:text-3xl mt-3 leading-tight">Gemaakt voor spanvloeren, niet voor alles.</h2>
-    <p class="mt-6 text-ink/65 leading-relaxed max-w-sm">Gewone allesreinigers tasten de coating van een PVC spanvloer aan. Miral is pH-gebalanceerd en specifiek ontwikkeld voor dit oppervlak — geen waas, geen strepen.</p>
-    <a href="producten.html" class="mt-8 inline-flex items-center gap-2 text-sm underline-hover">Bekijk onze producten <i class="ph ph-arrow-right"></i></a>
-  </div>
-  <div class="md:col-span-7 aspect-[16/10] overflow-hidden">
-    <img src="https://picsum.photos/seed/miral-team-portret/1200/750" alt="Specialist die een PVC spanvloer behandelt" class="w-full h-full object-cover" />
+<!-- HERO -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-12 md:pb-20">
+  <p class="reveal text-[13px] uppercase tracking-widest text-red">Ons verhaal</p>
+  <h1 class="reveal text-4xl md:text-6xl leading-[1.05] mt-4 max-w-3xl" style="transition-delay:100ms">Van vloerexpert naar schoonmaakspecialist</h1>
+  <p class="reveal mt-6 text-ink/65 max-w-xl leading-relaxed" style="transition-delay:200ms">[Korte introductie: waarom Miral bestaat en waar het merk voor staat — echte tekst aanleveren.]</p>
+  <div class="reveal-img mt-10 aspect-[21/9] overflow-hidden" style="transition-delay:150ms">
+    <img src="https://picsum.photos/seed/miral-story-hero/1800/770" alt="Miral ontstaansverhaal" class="w-full h-full object-cover" />
   </div>
 </section>
 
-<!-- TRUSTPILOT REVIEWS -->
+<!-- TIMELINE -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pb-24 md:pb-32 grid md:grid-cols-12 gap-10 md:gap-16">
+  <!-- sticky left rail -->
+  <div class="hidden md:block md:col-span-4">
+    <div class="sticky top-28 flex gap-6">
+      <div class="relative w-px bg-ink/10 shrink-0">
+        <div id="tlFill" class="tl-progress-fill absolute top-0 left-0 w-px bg-red"></div>
+      </div>
+      <div class="space-y-10">
+        <div class="tl-year-block" data-year="1978">
+          <p class="tl-year text-5xl font-700 leading-none">1978</p>
+          <p class="tl-year text-sm mt-1">Het begin</p>
+        </div>
+        <div class="tl-year-block" data-year="2010">
+          <p class="tl-year text-5xl font-700 leading-none">2010</p>
+          <p class="tl-year text-sm mt-1">De vraag</p>
+        </div>
+        <div class="tl-year-block" data-year="2019">
+          <p class="tl-year text-5xl font-700 leading-none">2019</p>
+          <p class="tl-year text-sm mt-1">De zoektocht</p>
+        </div>
+        <div class="tl-year-block" data-year="2023">
+          <p class="tl-year text-5xl font-700 leading-none">2023</p>
+          <p class="tl-year text-sm mt-1">De ontwikkeling</p>
+        </div>
+        <div class="tl-year-block" data-year="2025">
+          <p class="tl-year text-5xl font-700 leading-none">2025</p>
+          <p class="tl-year text-sm mt-1">Voor iedereen</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- story sections -->
+  <div class="md:col-span-8 space-y-24 md:space-y-32">
+    <article class="tl-section" data-year="1978">
+      <p class="reveal tl-year text-sm uppercase tracking-widest md:hidden">1978 — Het begin</p>
+      <h2 class="reveal text-2xl md:text-3xl mt-2">Het begin</h2>
+      <p class="reveal mt-4 text-ink/65 leading-relaxed max-w-xl" style="transition-delay:80ms">[Echte tekst over de oorsprong in 1978 — vloerexpertise, aanleveren.]</p>
+      <div class="reveal-img mt-8 aspect-[16/10] overflow-hidden" style="transition-delay:160ms">
+        <img src="https://picsum.photos/seed/miral-1978/1200/750" alt="1978 — historische sportvloer" class="w-full h-full object-cover" />
+      </div>
+    </article>
+
+    <article class="tl-section" data-year="2010">
+      <p class="reveal tl-year text-sm uppercase tracking-widest md:hidden">2010 — De vraag</p>
+      <h2 class="reveal text-2xl md:text-3xl mt-2">De vraag</h2>
+      <p class="reveal mt-4 text-ink/65 leading-relaxed max-w-xl" style="transition-delay:80ms">[Echte tekst: welke vraag ontstond bij intensief gebruikte sportvloeren — aanleveren.]</p>
+      <div class="reveal-img mt-8 aspect-[16/10] overflow-hidden" style="transition-delay:160ms">
+        <img src="https://picsum.photos/seed/miral-2010/1200/750" alt="2010 — intensief gebruikte sportvloer" class="w-full h-full object-cover" />
+      </div>
+    </article>
+
+    <article class="tl-section" data-year="2019">
+      <p class="reveal tl-year text-sm uppercase tracking-widest md:hidden">2019 — De zoektocht</p>
+      <h2 class="reveal text-2xl md:text-3xl mt-2">De zoektocht</h2>
+      <p class="reveal mt-4 text-ink/65 leading-relaxed max-w-xl" style="transition-delay:80ms">[Echte tekst over het testen van reinigingsmiddelen en oppervlakken — aanleveren.]</p>
+      <blockquote class="reveal mt-6 text-xl md:text-2xl font-700 max-w-lg leading-snug" style="transition-delay:120ms">"Als de juiste oplossing niet bestaat, ontwikkelen we hem zelf."</blockquote>
+      <div class="reveal-img mt-8 aspect-[16/10] overflow-hidden" style="transition-delay:160ms">
+        <img src="https://picsum.photos/seed/miral-2019/1200/750" alt="2019 — testen van reinigingsmiddelen" class="w-full h-full object-cover" />
+      </div>
+    </article>
+
+    <!-- 2023: the pivotal moment — larger, slower, glow -->
+    <article class="tl-section relative" data-year="2023">
+      <p class="reveal tl-year text-sm uppercase tracking-widest md:hidden">2023 — De ontwikkeling</p>
+      <h2 class="reveal text-3xl md:text-4xl mt-2">De ontwikkeling van Miral</h2>
+      <p class="reveal mt-4 text-ink/65 leading-relaxed max-w-xl" style="transition-delay:100ms">[Echte tekst over de productontwikkeling van Miral — aanleveren.]</p>
+      <blockquote class="reveal mt-6 text-xl md:text-2xl font-700 max-w-lg leading-snug" style="transition-delay:160ms">"Geen genoegen nemen met goed genoeg."</blockquote>
+      <div class="reveal-img relative mt-8 aspect-[16/10] overflow-hidden" style="transition-delay:220ms">
+        <div class="absolute -inset-6 bg-red/10 blur-3xl -z-10"></div>
+        <img src="https://picsum.photos/seed/miral-2023-fles/1400/875" alt="2023 — Miral-productontwikkeling" class="w-full h-full object-cover scale-110" />
+      </div>
+    </article>
+
+    <article class="tl-section" data-year="2025">
+      <p class="reveal tl-year text-sm uppercase tracking-widest md:hidden">2025 — Voor iedereen</p>
+      <h2 class="reveal text-2xl md:text-3xl mt-2">Van professionele toepassing naar Miral voor iedereen.</h2>
+      <p class="reveal mt-4 text-ink/65 leading-relaxed max-w-xl" style="transition-delay:80ms">[Echte tekst over de lancering voor thuisgebruik naast professioneel gebruik — aanleveren.]</p>
+      <div class="reveal-img mt-8 aspect-[16/10] overflow-hidden" style="transition-delay:160ms">
+        <img src="https://picsum.photos/seed/miral-2025/1200/750" alt="2025 — Miral voor thuis en professioneel gebruik" class="w-full h-full object-cover" />
+      </div>
+      <a href="producten.html" class="reveal group inline-flex items-center gap-2 mt-8 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors" style="transition-delay:220ms">
+        Ontdek Miral <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1"></i>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- 45+ jaar counter -->
 <section class="bg-[#f7f6f4] py-20 md:py-28">
-  <div class="max-w-8xl mx-auto px-6 md:px-10">
-    <div class="flex flex-wrap items-center gap-4 mb-10">
-      <span class="text-2xl font-700">Geweldig</span>
-      <span class="flex text-trust text-xl">
-        <i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph ph-square text-ink/20"></i>
-      </span>
-      <span class="text-sm text-ink/60">Gebaseerd op <u>1.240 reviews</u> · <span class="text-trust font-700">★Trustpilot</span></span>
-    </div>
-    <div class="grid md:grid-cols-4 gap-6">
-      <div>
-        <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
-        <p class="mt-3 font-700 text-sm">F. Meijer <span class="font-normal text-ink/40">, 2 uur geleden</span></p>
-        <p class="mt-1 font-700 text-sm">Eindelijk een streeploze vloer</p>
-        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik was bang om mijn PVC spanvloer te beschadigen. Miral voelt veilig aan en ruikt fris.</p>
-      </div>
-      <div>
-        <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
-        <p class="mt-3 font-700 text-sm">Mikey v.d. Berg <span class="font-normal text-ink/40">, 4 uur geleden</span></p>
-        <p class="mt-1 font-700 text-sm">Bleek gewoon vuil te zijn</p>
-        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik dacht dat mijn spanvloer verkleurd was. Super blij mee met het resultaat.</p>
-      </div>
-      <div>
-        <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
-        <p class="mt-3 font-700 text-sm">Lotte <span class="font-normal text-ink/40">, 11 uur geleden</span></p>
-        <p class="mt-1 font-700 text-sm">Speciaal voor spanvloeren</p>
-        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Je merkt aan alles dat dit speciaal voor spanvloeren is gemaakt. Geen waas, geen gedoe.</p>
-      </div>
-      <div>
-        <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
-        <p class="mt-3 font-700 text-sm">Sanne de Vries <span class="font-normal text-ink/40">, 15 uur geleden</span></p>
-        <p class="mt-1 font-700 text-sm">Blijvertje!</p>
-        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik worstelde al maanden met strepen op mijn zwarte spanvloer. Blijvertje!</p>
-      </div>
-    </div>
+  <div class="max-w-8xl mx-auto px-6 md:px-10 text-center">
+    <p id="yearCounter" class="reveal text-6xl md:text-8xl font-700" data-target="45">0+</p>
+    <p class="reveal mt-3 text-ink/60" style="transition-delay:80ms">jaar praktijkervaring met vloeren en reiniging</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 py-24 md:py-32 text-center">
+  <h2 class="reveal text-3xl md:text-5xl leading-tight max-w-2xl mx-auto">Ontwikkeld omdat goed genoeg niet goed genoeg was.</h2>
+  <p class="reveal mt-6 text-ink/65 max-w-xl mx-auto leading-relaxed" style="transition-delay:100ms">Miral ontstond niet omdat de wereld nog een schoonmaakmerk nodig had. Het ontstond omdat wij zelf jarenlang zochten naar een product waarvan we zonder twijfel konden zeggen: dit is wat wij zelf willen gebruiken.</p>
+  <div class="reveal flex flex-wrap items-center justify-center gap-4 mt-9" style="transition-delay:180ms">
+    <a href="producten.html" class="group inline-flex items-center gap-2 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors">Ontdek Miral <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1.5"></i></a>
+    <a href="producten.html" class="group inline-flex items-center gap-2 border border-ink/20 text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:border-ink transition-colors">Bekijk onze producten <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1.5"></i></a>
   </div>
 </section>
 
@@ -181,5 +262,56 @@
     <p class="text-xs text-white/40 pt-6 border-t border-white/10">© Miral. Alle rechten voorbehouden.</p>
   </div>
 </footer>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // staggered reveal for .reveal / .reveal-img / .mask-reveal
+  const revealIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.reveal, .reveal-img, .mask-reveal').forEach(el => revealIO.observe(el));
+
+  // active timeline year + progress fill (discrete per-section, no scroll-jank listener)
+  const yearBlocks = document.querySelectorAll('.tl-year-block');
+  const sections = document.querySelectorAll('.tl-section');
+  const fill = document.getElementById('tlFill');
+  if (yearBlocks.length && sections.length) {
+    const setActive = (year, index) => {
+      yearBlocks.forEach(b => b.querySelectorAll('.tl-year').forEach(t => t.classList.toggle('active', b.dataset.year === year)));
+      if (fill) fill.style.height = ((index + 1) / sections.length * 100) + '%';
+    };
+    const tlIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const idx = Array.from(sections).indexOf(e.target);
+          setActive(e.target.dataset.year, idx);
+        }
+      });
+    }, { threshold: 0.4, rootMargin: '-20% 0px -20% 0px' });
+    sections.forEach(s => tlIO.observe(s));
+  }
+
+  // count-up for 45+ years, once
+  const counter = document.getElementById('yearCounter');
+  if (counter) {
+    const target = parseInt(counter.dataset.target, 10);
+    const countIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        countIO.unobserve(e.target);
+        if (reduceMotion) { counter.textContent = target + '+'; return; }
+        const start = performance.now(), duration = 1200;
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          counter.textContent = Math.round(p * target) + '+';
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+    countIO.observe(counter);
+  }
+</script>
 </body>
 </html>

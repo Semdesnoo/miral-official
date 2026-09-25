@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Producten — Miral</title>
+<title>Dieptereiniger — Miral</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,24 +23,12 @@
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  h1, h2, h3, h4 {
-    font-family: "Sora", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.035em;
-  }
-  body, p, a, button {
-    font-family: "Manrope", sans-serif;
-    font-weight: 400;
-  }
-  button {
-    font-weight: 600;
-  }
+  h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; letter-spacing: -0.035em; }
+  body, p, a, button { font-family: "Manrope", sans-serif; font-weight: 400; }
+  button { font-weight: 600; }
   button, a.inline-flex, a.inline-block { border-radius: 8px; }
   .underline-hover { position: relative; }
-  .underline-hover::after {
-    content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px;
-    background: currentColor; transition: width .3s ease;
-  }
+  .underline-hover::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px; background: currentColor; transition: width .3s ease; }
   .underline-hover:hover::after { width: 100%; background: #c0261f; }
 </style>
 </head>
@@ -57,7 +45,7 @@
 
 <!-- ANNOUNCEMENT -->
 <div class="bg-red text-white text-center text-xs font-medium tracking-wide py-2.5">
-  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="#dagelijkse-reiniger" class="underline">BEKIJK NU</a>
+  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="producten.html" class="underline">BEKIJK NU</a>
 </div>
 
 <!-- NAV -->
@@ -77,41 +65,19 @@
   </div>
 </header>
 
-<!-- PAGE HEADING -->
-<section class="max-w-8xl mx-auto px-6 md:px-10 pt-12 md:pt-16 pb-10 md:pb-14">
-  <h1 class="text-3xl md:text-5xl font-700">Onze producten</h1>
-  <p class="mt-3 text-ink/60 max-w-lg">Speciaal ontwikkeld voor een streeploze PVC spanvloer, thuis of professioneel.</p>
-</section>
+<!-- BREADCRUMB -->
+<div class="max-w-8xl mx-auto px-6 md:px-10 pt-6 text-xs text-ink/50">
+  <a href="producten.html" class="hover:text-ink transition-colors">Producten</a> / Dieptereiniger
+</div>
 
-<!-- PRODUCT 1 — Dagelijkse Reiniger -->
-<section id="dagelijkse-reiniger" class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-  <a href="dagelijkse-reiniger.html" class="aspect-[4/5] bg-[#f2f1ee] overflow-hidden block">
-    <img src="dagelijkse-reiniger-fles.png" alt="Dagelijkse Reiniger" class="w-full h-full object-contain p-10" />
-  </a>
-  <div class="md:sticky md:top-24">
-    <p class="text-[13px] uppercase tracking-widest text-ink/50">Dagelijks onderhoud</p>
-    <h2 class="mt-2 text-3xl md:text-4xl"><a href="dagelijkse-reiniger.html" class="hover:text-red transition-colors">Dagelijkse Reiniger</a></h2>
-    <p class="mt-2 text-ink/60">500 ml flacon · voor regelmatig gebruik</p>
-    <div class="flex items-center gap-2 mt-4">
-      <span class="flex text-amber-400 text-sm">★★★★★</span>
-      <span class="text-sm text-ink/60">4,8/5 uit 250+ reviews</span>
-    </div>
-    <ul class="mt-6 space-y-2.5 text-sm">
-      <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-trust"></i> pH-gebalanceerd, veilig voor PVC spanvloeren</li>
-      <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-trust"></i> Droogt gegarandeerd streeploos op</li>
-      <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-trust"></i> Verwijdert stof en lichte vlekken in één beurt</li>
-    </ul>
-    <p class="mt-6 text-2xl"><span class="line-through text-ink/40 text-base mr-2">€18,95</span>€14,95</p>
-    <a href="#" class="inline-flex items-center gap-2 mt-5 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors"><i class="ph ph-shopping-cart"></i> In winkelmand</a>
-    <p class="mt-4 text-xs text-ink/50">Gratis verzending vanaf €45 · voor 23:00 besteld, morgen in huis.</p>
+<!-- PDP -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-6 pb-20 md:pb-28 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+  <div class="aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
+    <img src="dieptereiniger-fles.png" alt="Dieptereiniger" class="w-full h-full object-contain p-10" />
   </div>
-</section>
-
-<!-- PRODUCT 2 — Dieptereiniger (reversed layout) -->
-<section id="dieptereiniger" class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-  <div class="md:sticky md:top-24 md:order-2">
+  <div class="md:sticky md:top-24">
     <p class="text-[13px] uppercase tracking-widest text-ink/50">Diepe reiniging</p>
-    <h2 class="mt-2 text-3xl md:text-4xl"><a href="dieptereiniger.html" class="hover:text-red transition-colors">Dieptereiniger</a></h2>
+    <h1 class="mt-2 text-3xl md:text-4xl">Dieptereiniger</h1>
     <p class="mt-2 text-ink/60">500 ml flacon · voor zwaar vervuilde vloeren</p>
     <div class="flex items-center gap-2 mt-4">
       <span class="flex text-amber-400 text-sm">★★★★★</span>
@@ -125,25 +91,38 @@
     <p class="mt-6 text-2xl">€18,95</p>
     <a href="#" class="inline-flex items-center gap-2 mt-5 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors"><i class="ph ph-shopping-cart"></i> In winkelmand</a>
     <p class="mt-4 text-xs text-ink/50">Gratis verzending vanaf €45 · voor 23:00 besteld, morgen in huis.</p>
-  </div>
-  <div class="aspect-[4/5] bg-[#f2f1ee] overflow-hidden md:order-1">
-    <a href="dieptereiniger.html" class="block w-full h-full"><img src="dieptereiniger-fles.png" alt="Dieptereiniger" class="w-full h-full object-contain p-10" /></a>
+
+    <div class="mt-10 divide-y divide-ink/10 border-t border-b border-ink/10">
+      <details class="group py-4" open>
+        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium text-sm">
+          Gebruik
+          <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
+        </summary>
+        <p class="pt-3 text-ink/60 text-sm leading-relaxed">Gelijkmatig aanbrengen, volgens de aangegeven tijd laten inwerken en daarna grondig reinigen. Voor hardnekkige schoenstrepen: onverdund op een zachte doek aanbrengen.</p>
+      </details>
+      <details class="group py-4">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium text-sm">
+          Verzending &amp; retour
+          <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
+        </summary>
+        <p class="pt-3 text-ink/60 text-sm leading-relaxed">Gratis verzending naar Nederland, België en Duitsland. Bekijk ons <a href="verzendbeleid.html" class="underline-hover">verzendbeleid</a> en <a href="retourneren.html" class="underline-hover">retourbeleid</a>.</p>
+      </details>
+    </div>
   </div>
 </section>
 
-<!-- BUNDLE UPSELL -->
-<section class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28">
-  <div class="bg-[#f7f6f4] p-8 md:p-10 grid md:grid-cols-[auto_1fr_auto] items-center gap-6">
-    <div class="flex -space-x-6">
-      <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-[#f7f6f4]"><img src="dagelijkse-reiniger-fles.png" alt="" class="w-full h-full object-contain p-1" /></div>
-      <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-[#f7f6f4]"><img src="dieptereiniger-fles.png" alt="" class="w-full h-full object-contain p-1" /></div>
-    </div>
-    <div>
-      <p class="text-lg font-700">Startersbundel — beide reinigers samen</p>
-      <p class="mt-1 text-sm text-ink/60">Dagelijkse Reiniger + Dieptereiniger, alles wat u nodig heeft voor onderhoud én diepe reiniging.</p>
-      <p class="mt-2 text-lg"><span class="line-through text-ink/40 text-sm mr-2">€37,90</span>€29,95</p>
-    </div>
-    <a href="#" class="inline-flex items-center gap-2 justify-self-start md:justify-self-end bg-ink text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-ink/90 transition-colors">Bundel toevoegen <i class="ph ph-arrow-right"></i></a>
+<!-- YOU'LL ALSO LOVE -->
+<section class="bg-[#f7f6f4] py-16 md:py-24">
+  <div class="max-w-8xl mx-auto px-6 md:px-10">
+    <h2 class="text-2xl md:text-3xl mb-8">Ook interessant</h2>
+    <a href="dagelijkse-reiniger.html" class="group inline-flex items-center gap-6 bg-white p-5 max-w-lg">
+      <div class="w-24 h-24 bg-[#f2f1ee] shrink-0 overflow-hidden"><img src="dagelijkse-reiniger-fles.png" alt="Dagelijkse Reiniger" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform" /></div>
+      <div>
+        <p class="font-700">Dagelijkse Reiniger</p>
+        <p class="text-sm text-ink/60">Voor regelmatig onderhoud · €14,95</p>
+        <span class="inline-flex items-center gap-1.5 mt-1 text-sm underline-hover">Bekijk product <i class="ph ph-arrow-right"></i></span>
+      </div>
+    </a>
   </div>
 </section>
 

@@ -15,7 +15,7 @@
     theme: {
       extend: {
         fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
-        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a', tp: '#00b67a' },
         maxWidth: { '8xl': '1440px' },
       }
     }
@@ -59,6 +59,8 @@
   .cta-btn { transition: transform .15s ease, box-shadow .15s ease, filter .15s ease; }
   .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.15); filter: brightness(1.05); }
   .cta-btn:active { transform: scale(.98); }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
 </head>
 <body class="bg-white text-ink antialiased font-sans">
@@ -292,6 +294,67 @@
   </div>
 </section>
 
+<!-- TRUSTPILOT REVIEWS -->
+<section id="reviews" class="max-w-8xl mx-auto px-6 md:px-10 py-16 md:py-24">
+  <div class="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-10">
+    <div class="shrink-0 sm:w-44">
+      <p class="text-xl">Great</p>
+      <div class="flex gap-0.5 mt-1.5">
+        <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-ink/10 relative flex items-center justify-center overflow-hidden">
+          <span class="absolute inset-y-0 left-0 w-1/2 bg-tp"></span>
+          <i class="ph-fill ph-star text-white text-sm relative"></i>
+        </span>
+      </div>
+      <p class="mt-2 text-sm text-ink/60">Based on <a href="#" class="underline-hover text-ink">33 reviews</a></p>
+      <p class="mt-3 flex items-center gap-1.5 font-700 text-sm"><i class="ph-fill ph-star text-tp"></i>Trustpilot</p>
+    </div>
+    <div class="relative flex-1 min-w-0">
+      <div id="reviewTrack" class="flex gap-5 overflow-x-auto no-scrollbar scroll-smooth">
+        <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
+          <div class="flex items-center gap-2">
+            <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
+            <span class="flex items-center gap-1 text-[11px] text-ink/50"><i class="ph-fill ph-seal-check text-tp text-sm"></i>Geverifieerd</span>
+          </div>
+          <p class="mt-2.5 text-xs text-ink/45">Jasmijn K., 1 dag geleden</p>
+          <p class="mt-1.5 text-sm font-700">Ik had een probleem met een beschadigde fles bij…</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Ik had een probleem met een beschadigde fles bij levering en de klantenservice loste het razendsnel op…</p>
+        </article>
+        <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
+          <div class="flex items-center gap-2">
+            <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
+          </div>
+          <p class="mt-2.5 text-xs text-ink/45">Bram, 2 dagen geleden</p>
+          <p class="mt-1.5 text-sm font-700">Fijne geur en snel bezorgd</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Bestelling kwam netjes verpakt aan, geur is prettig licht en de vloer voelt niet plakkerig…</p>
+        </article>
+        <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
+          <div class="flex items-center gap-2">
+            <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
+            <span class="flex items-center gap-1 text-[11px] text-ink/50"><i class="ph-fill ph-seal-check text-tp text-sm"></i>Geverifieerd</span>
+          </div>
+          <p class="mt-2.5 text-xs text-ink/45">Lotte, 11 uur geleden</p>
+          <p class="mt-1.5 text-sm font-700">Speciaal voor spanvloeren</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Je merkt aan alles dat dit speciaal voor spanvloeren is gemaakt. Geen waas, geen gedoe…</p>
+        </article>
+        <article class="shrink-0 w-[82%] sm:w-[260px] bg-white border border-ink/10 rounded-xl p-5">
+          <div class="flex items-center gap-2">
+            <div class="flex gap-0.5"><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i><i class="ph-fill ph-star text-tp text-base"></i></div>
+          </div>
+          <p class="mt-2.5 text-xs text-ink/45">Mikey v.d. Berg, 4 uur geleden</p>
+          <p class="mt-1.5 text-sm font-700">Bleek gewoon vuil te zijn</p>
+          <p class="mt-1 text-sm text-ink/60 leading-relaxed line-clamp-2">Ik dacht dat mijn spanvloer verkleurd was. Super blij mee met het resultaat…</p>
+        </article>
+      </div>
+      <button id="reviewPrev" aria-label="Vorige" class="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-ink/15 bg-white items-center justify-center hover:border-ink/40 transition-colors"><i class="ph ph-caret-left"></i></button>
+      <button id="reviewNext" aria-label="Volgende" class="hidden sm:flex absolute -right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-ink/15 bg-white items-center justify-center hover:border-ink/40 transition-colors"><i class="ph ph-caret-right"></i></button>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER — logo top, links + newsletter, language/currency bar -->
 <footer class="bg-ink text-white">
   <div class="max-w-8xl mx-auto px-6 md:px-10 pt-10 pb-6 flex justify-center border-b border-white/10">
@@ -436,6 +499,14 @@
     entries.forEach(e => mobileBar.classList.toggle('visible', !e.isIntersecting));
   }, { threshold: 0 });
   ctaIO.observe(mainCta);
+
+  // review carousel scroll
+  const reviewTrack = document.getElementById('reviewTrack');
+  if (reviewTrack) {
+    const scrollAmount = () => reviewTrack.querySelector('article').offsetWidth + 20;
+    document.getElementById('reviewPrev').addEventListener('click', () => reviewTrack.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+    document.getElementById('reviewNext').addEventListener('click', () => reviewTrack.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+  }
 </script>
 </body>
 </html>

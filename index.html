@@ -144,12 +144,19 @@
   </div>
 </section>
 
-<!-- LIFESTYLE BANNER — full-width rounded, text + CTA bottom-left -->
+<!-- LIFESTYLE BANNER — full-width, wavy bottom edge, text + CTA bottom-left -->
+<svg width="0" height="0" class="absolute">
+  <defs>
+    <clipPath id="wave-clip" clipPathUnits="objectBoundingBox">
+      <path d="M0,0 L1,0 L1,0.88 C0.917,0.98 0.833,0.78 0.75,0.88 C0.667,0.98 0.583,0.78 0.5,0.88 C0.417,0.98 0.333,0.78 0.25,0.88 C0.167,0.98 0.083,0.78 0,0.88 Z" />
+    </clipPath>
+  </defs>
+</svg>
 <section class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28">
-  <div class="reveal relative aspect-[21/9] md:aspect-[3/1] overflow-hidden rounded-3xl">
+  <div class="reveal relative aspect-[21/9] md:aspect-[3/1] overflow-hidden" style="clip-path: url(#wave-clip)">
     <img src="miral-lifestyle-banner.png" alt="Miral in gebruik op een sportschoolvloer" class="absolute inset-0 w-full h-full object-cover" />
     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-    <div class="absolute left-6 md:left-12 bottom-6 md:bottom-10 max-w-sm">
+    <div class="absolute left-6 md:left-12 bottom-10 md:bottom-16 max-w-sm">
       <h2 class="text-white text-2xl md:text-4xl">Dagelijkse Reiniger</h2>
       <p class="mt-2 text-white/80 text-sm md:text-base leading-relaxed">Krachtige dagelijkse reiniging, veilig voor uw PVC spanvloer. Gemaakt om elke dag opnieuw te gebruiken.</p>
       <a href="dagelijkse-reiniger.html" class="inline-flex items-center gap-2 mt-5 bg-white text-ink text-xs font-700 uppercase tracking-wide px-6 py-3.5 hover:bg-white/90 transition-colors">Shop nu</a>

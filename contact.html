@@ -107,12 +107,12 @@
     </a>
     <a href="#" class="reveal contact-card border border-ink/10 p-7" style="transition-delay:160ms">
       <p class="text-lg font-700">Retourneren</p>
-      <p class="mt-2 text-sm text-ink/60 leading-relaxed">Wilt u een bestelling retourneren of is er iets misgegaan?</p>
+      <p class="mt-2 text-sm text-ink/60 leading-relaxed">Wilt u gebruikmaken van uw bedenktijd of is er iets mis met uw bestelling?</p>
       <span class="inline-flex items-center gap-1.5 mt-5 text-sm font-medium">Bekijk retourinformatie <i class="ph ph-arrow-right card-arrow"></i></span>
     </a>
-    <a href="#messageForm" class="reveal contact-card border border-ink/10 p-7" style="transition-delay:240ms">
-      <p class="text-lg font-700">Overige vragen</p>
-      <p class="mt-2 text-sm text-ink/60 leading-relaxed">Voor samenwerkingen, zakelijke aanvragen en andere vragen kunt u ook contact met ons opnemen.</p>
+    <a href="mailto:info@miral-official.com" class="reveal contact-card border border-ink/10 p-7" style="transition-delay:240ms">
+      <p class="text-lg font-700">Zakelijk</p>
+      <p class="mt-2 text-sm text-ink/60 leading-relaxed">Voor zakelijke aanvragen en overige samenwerkingen kunt u contact opnemen via info@miral-official.com.</p>
       <span class="inline-flex items-center gap-1.5 mt-5 text-sm font-medium">Stuur ons een bericht <i class="ph ph-arrow-right card-arrow"></i></span>
     </a>
   </div>
@@ -133,17 +133,21 @@
           <input id="cEmail" type="email" required placeholder="Uw e-mailadres" class="mt-1 w-full bg-white border border-ink/15 rounded px-4 py-3 text-sm focus:outline-none focus:border-red" />
         </div>
         <div>
-          <label class="text-xs text-ink/50" for="cOrder">Bestelnummer — optioneel</label>
-          <input id="cOrder" type="text" placeholder="Bijvoorbeeld MIRAL-12345" class="mt-1 w-full bg-white border border-ink/15 rounded px-4 py-3 text-sm focus:outline-none focus:border-red" />
+          <label class="text-xs text-ink/50" for="cPhone">Telefoonnummer — optioneel</label>
+          <input id="cPhone" type="tel" placeholder="Uw telefoonnummer" class="mt-1 w-full bg-white border border-ink/15 rounded px-4 py-3 text-sm focus:outline-none focus:border-red" />
         </div>
         <div>
-          <label class="text-xs text-ink/50" for="cTopic">Waar gaat uw vraag over?</label>
+          <label class="text-xs text-ink/50" for="cOrder">Bestelnummer — optioneel</label>
+          <input id="cOrder" type="text" placeholder="Uw bestelnummer" class="mt-1 w-full bg-white border border-ink/15 rounded px-4 py-3 text-sm focus:outline-none focus:border-red" />
+        </div>
+        <div>
+          <label class="text-xs text-ink/50" for="cTopic">Onderwerp</label>
           <select id="cTopic" class="mt-1 w-full bg-white border border-ink/15 rounded px-4 py-3 text-sm focus:outline-none focus:border-red">
             <option>Bestelling</option>
             <option>Verzending</option>
             <option>Retour</option>
             <option>Productadvies</option>
-            <option>Veiligheid</option>
+            <option>Productveiligheid</option>
             <option>Zakelijk</option>
             <option>Anders</option>
           </select>
@@ -162,24 +166,31 @@
       <div class="space-y-6">
         <div>
           <p class="text-xs uppercase tracking-widest text-ink/50">E-mail</p>
-          <p class="mt-1">klantenservice@miral-official.com</p>
+          <p class="mt-1"><a href="mailto:info@miral-official.com" class="underline-hover">info@miral-official.com</a></p>
         </div>
         <div>
           <p class="text-xs uppercase tracking-widest text-ink/50">Telefoon</p>
-          <p class="mt-1">[Telefoonnummer]</p>
+          <p class="mt-1"><a href="tel:+31683296802" class="underline-hover">+31 6 83296802</a></p>
         </div>
         <div>
           <p class="text-xs uppercase tracking-widest text-ink/50">Bereikbaar</p>
-          <p class="mt-1">Ma t/m vr 9.00 - 17.00<br/>Zaterdag 9.00 - 13.00</p>
+          <p class="mt-1">Maandag t/m vrijdag<br/>09:00–17:00 uur</p>
         </div>
         <div>
           <p class="text-xs uppercase tracking-widest text-ink/50">Bedrijfsadres</p>
-          <p class="mt-1">[Bedrijfsadres — vermeld of dit ook een bezoekadres is]</p>
+          <p class="mt-1">RALF spanvloeren en schoonmaak B.V.<br/>Discusstraat 30<br/>3078 XE Rotterdam<br/>Nederland</p>
         </div>
       </div>
       <div class="mt-10 pt-8 border-t border-ink/10">
-        <p class="text-sm font-medium">Heeft u een product bij de hand?</p>
-        <p class="mt-2 text-sm text-ink/60 leading-relaxed">Bij vragen over een Miral-product helpt het wanneer u de productnaam en indien relevant de batch- of productinformatie van de verpakking doorgeeft. Zo kunnen we uw vraag zo gericht mogelijk behandelen.</p>
+        <p class="text-sm font-medium">Een vraag over een Miral-product?</p>
+        <p class="mt-2 text-sm text-ink/60 leading-relaxed">Voor het beste advies ontvangen we graag: welk Miral-product u gebruikt, welk oppervlak u wilt reinigen, om welk type vervuiling het gaat, en eventueel foto's wanneer dat helpt bij uw vraag. Heeft uw vraag betrekking op een specifieke verpakking? Vermeld indien relevant ook de batch- of productinformatie op het etiket.</p>
+      </div>
+      <div class="mt-10 pt-8 border-t border-ink/10 text-xs text-ink/50 leading-relaxed">
+        <p class="font-medium text-ink/70 mb-1">Bedrijfsgegevens</p>
+        <p>RALF spanvloeren en schoonmaak B.V.</p>
+        <p>Discusstraat 30, 3078 XE Rotterdam, Nederland</p>
+        <p class="mt-1">KvK: 42007192 · Vestigingsnummer: 000065107063</p>
+        <p>Miral is een merk van RALF spanvloeren en schoonmaak B.V.</p>
       </div>
     </div>
   </div>

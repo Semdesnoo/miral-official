@@ -83,8 +83,8 @@
 <!-- HERO + LOOKUP FORM -->
 <section class="max-w-8xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-16 md:pb-20">
   <p class="reveal text-[13px] uppercase tracking-widest text-red">Bestelling volgen</p>
-  <h1 class="reveal text-4xl md:text-6xl leading-[1.05] mt-4 max-w-2xl" style="transition-delay:100ms">Waar is mijn bestelling?</h1>
-  <p class="reveal mt-5 text-ink/65 max-w-lg leading-relaxed" style="transition-delay:180ms">Van Miral naar uw voordeur. Vul uw bestelgegevens in en bekijk direct de actuele status van uw bestelling.</p>
+  <h1 class="reveal text-4xl md:text-6xl leading-[1.05] mt-4 max-w-2xl" style="transition-delay:100ms">Van ons magazijn naar uw voordeur.</h1>
+  <p class="reveal mt-5 text-ink/65 max-w-lg leading-relaxed" style="transition-delay:180ms">Benieuwd waar uw bestelling is? Vul hieronder uw bestelgegevens in en bekijk de actuele status van uw Miral-bestelling.</p>
 
   <form id="trackForm" class="reveal mt-9 max-w-xl grid sm:grid-cols-2 gap-4" style="transition-delay:260ms" onsubmit="return false">
     <div>
@@ -129,13 +129,34 @@
   <p class="mt-8 text-sm text-ink/50 max-w-md">Statussen worden uitsluitend getoond zodra ze daadwerkelijk vanuit het bestel- en verzendsysteem beschikbaar zijn — dit is een voorbeeldweergave.</p>
 </section>
 
-<!-- NOG GEEN UPDATE -->
+<!-- VERZENDING INFO -->
 <section class="bg-[#f7f6f4] py-16 md:py-20">
-  <div class="max-w-8xl mx-auto px-6 md:px-10">
-    <h2 class="text-xl md:text-2xl">Nog geen update?</h2>
-    <p class="mt-3 text-ink/65 max-w-xl leading-relaxed">Soms duurt het enkele uren voordat een track &amp; trace-code door de vervoerder wordt bijgewerkt. Heeft uw bestelling langer dan verwacht dezelfde status? Neem dan contact op met Miral. Wij zoeken graag voor u uit waar uw pakket zich bevindt.</p>
-    <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-sm underline-hover">Neem contact op <i class="ph ph-arrow-right"></i></a>
+  <div class="max-w-8xl mx-auto px-6 md:px-10 grid md:grid-cols-3 gap-10">
+    <div>
+      <h2 class="text-lg">Wanneer wordt mijn bestelling verzonden?</h2>
+      <p class="mt-3 text-sm text-ink/65 leading-relaxed">Wij streven ernaar iedere bestelling binnen 1 werkdag te verzenden. Voor Nederland en België bedraagt de verwachte bezorgtijd na verzending doorgaans 1–3 werkdagen. Voor Duitsland wordt de actuele levertijd tijdens het bestelproces en via de track &amp; trace weergegeven. Bestellingen in het weekend of op een feestdag worden vanaf de eerstvolgende werkdag verwerkt.</p>
+    </div>
+    <div>
+      <h2 class="text-lg">Gratis verzending</h2>
+      <p class="mt-3 text-sm text-ink/65 leading-relaxed">Bij Miral betaalt u geen verzendkosten voor bestellingen naar Nederland, België en Duitsland. Geen minimum bestelbedrag, geen verborgen verzendkosten.</p>
+    </div>
+    <div>
+      <h2 class="text-lg">Wie bezorgt mijn bestelling?</h2>
+      <p class="mt-3 text-sm text-ink/65 leading-relaxed">Wij verzenden met PostNL of DHL. Welke vervoerder uw bestelling bezorgt, kan afhankelijk zijn van bestemming, pakketgrootte en logistieke beschikbaarheid. De definitieve vervoerder vindt u in uw verzendbevestiging.</p>
+    </div>
   </div>
+</section>
+
+<!-- NOG GEEN TRACK & TRACE -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 py-16 md:py-20">
+  <h2 class="text-xl md:text-2xl">Nog geen track &amp; trace ontvangen?</h2>
+  <p class="mt-3 text-ink/65 max-w-xl leading-relaxed">Geen zorgen. Het kan enige tijd duren voordat de eerste trackinginformatie bij de vervoerder zichtbaar wordt. Heeft u na verzending geen werkende trackinginformatie ontvangen of lijkt uw bestelling onnodig lang stil te staan?</p>
+  <p class="mt-4 text-sm text-ink/65">
+    <a href="mailto:info@miral-official.com" class="underline-hover">info@miral-official.com</a> ·
+    <a href="tel:+31683296802" class="underline-hover">+31 6 83296802</a>
+  </p>
+  <p class="mt-1 text-xs text-ink/45">Telefonisch bereikbaar van maandag t/m vrijdag van 09:00 tot 17:00 uur.</p>
+  <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-sm underline-hover">Neem contact op <i class="ph ph-arrow-right"></i></a>
 </section>
 
 <!-- SNELLE ANTWOORDEN -->
@@ -144,24 +165,17 @@
   <div class="divide-y divide-ink/10 border-t border-b border-ink/10">
     <details class="group py-6" open>
       <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
-        Wanneer wordt mijn bestelling verzonden?
-        <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
-      </summary>
-      <p class="pt-4 text-ink/60 text-sm leading-relaxed max-w-xl">Bestellingen worden verwerkt volgens de levertijd die tijdens het bestellen wordt aangegeven. Zodra uw pakket is verzonden, ontvangt u een bevestiging met de beschikbare trackinginformatie.</p>
-    </details>
-    <details class="group py-6">
-      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
         Mijn bestelling staat op bezorgd, maar ik heb niets ontvangen.
         <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
       </summary>
-      <p class="pt-4 text-ink/60 text-sm leading-relaxed max-w-xl">Controleer eerst of het pakket bij buren, huisgenoten of een afgesproken veilige locatie is afgeleverd. Kunt u de bestelling niet vinden? Neem dan contact met ons op. Vermeld uw bestelnummer zodat we direct met u mee kunnen kijken.</p>
+      <p class="pt-4 text-ink/60 text-sm leading-relaxed max-w-xl">Controleer eerst of het pakket bij buren is bezorgd, of iemand anders op uw adres het heeft aangenomen, of de vervoerder een alternatieve afleverlocatie vermeldt, en de meest recente informatie in de track &amp; trace. Kunt u het pakket daarna nog steeds niet vinden? Neem contact met ons op en vermeld uw bestelnummer. Wij kijken graag met u mee.</p>
     </details>
     <details class="group py-6">
       <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
-        Mijn pakket is beschadigd aangekomen.
+        Mijn bestelling is beschadigd aangekomen.
         <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
       </summary>
-      <p class="pt-4 text-ink/60 text-sm leading-relaxed max-w-xl">Gebruik een beschadigd of lekkend product niet voordat duidelijk is dat het veilig gebruikt kan worden. Maak foto's van de buitenverpakking, verzendlabel en het product en neem contact met ons op.</p>
+      <p class="pt-4 text-ink/60 text-sm leading-relaxed max-w-xl">Gebruik het beschadigde product dan niet voordat duidelijk is dat het veilig kan worden gebruikt. Maak indien mogelijk foto's van de verzenddoos, het verzendlabel, het beschadigde product en de schade of lekkage. Stuur deze samen met uw bestelnummer naar <a href="mailto:info@miral-official.com" class="underline-hover">info@miral-official.com</a>. Wij zoeken vervolgens naar een passende oplossing.</p>
     </details>
     <details class="group py-6">
       <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">

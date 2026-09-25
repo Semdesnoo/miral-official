@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Over Miral</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
+        maxWidth: { '8xl': '1440px' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, h4 {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }
+  body, p, a, button {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+  }
+  button {
+    font-weight: 600;
+  }
+  button, a.inline-flex, a.inline-block { border-radius: 8px; }
+  .underline-hover { position: relative; }
+  .underline-hover::after {
+    content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px;
+    background: currentColor; transition: width .3s ease;
+  }
+  .underline-hover:hover::after { width: 100%; background: #c0261f; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased font-sans">
+
+<!-- UTILITY BAR -->
+<div class="bg-[#f7f6f4] border-b border-black/5 text-xs">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-9 flex items-center justify-end gap-3 text-ink/70">
+    <a href="#" class="hover:text-ink transition-colors">Klantenservice</a>
+    <span class="text-ink/20">|</span>
+    <span>Nederland (EUR €)</span>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT -->
+<div class="bg-red text-white text-center text-xs font-medium tracking-wide py-2.5">
+  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="producten.html" class="underline">BEKIJK NU</a>
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-30 bg-white border-b border-black/10">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-16 grid grid-cols-3 items-center">
+    <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium uppercase tracking-wide">
+      <a href="producten.html" class="underline-hover hover:text-red transition-colors">Producten</a>
+      <a href="advies.html" class="underline-hover hover:text-red transition-colors">Advies</a>
+      <a href="over-miral.html" class="underline-hover text-red font-700 whitespace-nowrap">Over Miral</a>
+    </nav>
+    <a href="index.html" class="flex justify-center"><img src="logo.png" alt="Miral" class="h-8 w-auto" /></a>
+    <div class="flex items-center justify-end gap-5 text-lg">
+      <button aria-label="Account" class="hover:opacity-60 transition-opacity"><i class="ph ph-user"></i></button>
+      <button aria-label="Zoeken" class="hover:opacity-60 transition-opacity"><i class="ph ph-magnifying-glass"></i></button>
+      <button aria-label="Winkelmand" class="hover:opacity-60 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-12 md:pt-16 pb-8">
+  <h1 class="text-3xl md:text-5xl font-700">Schoonmaken kan beter.</h1>
+  <p class="mt-3 text-ink/60 max-w-lg">Waarom Miral bestaat en waar we voor staan.</p>
+</section>
+
+<section class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28 grid md:grid-cols-12 gap-10 items-center">
+  <div class="md:col-span-5">
+    <p class="text-[13px] uppercase tracking-widest text-ink/50">Onze missie</p>
+    <h2 class="text-2xl md:text-3xl mt-3 leading-tight">Gemaakt voor spanvloeren, niet voor alles.</h2>
+    <p class="mt-6 text-ink/65 leading-relaxed max-w-sm">Gewone allesreinigers tasten de coating van een PVC spanvloer aan. Miral is pH-gebalanceerd en specifiek ontwikkeld voor dit oppervlak — geen waas, geen strepen.</p>
+    <a href="producten.html" class="mt-8 inline-flex items-center gap-2 text-sm underline-hover">Bekijk onze producten <i class="ph ph-arrow-right"></i></a>
+  </div>
+  <div class="md:col-span-7 aspect-[16/10] overflow-hidden">
+    <img src="https://picsum.photos/seed/miral-team-portret/1200/750" alt="Specialist die een PVC spanvloer behandelt" class="w-full h-full object-cover" />
+  </div>
+</section>
+
+<!-- TRUSTPILOT REVIEWS -->
+<section class="bg-[#f7f6f4] py-20 md:py-28">
+  <div class="max-w-8xl mx-auto px-6 md:px-10">
+    <div class="flex flex-wrap items-center gap-4 mb-10">
+      <span class="text-2xl font-700">Geweldig</span>
+      <span class="flex text-trust text-xl">
+        <i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph ph-square text-ink/20"></i>
+      </span>
+      <span class="text-sm text-ink/60">Gebaseerd op <u>1.240 reviews</u> · <span class="text-trust font-700">★Trustpilot</span></span>
+    </div>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div>
+        <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
+        <p class="mt-3 font-700 text-sm">F. Meijer <span class="font-normal text-ink/40">, 2 uur geleden</span></p>
+        <p class="mt-1 font-700 text-sm">Eindelijk een streeploze vloer</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik was bang om mijn PVC spanvloer te beschadigen. Miral voelt veilig aan en ruikt fris.</p>
+      </div>
+      <div>
+        <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
+        <p class="mt-3 font-700 text-sm">Mikey v.d. Berg <span class="font-normal text-ink/40">, 4 uur geleden</span></p>
+        <p class="mt-1 font-700 text-sm">Bleek gewoon vuil te zijn</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik dacht dat mijn spanvloer verkleurd was. Super blij mee met het resultaat.</p>
+      </div>
+      <div>
+        <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
+        <p class="mt-3 font-700 text-sm">Lotte <span class="font-normal text-ink/40">, 11 uur geleden</span></p>
+        <p class="mt-1 font-700 text-sm">Speciaal voor spanvloeren</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Je merkt aan alles dat dit speciaal voor spanvloeren is gemaakt. Geen waas, geen gedoe.</p>
+      </div>
+      <div>
+        <span class="flex text-trust text-sm"><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i><i class="ph-fill ph-square"></i></span>
+        <p class="mt-3 font-700 text-sm">Sanne de Vries <span class="font-normal text-ink/40">, 15 uur geleden</span></p>
+        <p class="mt-1 font-700 text-sm">Blijvertje!</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik worstelde al maanden met strepen op mijn zwarte spanvloer. Blijvertje!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER — quiet, newsletter + columns -->
+<footer class="bg-ink text-white">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 pt-20 pb-10">
+    <div class="grid md:grid-cols-2 gap-10 pb-16 border-b border-white/10">
+      <p class="text-2xl md:text-3xl font-700 max-w-sm">Blijf op de hoogte van Miral.</p>
+      <form class="flex items-end gap-3 max-w-md md:justify-self-end w-full" onsubmit="return false">
+        <div class="flex-1">
+          <label class="text-xs text-white/50" for="nl-email">E-mailadres</label>
+          <input id="nl-email" type="email" required placeholder="naam@voorbeeld.nl" class="w-full bg-transparent border-b border-white/30 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white" />
+        </div>
+        <button type="submit" class="text-sm underline-hover pb-2 shrink-0">Inschrijven</button>
+      </form>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-14">
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Producten</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="producten.html" class="hover:text-white transition-colors">Alle producten</a></li>
+          <li><a href="advies.html" class="hover:text-white transition-colors">Advies</a></li>
+          <li><a href="over-miral.html" class="hover:text-white transition-colors">Over Miral</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Service</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="index.html#faq" class="hover:text-white transition-colors">Veelgestelde vragen</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Juridisch</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Voorwaarden</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Volg ons</p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" aria-label="Instagram" class="hover:text-white/70 transition-colors"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="Facebook" class="hover:text-white/70 transition-colors"><i class="ph ph-facebook-logo"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-white/40 pt-6 border-t border-white/10">© Miral. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
+</body>
+</html>

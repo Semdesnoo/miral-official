@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Producten — Miral</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
+        maxWidth: { '8xl': '1440px' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, h4 {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }
+  body, p, a, button {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+  }
+  button {
+    font-weight: 600;
+  }
+  button, a.inline-flex, a.inline-block { border-radius: 8px; }
+  .underline-hover { position: relative; }
+  .underline-hover::after {
+    content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px;
+    background: currentColor; transition: width .3s ease;
+  }
+  .underline-hover:hover::after { width: 100%; background: #c0261f; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased font-sans">
+
+<!-- UTILITY BAR -->
+<div class="bg-[#f7f6f4] border-b border-black/5 text-xs">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-9 flex items-center justify-end gap-3 text-ink/70">
+    <a href="#" class="hover:text-ink transition-colors">Klantenservice</a>
+    <span class="text-ink/20">|</span>
+    <span>Nederland (EUR €)</span>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT -->
+<div class="bg-red text-white text-center text-xs font-medium tracking-wide py-2.5">
+  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="#bestsellers" class="underline">BEKIJK NU</a>
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-30 bg-white border-b border-black/10">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-16 grid grid-cols-3 items-center">
+    <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium uppercase tracking-wide">
+      <a href="producten.html" class="underline-hover text-red font-700">Producten</a>
+      <a href="advies.html" class="underline-hover hover:text-red transition-colors">Advies</a>
+      <a href="over-miral.html" class="underline-hover hover:text-red transition-colors whitespace-nowrap">Over Miral</a>
+    </nav>
+    <a href="index.html" class="flex justify-center"><img src="logo.png" alt="Miral" class="h-8 w-auto" /></a>
+    <div class="flex items-center justify-end gap-5 text-lg">
+      <button aria-label="Account" class="hover:opacity-60 transition-opacity"><i class="ph ph-user"></i></button>
+      <button aria-label="Zoeken" class="hover:opacity-60 transition-opacity"><i class="ph ph-magnifying-glass"></i></button>
+      <button aria-label="Winkelmand" class="hover:opacity-60 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HEADING -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-12 md:pt-16 pb-8">
+  <h1 class="text-3xl md:text-5xl font-700">Onze producten</h1>
+  <p class="mt-3 text-ink/60 max-w-lg">Speciaal ontwikkeld voor een streeploze PVC spanvloer, thuis of professioneel.</p>
+</section>
+
+<!-- BESTSELLERS grid — tabs, badges, swatches, hover add-to-cart -->
+<section id="bestsellers" class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28">
+  <div class="flex items-center gap-7 text-sm font-medium border-b border-black/10">
+    <button class="pb-3 border-b-2 border-red text-red font-medium">Bestsellers</button>
+    <button class="pb-3 text-ink/40 hover:text-ink transition-colors">Nieuw</button>
+    <button class="pb-3 text-ink/40 hover:text-ink transition-colors">Reinigers</button>
+    <button class="pb-3 text-ink/40 hover:text-ink transition-colors">Accessoires</button>
+  </div>
+
+  <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+    <a href="#" class="group">
+      <div class="relative aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
+        <span class="absolute top-3 left-3 z-10 bg-red text-white text-[11px] font-700 px-2.5 py-1">BESPAAR 20%</span>
+        <img src="https://picsum.photos/seed/miral-daily-cleaner-blue/700/875" alt="Dagelijkse Reiniger" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+        <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+      </div>
+      <div class="flex gap-1.5 mt-3">
+        <span class="w-4 h-4 rounded-full bg-blue-400 border border-black/10"></span>
+        <span class="w-4 h-4 rounded-full bg-ink border border-black/10"></span>
+        <span class="text-xs text-ink/50">+2</span>
+      </div>
+      <p class="mt-2 font-medium">Dagelijkse Reiniger</p>
+      <p class="text-sm text-ink/50">500ml flacon</p>
+      <p class="mt-1 text-sm"><span class="line-through text-ink/40 mr-1.5">€18,95</span>€14,95</p>
+    </a>
+    <a href="#" class="group">
+      <div class="relative aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
+        <span class="absolute top-3 left-3 z-10 bg-white text-ink text-[11px] font-700 px-2.5 py-1 border border-black/10">MIX &amp; MATCH</span>
+        <img src="https://picsum.photos/seed/miral-extreme-cleaner-orange/700/875" alt="Dieptereiniger" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+        <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+      </div>
+      <div class="flex gap-1.5 mt-3">
+        <span class="w-4 h-4 rounded-full bg-orange-400 border border-black/10"></span>
+        <span class="text-xs text-ink/50">+1</span>
+      </div>
+      <p class="mt-2 font-medium">Dieptereiniger</p>
+      <p class="text-sm text-ink/50">500ml flacon</p>
+      <p class="mt-1 text-sm">€18,95</p>
+    </a>
+    <a href="#" class="group">
+      <div class="relative aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
+        <span class="absolute top-3 left-3 z-10 bg-red text-white text-[11px] font-700 px-2.5 py-1">BESPAAR 19%</span>
+        <img src="https://picsum.photos/seed/miral-bundel/700/875" alt="Startersbundel" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+        <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+      </div>
+      <div class="flex gap-1.5 mt-3">
+        <span class="w-4 h-4 rounded-full bg-blue-400 border border-black/10"></span>
+        <span class="w-4 h-4 rounded-full bg-orange-400 border border-black/10"></span>
+      </div>
+      <p class="mt-2 font-medium">Startersbundel</p>
+      <p class="text-sm text-ink/50">Dagelijks + Diepte</p>
+      <p class="mt-1 text-sm"><span class="line-through text-ink/40 mr-1.5">€37,90</span>€29,95</p>
+    </a>
+    <a href="#" class="group">
+      <div class="relative aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
+        <img src="https://picsum.photos/seed/miral-microdoek/700/875" alt="Microvezeldoek set" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+        <button aria-label="Snel toevoegen" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+      </div>
+      <div class="flex gap-1.5 mt-3">
+        <span class="w-4 h-4 rounded-full bg-gray-300 border border-black/10"></span>
+      </div>
+      <p class="mt-2 font-medium">Microvezeldoek set</p>
+      <p class="text-sm text-ink/50">Set van 3</p>
+      <p class="mt-1 text-sm">€9,95</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER — quiet, newsletter + columns -->
+<footer class="bg-ink text-white">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 pt-20 pb-10">
+    <div class="grid md:grid-cols-2 gap-10 pb-16 border-b border-white/10">
+      <p class="text-2xl md:text-3xl font-700 max-w-sm">Blijf op de hoogte van Miral.</p>
+      <form class="flex items-end gap-3 max-w-md md:justify-self-end w-full" onsubmit="return false">
+        <div class="flex-1">
+          <label class="text-xs text-white/50" for="nl-email">E-mailadres</label>
+          <input id="nl-email" type="email" required placeholder="naam@voorbeeld.nl" class="w-full bg-transparent border-b border-white/30 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white" />
+        </div>
+        <button type="submit" class="text-sm underline-hover pb-2 shrink-0">Inschrijven</button>
+      </form>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-14">
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Producten</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="producten.html" class="hover:text-white transition-colors">Alle producten</a></li>
+          <li><a href="advies.html" class="hover:text-white transition-colors">Advies</a></li>
+          <li><a href="over-miral.html" class="hover:text-white transition-colors">Over Miral</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Service</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="index.html#faq" class="hover:text-white transition-colors">Veelgestelde vragen</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Juridisch</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Voorwaarden</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Volg ons</p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" aria-label="Instagram" class="hover:text-white/70 transition-colors"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="Facebook" class="hover:text-white/70 transition-colors"><i class="ph ph-facebook-logo"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-white/40 pt-6 border-t border-white/10">© Miral. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
+</body>
+</html>

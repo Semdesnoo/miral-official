@@ -30,6 +30,35 @@
   .underline-hover { position: relative; }
   .underline-hover::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px; background: currentColor; transition: width .3s ease; }
   .underline-hover:hover::after { width: 100%; background: #c0261f; }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  .hero-img { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+  .hero-img.in { opacity: 1; transform: translateY(0); }
+  .hero-img img { transition: transform .3s ease; }
+  .hero-img:hover img { transform: scale(1.02); }
+
+  .pack-card { transition: border-color .22s ease, background-color .22s ease, box-shadow .22s ease, transform .2s ease; }
+  .pack-card.selected { border-color: #c0261f; background-color: #fdf1f0; box-shadow: 0 0 0 3px rgba(192,38,31,.08); }
+  .pack-card .check { opacity: 0; transform: scale(.6); transition: opacity .2s ease, transform .2s ease; }
+  .pack-card.selected .check { opacity: 1; transform: scale(1); }
+
+  .price-fade { transition: opacity .18s ease; }
+  .price-fade.fading { opacity: 0; }
+
+  #mobileBar { transform: translateY(100%); transition: transform .35s cubic-bezier(.22,1,.36,1); }
+  #mobileBar.visible { transform: translateY(0); }
+
+  #addedCheck { opacity: 0; transition: opacity .2s ease; }
+  #addedCheck.show { opacity: 1; }
+  .cta-btn { transition: transform .15s ease, box-shadow .15s ease, filter .15s ease; }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.15); filter: brightness(1.05); }
+  .cta-btn:active { transform: scale(.98); }
 </style>
 </head>
 <body class="bg-white text-ink antialiased font-sans">
@@ -70,30 +99,112 @@
   <a href="producten.html" class="hover:text-ink transition-colors">Producten</a> / Dieptereiniger
 </div>
 
-<!-- PDP -->
-<section class="max-w-8xl mx-auto px-6 md:px-10 pt-6 pb-20 md:pb-28 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-  <div class="aspect-[4/5] bg-[#f2f1ee] overflow-hidden">
-    <img src="dieptereiniger-fles.png" alt="Dieptereiniger" class="w-full h-full object-contain p-10" />
+<!-- PDP: 55/45 split, sticky right column -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-6 pb-16 md:pb-24 grid md:grid-cols-[55%_45%] gap-10 md:gap-14">
+
+  <!-- LEFT — visuals -->
+  <div>
+    <div class="hero-img aspect-square bg-[#f2f1ee] overflow-hidden">
+      <img id="mainImg" src="dieptereiniger-fles.png" alt="Miral Dieptereiniger" class="w-full h-full object-contain p-10" />
+    </div>
+    <div class="grid grid-cols-4 gap-3 mt-4">
+      <button data-img="dieptereiniger-fles.png" class="thumb aspect-square bg-[#f2f1ee] overflow-hidden border-2 border-red">
+        <img src="dieptereiniger-fles.png" alt="Fles vooraanzicht" class="w-full h-full object-contain p-2" />
+      </button>
+      <button data-img="https://picsum.photos/seed/miral-deep-lifestyle/900/900" class="thumb aspect-square bg-[#f2f1ee] overflow-hidden border-2 border-transparent hover:border-ink/20 transition-colors">
+        <img src="https://picsum.photos/seed/miral-deep-lifestyle/300/300" alt="Product in gebruik" class="w-full h-full object-cover" />
+      </button>
+      <button data-img="https://picsum.photos/seed/miral-deep-detail/900/900" class="thumb aspect-square bg-[#f2f1ee] overflow-hidden border-2 border-transparent hover:border-ink/20 transition-colors">
+        <img src="https://picsum.photos/seed/miral-deep-detail/300/300" alt="Detail van de spray" class="w-full h-full object-cover" />
+      </button>
+      <button data-img="https://picsum.photos/seed/miral-deep-6pack/900/900" class="thumb aspect-square bg-[#f2f1ee] overflow-hidden border-2 border-transparent hover:border-ink/20 transition-colors">
+        <img src="https://picsum.photos/seed/miral-deep-6pack/300/300" alt="6-pack voordeelbundel" class="w-full h-full object-cover" />
+      </button>
+    </div>
   </div>
-  <div class="md:sticky md:top-24">
-    <p class="text-[13px] uppercase tracking-widest text-ink/50">Diepe reiniging</p>
-    <h1 class="mt-2 text-3xl md:text-4xl">Dieptereiniger</h1>
-    <p class="mt-2 text-ink/60">500 ml flacon · voor zwaar vervuilde vloeren</p>
+
+  <!-- RIGHT — sticky product info -->
+  <div class="md:sticky md:top-24 self-start">
+    <p class="text-xs uppercase tracking-widest text-ink/50">MIRAL™</p>
+    <h1 class="mt-1 text-3xl md:text-4xl">Dieptereiniger</h1>
+    <p class="mt-2 text-ink/60">Krachtige diepe reiniging voor zwaar vervuilde vloeren.</p>
     <div class="flex items-center gap-2 mt-4">
       <span class="flex text-amber-400 text-sm">★★★★★</span>
-      <span class="text-sm text-ink/60">4,8/5 uit 250+ reviews</span>
+      <span class="text-sm text-ink/60">Uitstekend beoordeeld door onze klanten</span>
     </div>
-    <ul class="mt-6 space-y-2.5 text-sm">
-      <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-trust"></i> Verwijdert hardnekkig vuil, vet en oude zeepresten</li>
-      <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-trust"></i> Effectief tegen zwarte schoenstrepen</li>
-      <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-trust"></i> Ideaal voor periodiek onderhoud, ca. 1x per maand</li>
-    </ul>
-    <p class="mt-6 text-2xl">€18,95</p>
-    <a href="#" class="inline-flex items-center gap-2 mt-5 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors"><i class="ph ph-shopping-cart"></i> In winkelmand</a>
-    <p class="mt-4 text-xs text-ink/50">Gratis verzending vanaf €45 · voor 23:00 besteld, morgen in huis.</p>
 
-    <div class="mt-10 divide-y divide-ink/10 border-t border-b border-ink/10">
-      <details class="group py-4" open>
+    <ul class="mt-6 space-y-2.5 text-sm">
+      <li class="flex items-start gap-2"><i class="ph-fill ph-check-circle text-trust mt-0.5"></i> <span><strong class="text-ink">Krachtige diepreiniging</strong> — vuil, vet en oude zeepresten</span></li>
+      <li class="flex items-start gap-2"><i class="ph-fill ph-check-circle text-trust mt-0.5"></i> <span><strong class="text-ink">Effectief</strong> — tegen zwarte schoenstrepen</span></li>
+      <li class="flex items-start gap-2"><i class="ph-fill ph-check-circle text-trust mt-0.5"></i> <span><strong class="text-ink">Periodiek onderhoud</strong> — ca. 1x per maand gebruiken</span></li>
+    </ul>
+
+    <!-- PACK SELECTOR -->
+    <p class="mt-8 text-sm font-700 uppercase tracking-wide text-ink/50">Kies je voordeel</p>
+    <div class="mt-3 grid gap-3">
+      <button data-pack="1" data-price="18.95" data-was="18.95" data-save="0,00" class="pack-card text-left border border-ink/15 rounded-xl p-4" aria-pressed="false">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="font-700">1 stuk</p>
+            <p class="text-xs text-ink/50">Om Miral te proberen</p>
+          </div>
+          <div class="text-right">
+            <p class="font-700">€18,95</p>
+          </div>
+        </div>
+      </button>
+      <button data-pack="6" data-price="94.75" data-was="113.70" data-save="18,95" class="pack-card selected relative text-left border-2 rounded-xl p-4" aria-pressed="true">
+        <span class="absolute -top-3 left-4 bg-ink text-white text-[10px] font-700 uppercase tracking-wide px-2.5 py-1 rounded-full">Meest gekozen</span>
+        <i class="check ph-fill ph-check-circle text-red text-xl absolute top-4 right-4"></i>
+        <div class="flex items-center justify-between pr-8">
+          <div>
+            <p class="font-700">6-pack voordeelbundel</p>
+            <p class="text-xs text-red font-700">1 fles gratis</p>
+          </div>
+          <div class="text-right">
+            <p class="text-xs text-ink/40 line-through">€113,70</p>
+            <p class="font-700 text-lg">€94,75</p>
+          </div>
+        </div>
+        <ul class="mt-3 pt-3 border-t border-ink/10 text-xs text-ink/60 space-y-1">
+          <li class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-trust"></i> Gratis verzending</li>
+          <li class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-trust"></i> Genoeg voorraad voor periodiek onderhoud</li>
+          <li class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-trust"></i> Beste prijs per fles</li>
+        </ul>
+      </button>
+    </div>
+
+    <!-- PRICE -->
+    <div class="mt-6 flex items-baseline gap-3">
+      <span id="priceNow" class="price-fade text-3xl font-700">€94,75</span>
+      <span id="priceWas" class="price-fade text-ink/40 line-through">€113,70</span>
+      <span id="priceSave" class="price-fade text-sm text-trust font-700">Je bespaart €18,95</span>
+    </div>
+
+    <!-- CTA -->
+    <button id="addToCart" class="cta-btn relative w-full mt-5 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-4 hover:bg-red/90 overflow-hidden">
+      <span id="ctaLabel">Toevoegen aan winkelwagen — €94,75</span>
+      <span id="addedCheck" class="absolute inset-0 flex items-center justify-center gap-2 bg-trust text-white"><i class="ph-fill ph-check-circle"></i> Toegevoegd aan winkelwagen</span>
+    </button>
+    <div class="grid grid-cols-3 gap-2 mt-4 text-xs text-ink/60">
+      <p class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-trust"></i> Gratis verzending</p>
+      <p class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-trust"></i> Binnen 1 werkdag verzonden</p>
+      <p class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-trust"></i> 1–3 werkdagen levertijd</p>
+    </div>
+
+    <!-- TRUST ROW -->
+    <div class="mt-6 pt-5 border-t border-ink/10">
+      <p class="text-xs text-ink/50 text-center">Veilig betalen · Snelle verzending · Service uit Nederland</p>
+      <div class="flex items-center justify-center gap-4 mt-3 text-2xl text-ink/30">
+        <i class="ph ph-credit-card" title="iDEAL"></i>
+        <i class="ph ph-credit-card" title="Visa"></i>
+        <i class="ph ph-credit-card" title="Mastercard"></i>
+        <i class="ph ph-paypal-logo" title="PayPal"></i>
+      </div>
+    </div>
+
+    <div class="mt-8 divide-y divide-ink/10 border-t border-b border-ink/10">
+      <details class="group py-4">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium text-sm">
           Gebruik
           <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
@@ -107,6 +218,63 @@
         </summary>
         <p class="pt-3 text-ink/60 text-sm leading-relaxed">Gratis verzending naar Nederland, België en Duitsland. Bekijk ons <a href="verzendbeleid.html" class="underline-hover">verzendbeleid</a> en <a href="retourneren.html" class="underline-hover">retourbeleid</a>.</p>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLSECTIE 1 — lifestyle -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 py-16 md:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+  <div class="reveal">
+    <h2 class="text-2xl md:text-4xl leading-tight">Voor de vlekken die blijven zitten.</h2>
+    <p class="mt-4 text-ink/65 leading-relaxed max-w-md">De Miral Dieptereiniger is ontwikkeld voor hardnekkig vuil, vet en oude zeepresten die een gewone beurt niet wegkrijgt. Onverdund op de vlek, laten inwerken, klaar.</p>
+    <p class="mt-3 font-700">Grondig schoon, zonder schade aan uw vloer.</p>
+  </div>
+  <div class="reveal aspect-[4/3] overflow-hidden" style="transition-delay:100ms">
+    <img src="https://picsum.photos/seed/miral-deep-lifestyle-large/1000/750" alt="Diepe reiniging met Miral" class="w-full h-full object-cover" />
+  </div>
+</section>
+
+<!-- SCROLLSECTIE 2 — waarom miral -->
+<section class="bg-[#f7f6f4] py-16 md:py-24">
+  <div class="max-w-8xl mx-auto px-6 md:px-10">
+    <h2 class="reveal text-2xl md:text-4xl mb-10">Waarom Miral™?</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal">
+        <p class="text-3xl font-700 text-ink/20">01</p>
+        <p class="mt-2 font-700">Krachtig</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ontwikkeld voor hardnekkig vuil en zware vervuiling.</p>
+      </div>
+      <div class="reveal" style="transition-delay:100ms">
+        <p class="text-3xl font-700 text-ink/20">02</p>
+        <p class="mt-2 font-700">Gericht</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Onverdund op de vlek, laten inwerken, reinigen.</p>
+      </div>
+      <div class="reveal" style="transition-delay:200ms">
+        <p class="text-3xl font-700 text-ink/20">03</p>
+        <p class="mt-2 font-700">Periodiek</p>
+        <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ideaal als maandelijkse diepe beurt naast dagelijks onderhoud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLSECTIE 3 — visuele vergelijking -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 py-16 md:py-24">
+  <h2 class="reveal text-2xl md:text-4xl text-center mb-10">Eén fles proberen of direct voordeel pakken?</h2>
+  <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+    <div class="reveal border border-ink/15 rounded-xl p-6 text-center">
+      <p class="font-700">1 stuk</p>
+      <p class="mt-2 text-2xl font-700">€18,95</p>
+      <p class="text-xs text-ink/50">€18,95 per fles</p>
+      <p class="mt-3 text-sm text-ink/60">Proberen</p>
+    </div>
+    <div class="reveal relative border-2 border-red rounded-xl p-6 text-center bg-[#fdf1f0]" style="transition-delay:100ms">
+      <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red text-white text-[10px] font-700 uppercase tracking-wide px-3 py-1 rounded-full">Beste deal</span>
+      <p class="font-700">6 stuks</p>
+      <p class="mt-2 text-2xl font-700">€94,75</p>
+      <p class="text-xs text-ink/50">€15,79 per fles</p>
+      <p class="mt-3 text-sm text-red font-700">1 fles gratis</p>
+      <p class="text-xs text-trust mt-1">Gratis verzending</p>
     </div>
   </div>
 </section>
@@ -192,5 +360,84 @@
     </div>
   </div>
 </footer>
+
+<!-- MOBILE STICKY BAR -->
+<div id="mobileBar" class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white border-t border-ink/10 p-3 flex items-center gap-3">
+  <div class="flex-1">
+    <p id="mobilePackLabel" class="text-xs text-ink/50">6-Pack</p>
+    <p id="mobilePrice" class="font-700">€94,75</p>
+  </div>
+  <button id="mobileAdd" class="bg-red text-white text-sm font-700 uppercase tracking-wide px-6 py-3">In winkelwagen</button>
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal, .hero-img').forEach(el => io.observe(el));
+
+  // thumbnail swap with crossfade
+  const mainImg = document.getElementById('mainImg');
+  document.querySelectorAll('.thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.thumb').forEach(t => t.classList.remove('border-red'));
+      btn.classList.add('border-red');
+      mainImg.style.opacity = 0;
+      setTimeout(() => { mainImg.src = btn.dataset.img; mainImg.style.opacity = 1; }, 200);
+    });
+  });
+
+  // pack selector — fades price, updates CTA + mobile bar
+  const packs = document.querySelectorAll('.pack-card');
+  const priceNow = document.getElementById('priceNow');
+  const priceWas = document.getElementById('priceWas');
+  const priceSave = document.getElementById('priceSave');
+  const ctaLabel = document.getElementById('ctaLabel');
+  const mobilePrice = document.getElementById('mobilePrice');
+  const mobilePackLabel = document.getElementById('mobilePackLabel');
+
+  function fmt(n) { return '€' + n.toFixed(2).replace('.', ','); }
+
+  function selectPack(btn) {
+    packs.forEach(p => { p.classList.remove('selected'); p.setAttribute('aria-pressed', 'false'); });
+    btn.classList.add('selected');
+    btn.setAttribute('aria-pressed', 'true');
+
+    const price = parseFloat(btn.dataset.price);
+    const was = parseFloat(btn.dataset.was);
+    const save = btn.dataset.save;
+    const label = btn.dataset.pack === '6' ? '6-Pack' : '1 stuk';
+
+    [priceNow, priceWas, priceSave].forEach(el => el.classList.add('fading'));
+    setTimeout(() => {
+      priceNow.textContent = fmt(price);
+      priceWas.textContent = fmt(was);
+      priceSave.textContent = 'Je bespaart €' + save;
+      ctaLabel.textContent = `Toevoegen aan winkelwagen — ${fmt(price)}`;
+      mobilePrice.textContent = fmt(price);
+      mobilePackLabel.textContent = label;
+      [priceNow, priceWas, priceSave].forEach(el => el.classList.remove('fading'));
+    }, 180);
+  }
+
+  packs.forEach(btn => btn.addEventListener('click', () => selectPack(btn)));
+
+  // add to cart micro-interaction
+  function addToCart() {
+    const target = document.getElementById('addedCheck');
+    target.classList.add('show');
+    setTimeout(() => target.classList.remove('show'), 1600);
+  }
+  document.getElementById('addToCart').addEventListener('click', addToCart);
+  document.getElementById('mobileAdd').addEventListener('click', addToCart);
+
+  // mobile sticky bar appears once main CTA scrolls out of view
+  const mainCta = document.getElementById('addToCart');
+  const mobileBar = document.getElementById('mobileBar');
+  const ctaIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => mobileBar.classList.toggle('visible', !e.isIntersecting));
+  }, { threshold: 0 });
+  ctaIO.observe(mainCta);
+</script>
 </body>
 </html>

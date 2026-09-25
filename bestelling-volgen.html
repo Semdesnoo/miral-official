@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bestelling volgen — Miral</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
+        maxWidth: { '8xl': '1440px' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; letter-spacing: -0.035em; }
+  body, p, a, button { font-family: "Manrope", sans-serif; font-weight: 400; }
+  button { font-weight: 600; }
+  button, a.inline-flex, a.inline-block { border-radius: 8px; }
+  .underline-hover { position: relative; }
+  .underline-hover::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px; background: currentColor; transition: width .3s ease; }
+  .underline-hover:hover::after { width: 100%; background: #c0261f; }
+
+  .reveal { opacity: 0; transform: translateY(25px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  .step-line { height: 2px; background: #14131114; }
+  .step-line-fill { height: 2px; background: #c0261f; width: 0%; transition: width .6s cubic-bezier(.22,1,.36,1); }
+  .step-dot { width: 14px; height: 14px; border-radius: 9999px; background: #fff; border: 2px solid #14131125; transition: border-color .3s ease, background .3s ease; }
+  .step-dot.done { border-color: #c0261f; background: #c0261f; }
+  @media (max-width: 767px) {
+    .step-line, .step-line-fill { width: 2px; height: auto; }
+  }
+</style>
+</head>
+<body class="bg-white text-ink antialiased font-sans">
+
+<!-- UTILITY BAR -->
+<div class="bg-[#f7f6f4] border-b border-black/5 text-xs">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-9 flex items-center justify-end gap-3 text-ink/70">
+    <a href="#" class="hover:text-ink transition-colors">Klantenservice</a>
+    <span class="text-ink/20">|</span>
+    <span>Nederland (EUR €)</span>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT -->
+<div class="bg-red text-white text-center text-xs font-medium tracking-wide py-2.5">
+  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="producten.html" class="underline">BEKIJK NU</a>
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-30 bg-white border-b border-black/10">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-16 grid grid-cols-3 items-center">
+    <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium uppercase tracking-wide">
+      <a href="producten.html" class="underline-hover hover:text-red transition-colors">Producten</a>
+      <a href="advies.html" class="underline-hover hover:text-red transition-colors">Advies</a>
+      <a href="over-miral.html" class="underline-hover hover:text-red transition-colors whitespace-nowrap">Over Miral</a>
+    </nav>
+    <a href="index.html" class="flex justify-center"><img src="logo.png" alt="Miral" class="h-8 w-auto" /></a>
+    <div class="flex items-center justify-end gap-5 text-lg">
+      <button aria-label="Account" class="hover:opacity-60 transition-opacity"><i class="ph ph-user"></i></button>
+      <button aria-label="Zoeken" class="hover:opacity-60 transition-opacity"><i class="ph ph-magnifying-glass"></i></button>
+      <button aria-label="Winkelmand" class="hover:opacity-60 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO + LOOKUP FORM -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-16 md:pb-20">
+  <p class="reveal text-[13px] uppercase tracking-widest text-red">Bestelling volgen</p>
+  <h1 class="reveal text-4xl md:text-6xl leading-[1.05] mt-4 max-w-2xl" style="transition-delay:100ms">Waar is mijn bestelling?</h1>
+  <p class="reveal mt-5 text-ink/65 max-w-lg leading-relaxed" style="transition-delay:180ms">Van Miral naar uw voordeur. Vul uw bestelgegevens in en bekijk direct de actuele status van uw bestelling.</p>
+
+  <form id="trackForm" class="reveal mt-9 max-w-xl grid sm:grid-cols-2 gap-4" style="transition-delay:260ms" onsubmit="return false">
+    <div>
+      <label class="text-xs text-ink/50" for="orderNumber">Bestelnummer</label>
+      <input id="orderNumber" type="text" required placeholder="MIRAL-12345" class="mt-1 w-full border-b border-ink/20 py-2 text-sm focus:outline-none focus:border-red" />
+    </div>
+    <div>
+      <label class="text-xs text-ink/50" for="orderEmail">E-mailadres</label>
+      <input id="orderEmail" type="email" required placeholder="naam@voorbeeld.nl" class="mt-1 w-full border-b border-ink/20 py-2 text-sm focus:outline-none focus:border-red" />
+    </div>
+    <button type="submit" class="sm:col-span-2 mt-2 justify-self-start inline-flex items-center gap-2 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors">Bekijk mijn bestelling <i class="ph ph-arrow-right"></i></button>
+  </form>
+  <p class="reveal mt-3 text-xs text-ink/50" style="transition-delay:300ms">Uw bestelnummer vindt u in de bevestigingsmail die u na uw bestelling heeft ontvangen.</p>
+</section>
+
+<!-- TRACKING TIMELINE (demo state, shown after lookup) -->
+<section id="trackResult" class="hidden max-w-8xl mx-auto px-6 md:px-10 pb-16 md:pb-24">
+  <h2 class="text-2xl md:text-3xl">Uw bestelling, stap voor stap</h2>
+  <div class="mt-10 md:flex items-start gap-0">
+    <div class="flex md:contents flex-col md:flex-row w-full">
+      <div class="flex md:flex-col items-center md:items-center gap-3 md:gap-3 md:flex-1">
+        <div class="step-dot done shrink-0"></div>
+        <p class="text-sm font-medium">Bestelling ontvangen</p>
+      </div>
+      <div class="step-line flex-1 my-2 md:my-0 md:mt-[7px] mx-3 md:mx-0"><div class="step-line-fill" data-fill="100"></div></div>
+      <div class="flex md:flex-col items-center md:items-center gap-3 md:gap-3 md:flex-1">
+        <div class="step-dot done shrink-0"></div>
+        <p class="text-sm font-medium">Wordt klaargemaakt</p>
+      </div>
+      <div class="step-line flex-1 my-2 md:my-0 md:mt-[7px] mx-3 md:mx-0"><div class="step-line-fill" data-fill="60"></div></div>
+      <div class="flex md:flex-col items-center md:items-center gap-3 md:gap-3 md:flex-1">
+        <div class="step-dot shrink-0"></div>
+        <p class="text-sm text-ink/50">Onderweg</p>
+      </div>
+      <div class="step-line flex-1 my-2 md:my-0 md:mt-[7px] mx-3 md:mx-0"><div class="step-line-fill" data-fill="0"></div></div>
+      <div class="flex md:flex-col items-center md:items-center gap-3 md:gap-3 md:flex-1">
+        <div class="step-dot shrink-0"></div>
+        <p class="text-sm text-ink/50">Bezorgd</p>
+      </div>
+    </div>
+  </div>
+  <p class="mt-8 text-sm text-ink/50 max-w-md">Statussen worden uitsluitend getoond zodra ze daadwerkelijk vanuit het bestel- en verzendsysteem beschikbaar zijn — dit is een voorbeeldweergave.</p>
+</section>
+
+<!-- NOG GEEN UPDATE -->
+<section class="bg-[#f7f6f4] py-16 md:py-20">
+  <div class="max-w-8xl mx-auto px-6 md:px-10">
+    <h2 class="text-xl md:text-2xl">Nog geen update?</h2>
+    <p class="mt-3 text-ink/65 max-w-xl leading-relaxed">Soms duurt het enkele uren voordat een track &amp; trace-code door de vervoerder wordt bijgewerkt. Heeft uw bestelling langer dan verwacht dezelfde status? Neem dan contact op met Miral. Wij zoeken graag voor u uit waar uw pakket zich bevindt.</p>
+    <a href="contact.html" class="inline-flex items-center gap-2 mt-6 text-sm underline-hover">Neem contact op <i class="ph ph-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- SNELLE ANTWOORDEN -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 py-16 md:py-24">
+  <h2 class="text-2xl md:text-3xl mb-10">Snelle antwoorden</h2>
+  <div class="divide-y divide-ink/10 border-t border-b border-ink/10">
+    <details class="group py-6" open>
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Wanneer wordt mijn bestelling verzonden?
+        <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
+      </summary>
+      <p class="pt-4 text-ink/60 text-sm leading-relaxed max-w-xl">Bestellingen worden verwerkt volgens de levertijd die tijdens het bestellen wordt aangegeven. Zodra uw pakket is verzonden, ontvangt u een bevestiging met de beschikbare trackinginformatie.</p>
+    </details>
+    <details class="group py-6">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Mijn bestelling staat op bezorgd, maar ik heb niets ontvangen.
+        <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
+      </summary>
+      <p class="pt-4 text-ink/60 text-sm leading-relaxed max-w-xl">Controleer eerst of het pakket bij buren, huisgenoten of een afgesproken veilige locatie is afgeleverd. Kunt u de bestelling niet vinden? Neem dan contact met ons op. Vermeld uw bestelnummer zodat we direct met u mee kunnen kijken.</p>
+    </details>
+    <details class="group py-6">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Mijn pakket is beschadigd aangekomen.
+        <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
+      </summary>
+      <p class="pt-4 text-ink/60 text-sm leading-relaxed max-w-xl">Gebruik een beschadigd of lekkend product niet voordat duidelijk is dat het veilig gebruikt kan worden. Maak foto's van de buitenverpakking, verzendlabel en het product en neem contact met ons op.</p>
+    </details>
+    <details class="group py-6">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Kan ik mijn bezorgadres nog aanpassen?
+        <i class="ph ph-plus text-ink/40 group-open:rotate-45 transition-transform shrink-0"></i>
+      </summary>
+      <p class="pt-4 text-ink/60 text-sm leading-relaxed max-w-xl">Neem zo snel mogelijk contact met ons op. Zolang de bestelling nog niet is verwerkt of overgedragen aan de vervoerder, bekijken we wat nog mogelijk is.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FOOTER — quiet, newsletter + columns -->
+<footer class="bg-ink text-white">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 pt-20 pb-10">
+    <div class="grid md:grid-cols-2 gap-10 pb-16 border-b border-white/10">
+      <p class="text-2xl md:text-3xl font-700 max-w-sm">Blijf op de hoogte van Miral.</p>
+      <form class="flex items-end gap-3 max-w-md md:justify-self-end w-full" onsubmit="return false">
+        <div class="flex-1">
+          <label class="text-xs text-white/50" for="nl-email">E-mailadres</label>
+          <input id="nl-email" type="email" required placeholder="naam@voorbeeld.nl" class="w-full bg-transparent border-b border-white/30 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white" />
+        </div>
+        <button type="submit" class="text-sm underline-hover pb-2 shrink-0">Inschrijven</button>
+      </form>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 py-14">
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Producten</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="producten.html" class="hover:text-white transition-colors">Alle producten</a></li>
+          <li><a href="advies.html" class="hover:text-white transition-colors">Advies</a></li>
+          <li><a href="over-miral.html" class="hover:text-white transition-colors">Over Miral</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Klantenservice</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="bestelling-volgen.html" class="hover:text-white transition-colors">Bestelling volgen</a></li>
+          <li><a href="veelgestelde-vragen.html" class="hover:text-white transition-colors">Veelgestelde vragen</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Algemene voorwaarden</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Verzendbeleid</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Retour- en restitutiebeleid</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacybeleid</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Volg ons</p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" aria-label="Instagram" class="hover:text-white/70 transition-colors"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="Facebook" class="hover:text-white/70 transition-colors"><i class="ph ph-facebook-logo"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-white/40 pt-6 border-t border-white/10">© Miral. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // demo lookup: reveals a static example timeline, no real order backend
+  document.getElementById('trackForm').addEventListener('submit', () => {
+    const result = document.getElementById('trackResult');
+    result.classList.remove('hidden');
+    result.querySelectorAll('.step-line-fill').forEach(el => { el.style.width = el.dataset.fill + '%'; });
+    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
+</body>
+</html>

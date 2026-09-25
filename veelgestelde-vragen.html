@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Veelgestelde vragen — Miral</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
+        maxWidth: { '8xl': '1440px' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; letter-spacing: -0.035em; }
+  body, p, a, button { font-family: "Manrope", sans-serif; font-weight: 400; }
+  button { font-weight: 600; }
+  button, a.inline-flex, a.inline-block { border-radius: 8px; }
+  .underline-hover { position: relative; }
+  .underline-hover::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px; background: currentColor; transition: width .3s ease; }
+  .underline-hover:hover::after { width: 100%; background: #c0261f; }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  .cat-tab { border-radius: 9999px; }
+  .cat-tab.active { background: #141311; color: #fff; }
+  details > summary::-webkit-details-marker { display: none; }
+  .faq-item { border-bottom: 1px solid rgba(20,19,17,.1); transition: border-color .2s ease; }
+  .faq-item[open] { border-color: rgba(20,19,17,.25); }
+  .faq-item .answer-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.22,1,.36,1); }
+  .faq-item[open] .answer-wrap { grid-template-rows: 1fr; }
+  .faq-item .answer-inner { overflow: hidden; }
+  .faq-hidden { display: none !important; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased font-sans">
+
+<!-- UTILITY BAR -->
+<div class="bg-[#f7f6f4] border-b border-black/5 text-xs">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-9 flex items-center justify-end gap-3 text-ink/70">
+    <a href="#" class="hover:text-ink transition-colors">Klantenservice</a>
+    <span class="text-ink/20">|</span>
+    <span>Nederland (EUR €)</span>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT -->
+<div class="bg-red text-white text-center text-xs font-medium tracking-wide py-2.5">
+  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="producten.html" class="underline">BEKIJK NU</a>
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-30 bg-white border-b border-black/10">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-16 grid grid-cols-3 items-center">
+    <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium uppercase tracking-wide">
+      <a href="producten.html" class="underline-hover hover:text-red transition-colors">Producten</a>
+      <a href="advies.html" class="underline-hover hover:text-red transition-colors">Advies</a>
+      <a href="over-miral.html" class="underline-hover hover:text-red transition-colors whitespace-nowrap">Over Miral</a>
+    </nav>
+    <a href="index.html" class="flex justify-center"><img src="logo.png" alt="Miral" class="h-8 w-auto" /></a>
+    <div class="flex items-center justify-end gap-5 text-lg">
+      <button aria-label="Account" class="hover:opacity-60 transition-opacity"><i class="ph ph-user"></i></button>
+      <button aria-label="Zoeken" class="hover:opacity-60 transition-opacity"><i class="ph ph-magnifying-glass"></i></button>
+      <button aria-label="Winkelmand" class="hover:opacity-60 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO + SEARCH -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-10 text-center">
+  <p class="reveal text-[13px] uppercase tracking-widest text-red">Veelgestelde vragen</p>
+  <h1 class="reveal text-4xl md:text-6xl leading-[1.05] mt-4" style="transition-delay:100ms">Hoe kunnen we helpen?</h1>
+  <p class="reveal mt-5 text-ink/65 max-w-xl mx-auto leading-relaxed" style="transition-delay:180ms">Alles wat u wilt weten over Miral, uw bestelling en het gebruik van onze producten.</p>
+  <div class="reveal relative max-w-xl mx-auto mt-8" style="transition-delay:240ms">
+    <i class="ph ph-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-ink/40"></i>
+    <input id="faqSearch" type="search" placeholder="Zoek in veelgestelde vragen..." class="w-full border border-ink/15 rounded-full pl-12 pr-5 py-3.5 text-sm focus:outline-none focus:border-red" />
+  </div>
+</section>
+
+<!-- CATEGORY TABS -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pb-4">
+  <div id="catTabs" class="reveal flex flex-wrap justify-center gap-3" style="transition-delay:280ms">
+    <button data-cat="alles" class="cat-tab active px-5 py-2.5 text-sm border border-ink/15">Alles</button>
+    <button data-cat="bestellen" class="cat-tab px-5 py-2.5 text-sm border border-ink/15 hover:border-ink/40 transition-colors">Bestellen</button>
+    <button data-cat="verzending" class="cat-tab px-5 py-2.5 text-sm border border-ink/15 hover:border-ink/40 transition-colors">Verzending</button>
+    <button data-cat="retourneren" class="cat-tab px-5 py-2.5 text-sm border border-ink/15 hover:border-ink/40 transition-colors">Retourneren</button>
+    <button data-cat="productgebruik" class="cat-tab px-5 py-2.5 text-sm border border-ink/15 hover:border-ink/40 transition-colors">Productgebruik</button>
+    <button data-cat="veiligheid" class="cat-tab px-5 py-2.5 text-sm border border-ink/15 hover:border-ink/40 transition-colors">Veiligheid</button>
+    <button data-cat="betalen" class="cat-tab px-5 py-2.5 text-sm border border-ink/15 hover:border-ink/40 transition-colors">Betalen</button>
+  </div>
+</section>
+
+<!-- FAQ LIST -->
+<section class="max-w-3xl mx-auto px-6 md:px-10 py-16 md:py-20">
+
+  <div class="faq-group" data-cat="bestellen">
+    <h2 class="text-xl mb-4 mt-10 first:mt-0">Bestellen</h2>
+    <details class="faq-item group py-5" data-q="hoe weet ik of mijn bestelling is gelukt">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Hoe weet ik of mijn bestelling is gelukt?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Na een succesvolle bestelling ontvangt u een orderbevestiging op het opgegeven e-mailadres. Geen bevestiging ontvangen? Controleer eerst uw spam- of ongewenste e-mailmap. Is daar ook niets te vinden, neem dan contact met ons op.</p>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="kan ik mijn bestelling aanpassen">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Kan ik mijn bestelling aanpassen?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Neem zo snel mogelijk contact op met onze klantenservice. Als uw bestelling nog niet is verwerkt, bekijken we of een wijziging nog mogelijk is.</p>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="kan ik mijn bestelling annuleren">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Kan ik mijn bestelling annuleren?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Wanneer uw bestelling nog niet is verzonden, kunnen we bekijken of deze direct kan worden geannuleerd. Is uw bestelling al verzonden? Dan kunt u, wanneer het wettelijke herroepingsrecht van toepassing is, gebruikmaken van de retourprocedure.</p>
+      </div></div>
+    </details>
+  </div>
+
+  <div class="faq-group" data-cat="verzending">
+    <h2 class="text-xl mb-4 mt-10">Verzending</h2>
+    <details class="faq-item group py-5" data-q="wanneer ontvang ik mijn bestelling">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Wanneer ontvang ik mijn bestelling?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">De actuele verwachte levertijd wordt tijdens het bestellen en op onze verzendpagina weergegeven. Na verzending ontvangt u waar beschikbaar een track &amp; trace-code.</p>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="kan ik mijn bestelling volgen">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Kan ik mijn bestelling volgen?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Ja. Ga naar Bestelling volgen en vul uw bestelnummer en e-mailadres in.</p>
+        <a href="bestelling-volgen.html" class="inline-flex items-center gap-1.5 mt-2 text-sm underline-hover">Volg mijn bestelling <i class="ph ph-arrow-right"></i></a>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="mijn pakket is vertraagd">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Mijn pakket is vertraagd. Wat nu?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Een vervoerder kan incidenteel vertraging oplopen. Wanneer uw bestelling duidelijk buiten de aangegeven levertijd valt, kunt u contact met ons opnemen. We kijken dan graag met u mee.</p>
+      </div></div>
+    </details>
+  </div>
+
+  <div class="faq-group" data-cat="productgebruik">
+    <h2 class="text-xl mb-4 mt-10">Productgebruik</h2>
+    <details class="faq-item group py-5" data-q="hoe gebruik ik miral">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Hoe gebruik ik Miral?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Bekijk altijd eerst de instructies van het specifieke Miral-product. De juiste toepassing kan verschillen per product, oppervlak en mate van vervuiling.</p>
+        <a href="advies.html" class="inline-flex items-center gap-1.5 mt-2 text-sm underline-hover">Bekijk Advies &amp; Gebruik <i class="ph ph-arrow-right"></i></a>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="kan ik miral op ieder oppervlak gebruiken">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Kan ik Miral op ieder oppervlak gebruiken?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Niet ieder oppervlak reageert hetzelfde op reinigingsmiddelen. Controleer altijd de productinformatie en test bij twijfel eerst op een kleine, onopvallende plaats.</p>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="hoeveel miral moet ik gebruiken">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Hoeveel Miral moet ik gebruiken?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Gebruik de aanbevolen dosering van het betreffende Miral-product. Gebruik niet automatisch meer product bij zware vervuiling. Volg hiervoor de specifieke doserings- en gebruiksinstructies.</p>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="kan ik miral mengen met andere schoonmaakmiddelen">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Kan ik Miral mengen met andere schoonmaakmiddelen?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Meng schoonmaakproducten niet met andere middelen tenzij uitdrukkelijk is aangegeven dat dit veilig en toegestaan is.</p>
+      </div></div>
+    </details>
+  </div>
+
+  <div class="faq-group" data-cat="veiligheid">
+    <h2 class="text-xl mb-4 mt-10">Veiligheid</h2>
+    <details class="faq-item group py-5" data-q="waar vind ik de veiligheidsinformatie">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Waar vind ik de veiligheidsinformatie?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">De actuele veiligheids- en gebruiksinformatie staat op de verpakking van het betreffende product. Aanvullende productinformatie kan op de productpagina beschikbaar worden gesteld.</p>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="wat moet ik doen bij onbedoeld contact">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Wat moet ik doen bij onbedoeld contact?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Volg onmiddellijk de aanwijzingen op het etiket van het betreffende product. Neem bij klachten, twijfel of een ongeval contact op met een arts of de daarvoor aangewezen medische instantie en houd indien mogelijk het product of etiket bij de hand.</p>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="hoe bewaar ik miral">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Hoe bewaar ik Miral?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Bewaar Miral volgens de aanwijzingen op het productetiket en buiten bereik van kinderen.</p>
+      </div></div>
+    </details>
+  </div>
+
+  <div class="faq-group" data-cat="retourneren">
+    <h2 class="text-xl mb-4 mt-10">Retourneren</h2>
+    <details class="faq-item group py-5" data-q="kan ik mijn bestelling retourneren">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Kan ik mijn bestelling retourneren?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Bij online aankopen geldt voor consumenten in veel gevallen een wettelijke bedenktijd. Bekijk onze retourpagina voor de actuele voorwaarden en instructies.</p>
+        <a href="#" class="inline-flex items-center gap-1.5 mt-2 text-sm underline-hover">Retour &amp; terugbetaling <i class="ph ph-arrow-right"></i></a>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="moet ik een reden opgeven">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Moet ik een reden opgeven?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Wanneer u gebruikmaakt van het wettelijke herroepingsrecht hoeft u geen reden op te geven. Feedback is uiteraard welkom.</p>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="wanneer ontvang ik mijn terugbetaling">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Wanneer ontvang ik mijn terugbetaling?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Bekijk hiervoor onze volledige Retour &amp; Refund Policy.</p>
+      </div></div>
+    </details>
+  </div>
+
+  <div class="faq-group" data-cat="betalen">
+    <h2 class="text-xl mb-4 mt-10">Betalen</h2>
+    <details class="faq-item group py-5" data-q="welke betaalmethoden accepteren jullie">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Welke betaalmethoden accepteren jullie?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">[Dynamisch overzicht van de betaalmethoden die daadwerkelijk in de webshop beschikbaar zijn.]</p>
+      </div></div>
+    </details>
+    <details class="faq-item group py-5" data-q="is betalen bij miral veilig">
+      <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-medium">
+        Is betalen bij Miral veilig?
+        <i class="ph ph-plus text-ink/40 transition-transform group-open:rotate-45 shrink-0"></i>
+      </summary>
+      <div class="answer-wrap"><div class="answer-inner">
+        <p class="pt-4 text-ink/60 text-sm leading-relaxed">Betalingen worden verwerkt via onze betaalomgeving en aangesloten betaaldienstverlener(s).</p>
+      </div></div>
+    </details>
+  </div>
+
+  <p id="noResults" class="hidden text-center text-ink/50 py-10">Geen vragen gevonden. Probeer een andere zoekterm.</p>
+</section>
+
+<!-- CTA -->
+<section class="bg-[#f7f6f4] py-16 md:py-20 text-center">
+  <div class="max-w-8xl mx-auto px-6 md:px-10">
+    <h2 class="text-xl md:text-2xl">Staat uw vraag er niet tussen?</h2>
+    <p class="mt-2 text-ink/60">Wij helpen u graag persoonlijk verder.</p>
+    <a href="contact.html" class="inline-flex items-center gap-2 mt-6 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors">Neem contact op <i class="ph ph-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- FOOTER — quiet, newsletter + columns -->
+<footer class="bg-ink text-white">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 pt-20 pb-10">
+    <div class="grid md:grid-cols-2 gap-10 pb-16 border-b border-white/10">
+      <p class="text-2xl md:text-3xl font-700 max-w-sm">Blijf op de hoogte van Miral.</p>
+      <form class="flex items-end gap-3 max-w-md md:justify-self-end w-full" onsubmit="return false">
+        <div class="flex-1">
+          <label class="text-xs text-white/50" for="nl-email">E-mailadres</label>
+          <input id="nl-email" type="email" required placeholder="naam@voorbeeld.nl" class="w-full bg-transparent border-b border-white/30 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white" />
+        </div>
+        <button type="submit" class="text-sm underline-hover pb-2 shrink-0">Inschrijven</button>
+      </form>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 py-14">
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Producten</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="producten.html" class="hover:text-white transition-colors">Alle producten</a></li>
+          <li><a href="advies.html" class="hover:text-white transition-colors">Advies</a></li>
+          <li><a href="over-miral.html" class="hover:text-white transition-colors">Over Miral</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Klantenservice</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="bestelling-volgen.html" class="hover:text-white transition-colors">Bestelling volgen</a></li>
+          <li><a href="veelgestelde-vragen.html" class="hover:text-white transition-colors">Veelgestelde vragen</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Algemene voorwaarden</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Verzendbeleid</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Retour- en restitutiebeleid</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacybeleid</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Volg ons</p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" aria-label="Instagram" class="hover:text-white/70 transition-colors"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="Facebook" class="hover:text-white/70 transition-colors"><i class="ph ph-facebook-logo"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-white/40 pt-6 border-t border-white/10">© Miral. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const tabs = document.querySelectorAll('.cat-tab');
+  const groups = document.querySelectorAll('.faq-group');
+  const search = document.getElementById('faqSearch');
+  const noResults = document.getElementById('noResults');
+  let activeCat = 'alles';
+
+  function applyFilters() {
+    const q = search.value.trim().toLowerCase();
+    let anyVisible = false;
+    groups.forEach(group => {
+      const catMatch = activeCat === 'alles' || group.dataset.cat === activeCat;
+      let groupHasVisible = false;
+      group.querySelectorAll('.faq-item').forEach(item => {
+        const textMatch = !q || item.dataset.q.includes(q) || item.textContent.toLowerCase().includes(q);
+        const visible = catMatch && textMatch;
+        item.classList.toggle('faq-hidden', !visible);
+        if (visible) groupHasVisible = true;
+      });
+      group.classList.toggle('faq-hidden', !groupHasVisible);
+      if (groupHasVisible) anyVisible = true;
+    });
+    noResults.classList.toggle('hidden', anyVisible);
+  }
+
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    activeCat = tab.dataset.cat;
+    applyFilters();
+  }));
+  search.addEventListener('input', applyFilters);
+</script>
+</body>
+</html>

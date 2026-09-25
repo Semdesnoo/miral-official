@@ -15,7 +15,7 @@
     theme: {
       extend: {
         fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
-        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a', tp: '#73cf11' },
         maxWidth: { '8xl': '1440px' },
       }
     }
@@ -182,39 +182,42 @@
     <div class="shrink-0 sm:w-40">
       <p class="text-xl">Great</p>
       <div class="flex gap-0.5 mt-1.5">
-        <span class="w-6 h-6 bg-trust flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
-        <span class="w-6 h-6 bg-trust flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
-        <span class="w-6 h-6 bg-trust flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
-        <span class="w-6 h-6 bg-trust flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
-        <span class="w-6 h-6 border border-ink/15 flex items-center justify-center"><i class="ph-fill ph-star-half text-trust text-sm"></i></span>
+        <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-tp flex items-center justify-center"><i class="ph-fill ph-star text-white text-sm"></i></span>
+        <span class="w-6 h-6 bg-ink/10 relative flex items-center justify-center overflow-hidden">
+          <span class="absolute inset-y-0 left-0 w-1/2 bg-tp"></span>
+          <i class="ph-fill ph-star text-white text-sm relative"></i>
+        </span>
       </div>
       <p class="mt-2 text-sm text-ink/60">Based on <a href="#" class="underline-hover text-ink">10,067 reviews</a></p>
-      <p class="mt-3 flex items-center gap-1.5 font-700 text-sm"><i class="ph-fill ph-star text-trust"></i>Trustpilot</p>
+      <p class="mt-3 flex items-center gap-1.5 font-700 text-sm"><i class="ph-fill ph-star text-tp"></i>Trustpilot</p>
     </div>
 
     <!-- carousel -->
     <div class="relative flex-1 min-w-0">
       <div id="reviewTrack" class="flex gap-8 overflow-x-auto no-scrollbar scroll-smooth">
         <article class="shrink-0 w-[80%] sm:w-[240px]">
-          <div class="flex gap-0.5"><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i></div>
+          <div class="flex gap-1"><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i></div>
           <p class="mt-3 text-sm font-700">F. Meijer <span class="font-normal text-ink/40">, 2 uur geleden</span></p>
           <p class="mt-1 text-sm font-700">Eindelijk een streeploze vloer</p>
           <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik was bang om mijn PVC spanvloer te beschadigen. Miral voelt veilig aan en ruikt fris.</p>
         </article>
         <article class="shrink-0 w-[80%] sm:w-[240px]">
-          <div class="flex gap-0.5"><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i></div>
+          <div class="flex gap-1"><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i></div>
           <p class="mt-3 text-sm font-700">Mikey v.d. Berg <span class="font-normal text-ink/40">, 4 uur geleden</span></p>
           <p class="mt-1 text-sm font-700">Bleek gewoon vuil te zijn</p>
           <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik dacht dat mijn spanvloer verkleurd was. Super blij mee met het resultaat.</p>
         </article>
         <article class="shrink-0 w-[80%] sm:w-[240px]">
-          <div class="flex gap-0.5"><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i></div>
+          <div class="flex gap-1"><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i></div>
           <p class="mt-3 text-sm font-700">Lotte <span class="font-normal text-ink/40">, 11 uur geleden</span></p>
           <p class="mt-1 text-sm font-700">Speciaal voor spanvloeren</p>
           <p class="mt-1 text-sm text-ink/60 leading-relaxed">Je merkt aan alles dat dit speciaal voor spanvloeren is gemaakt. Geen waas, geen gedoe.</p>
         </article>
         <article class="shrink-0 w-[80%] sm:w-[240px]">
-          <div class="flex gap-0.5"><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i><i class="ph-fill ph-star text-trust"></i></div>
+          <div class="flex gap-1"><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i><i class="ph-fill ph-star text-tp text-xl"></i></div>
           <p class="mt-3 text-sm font-700">Sanne de Vries <span class="font-normal text-ink/40">, 15 uur geleden</span></p>
           <p class="mt-1 text-sm font-700">Blijvertje!</p>
           <p class="mt-1 text-sm text-ink/60 leading-relaxed">Ik worstelde al maanden met strepen op mijn zwarte spanvloer. Blijvertje!</p>

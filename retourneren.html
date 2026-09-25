@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Retourneren &amp; terugbetaling — Miral</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
+        maxWidth: { '8xl': '1440px' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; letter-spacing: -0.035em; }
+  body, p, a, button { font-family: "Manrope", sans-serif; font-weight: 400; }
+  button { font-weight: 600; }
+  button, a.inline-flex, a.inline-block { border-radius: 8px; }
+  .underline-hover { position: relative; }
+  .underline-hover::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px; background: currentColor; transition: width .3s ease; }
+  .underline-hover:hover::after { width: 100%; background: #c0261f; }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  .flow-num { width: 34px; height: 34px; border-radius: 9999px; border: 1px solid #14131125; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: "Sora", sans-serif; }
+  .revoke-step { display: none; }
+  .revoke-step.active { display: block; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased font-sans">
+
+<!-- UTILITY BAR -->
+<div class="bg-[#f7f6f4] border-b border-black/5 text-xs">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-9 flex items-center justify-end gap-3 text-ink/70">
+    <a href="#" class="hover:text-ink transition-colors">Klantenservice</a>
+    <span class="text-ink/20">|</span>
+    <span>Nederland (EUR €)</span>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT -->
+<div class="bg-red text-white text-center text-xs font-medium tracking-wide py-2.5">
+  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="producten.html" class="underline">BEKIJK NU</a>
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-30 bg-white border-b border-black/10">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-16 grid grid-cols-3 items-center">
+    <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium uppercase tracking-wide">
+      <a href="producten.html" class="underline-hover hover:text-red transition-colors">Producten</a>
+      <a href="advies.html" class="underline-hover hover:text-red transition-colors">Advies</a>
+      <a href="over-miral.html" class="underline-hover hover:text-red transition-colors whitespace-nowrap">Over Miral</a>
+    </nav>
+    <a href="index.html" class="flex justify-center"><img src="logo.png" alt="Miral" class="h-8 w-auto" /></a>
+    <div class="flex items-center justify-end gap-5 text-lg">
+      <button aria-label="Account" class="hover:opacity-60 transition-opacity"><i class="ph ph-user"></i></button>
+      <button aria-label="Zoeken" class="hover:opacity-60 transition-opacity"><i class="ph ph-magnifying-glass"></i></button>
+      <button aria-label="Winkelmand" class="hover:opacity-60 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-10">
+  <p class="reveal text-[13px] uppercase tracking-widest text-red">Retourneren &amp; terugbetaling</p>
+  <h1 class="reveal text-4xl md:text-6xl leading-[1.05] mt-4 max-w-2xl" style="transition-delay:100ms">Retourneren zonder onduidelijkheid.</h1>
+  <p class="reveal mt-5 text-ink/65 max-w-lg leading-relaxed" style="transition-delay:180ms">Van gedachten veranderd of is er iets mis met uw bestelling? Hier leest u precies hoe retourneren bij Miral werkt.</p>
+</section>
+
+<!-- 14 DAGEN BEDENKTIJD + CTA -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pb-16 md:pb-20">
+  <div class="bg-[#f7f6f4] p-8 md:p-10">
+    <h2 class="text-2xl md:text-3xl">14 dagen bedenktijd</h2>
+    <p class="mt-4 text-ink/65 leading-relaxed max-w-2xl">Bij een online consumentenaankoop heeft u in beginsel een wettelijke bedenktijd van 14 dagen. Binnen deze periode kunt u zonder opgave van reden laten weten dat u van de aankoop afziet. Nadat u de aankoop tijdig heeft herroepen, heeft u vervolgens 14 dagen om de betreffende producten terug te sturen.</p>
+    <a href="#herroepen" class="inline-flex items-center gap-2 mt-6 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors">Aankoop herroepen <i class="ph ph-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- 4 STAPPEN FLOW -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pb-20 md:pb-28">
+  <h2 class="reveal text-2xl md:text-3xl mb-10">Retourneren in 4 stappen</h2>
+  <div class="grid md:grid-cols-4 gap-8">
+    <div class="reveal" style="transition-delay:0ms">
+      <div class="flow-num">01</div>
+      <p class="mt-4 font-medium">Meld uw retour aan</p>
+      <p class="mt-2 text-sm text-ink/60 leading-relaxed">Gebruik onze online herroepingsfunctie of neem contact op via <a href="mailto:info@miral-official.com" class="underline-hover">info@miral-official.com</a>.</p>
+    </div>
+    <div class="reveal" style="transition-delay:80ms">
+      <div class="flow-num">02</div>
+      <p class="mt-4 font-medium">Verpak zorgvuldig</p>
+      <p class="mt-2 text-sm text-ink/60 leading-relaxed">Verpak de producten goed zodat zij tijdens het transport niet beschadigen. Gebruik indien mogelijk de oorspronkelijke verzendverpakking.</p>
+    </div>
+    <div class="reveal" style="transition-delay:160ms">
+      <div class="flow-num">03</div>
+      <p class="mt-4 font-medium">Verstuur uw retour</p>
+      <p class="mt-2 text-sm text-ink/60 leading-relaxed">RALF spanvloeren en schoonmaak B.V.<br/>Discusstraat 30, 3078 XE Rotterdam. De directe retourkosten bij een normale herroeping zijn voor rekening van de klant.</p>
+    </div>
+    <div class="reveal" style="transition-delay:240ms">
+      <div class="flow-num">04</div>
+      <p class="mt-4 font-medium">Terugbetaling</p>
+      <p class="mt-2 text-sm text-ink/60 leading-relaxed">Na ontvangst en verwerking van uw retour ontvangt u de terugbetaling waarop u wettelijk recht heeft, binnen de toepasselijke wettelijke termijn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HERROEPINGSFORMULIER (demo, 4-step) -->
+<section id="herroepen" class="bg-[#f7f6f4] py-16 md:py-24">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 max-w-xl">
+    <h2 class="text-2xl md:text-3xl mb-2">Aankoop herroepen</h2>
+    <p class="text-ink/60 text-sm mb-8">Vul uw bestelnummer en e-mailadres in om uw herroeping te starten.</p>
+
+    <div id="revokeStep1" class="revoke-step active">
+      <form class="grid gap-4" onsubmit="return false" id="revokeForm">
+        <div>
+          <label class="text-xs text-ink/50" for="rOrder">Bestelnummer</label>
+          <input id="rOrder" type="text" required placeholder="Uw bestelnummer" class="mt-1 w-full bg-white border border-ink/15 rounded px-4 py-3 text-sm focus:outline-none focus:border-red" />
+        </div>
+        <div>
+          <label class="text-xs text-ink/50" for="rEmail">E-mailadres</label>
+          <input id="rEmail" type="email" required placeholder="Uw e-mailadres" class="mt-1 w-full bg-white border border-ink/15 rounded px-4 py-3 text-sm focus:outline-none focus:border-red" />
+        </div>
+        <button type="submit" class="justify-self-start inline-flex items-center gap-2 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors">Bestelling opzoeken <i class="ph ph-arrow-right"></i></button>
+      </form>
+    </div>
+
+    <div id="revokeStep2" class="revoke-step bg-white p-6">
+      <p class="text-sm text-ink/50">Gevonden bestelling</p>
+      <p class="mt-1 font-medium">Bestelnummer <span id="foundOrder"></span></p>
+      <p class="mt-4 text-sm text-ink/65 leading-relaxed">Bevestig hieronder dat u deze aankoop wilt herroepen. Dit is een voorbeeldweergave — koppel deze pagina aan uw ordersysteem om echte bestellingen te tonen.</p>
+      <button id="confirmRevoke" class="inline-flex items-center gap-2 mt-6 bg-red text-white text-sm font-700 uppercase tracking-wide px-7 py-3.5 hover:bg-red/90 transition-colors">Herroeping bevestigen <i class="ph ph-arrow-right"></i></button>
+    </div>
+
+    <div id="revokeStep3" class="revoke-step bg-white p-6">
+      <p class="flex items-center gap-2 text-trust font-medium"><i class="ph-fill ph-check-circle text-xl"></i> Herroeping bevestigd</p>
+      <p class="mt-3 text-sm text-ink/65 leading-relaxed">U ontvangt direct elektronisch een bevestiging met de betreffende aankoop, datum en tijd van de herroeping. Verstuur het product vervolgens naar het retouradres hieronder.</p>
+      <p class="mt-4 text-sm">RALF spanvloeren en schoonmaak B.V.<br/>Discusstraat 30<br/>3078 XE Rotterdam<br/>Nederland</p>
+    </div>
+
+    <p class="mt-6 text-xs text-ink/50">U kunt uw herroeping ook kenbaar maken via <a href="mailto:info@miral-official.com" class="underline-hover">info@miral-official.com</a>.</p>
+  </div>
+</section>
+
+<!-- GEOPENDE FLESSEN / VERZEGELDE PRODUCTEN -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 py-16 md:py-24 grid md:grid-cols-2 gap-10">
+  <div>
+    <h2 class="text-lg">Geopende flessen</h2>
+    <p class="mt-3 text-sm text-ink/65 leading-relaxed">Een consument mag een product tijdens de bedenktijd slechts gebruiken voor zover dit noodzakelijk is om de aard, kenmerken en werking ervan vast te stellen. Een Miral-fles volledig gebruiken of meerdere schoonmaakbehandelingen uitvoeren en het product daarna retourneren, gaat in beginsel verder dan alleen het beoordelen van het product. Wanneer een product daardoor minder waard is geworden, kan deze waardevermindering voor zover wettelijk toegestaan worden verrekend.</p>
+  </div>
+  <div>
+    <h2 class="text-lg">Verzegelde producten en hygiëne</h2>
+    <p class="mt-3 text-sm text-ink/65 leading-relaxed">Voor bepaalde producten bestaat wettelijk een uitzondering wanneer het product verzegeld wordt geleverd, om gezondheidsbeschermings- of hygiëneredenen niet geschikt is om na opening te worden teruggezonden, en de klant de verzegeling na levering verbreekt. Wanneer een specifiek Miral-product daadwerkelijk onder deze wettelijke uitzondering valt, wordt dat vóór aankoop duidelijk op de betreffende productpagina vermeld. Zonder een toepasselijke wettelijke uitzondering sluiten wij het herroepingsrecht niet automatisch uit alleen omdat een fles is geopend.</p>
+  </div>
+</section>
+
+<!-- RETOURKOSTEN / BESCHADIGD / LEKKEND -->
+<section class="bg-[#f7f6f4] py-16 md:py-24">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 grid md:grid-cols-3 gap-10">
+    <div>
+      <h2 class="text-lg">Retourkosten</h2>
+      <p class="mt-3 text-sm text-ink/65 leading-relaxed">Bij een normale retour op basis van het herroepingsrecht zijn de directe kosten voor het terugsturen voor rekening van de klant. De oorspronkelijke standaardverzending bij Miral is gratis.</p>
+    </div>
+    <div>
+      <h2 class="text-lg">Beschadigd, verkeerd of defect ontvangen?</h2>
+      <p class="mt-3 text-sm text-ink/65 leading-relaxed">Dat is geen normale spijt-retour. Neem in dat geval eerst contact met ons op. Stuur indien mogelijk uw bestelnummer, een korte omschrijving en foto's van het product, de verpakking en de schade naar <a href="mailto:info@miral-official.com" class="underline-hover">info@miral-official.com</a>. Wij beoordelen vervolgens welke oplossing passend is.</p>
+    </div>
+    <div>
+      <h2 class="text-lg">Lekkende verpakking?</h2>
+      <p class="mt-3 text-sm text-ink/65 leading-relaxed">Verstuur een lekkende of mogelijk onveilige fles niet zelfstandig via de post. Neem eerst contact met ons op voor verdere instructies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TERUGBETALING + HULP -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 py-16 md:py-24">
+  <h2 class="text-xl">Terugbetaling</h2>
+  <p class="mt-3 text-ink/65 max-w-2xl leading-relaxed">Wanneer u rechtsgeldig gebruikmaakt van uw herroepingsrecht betalen wij het bedrag waarop u wettelijk recht heeft terug. Wij mogen wachten met terugbetaling totdat wij de producten hebben ontvangen of totdat u aantoont dat u deze heeft teruggestuurd, afhankelijk van wat zich het eerst voordoet. De terugbetaling vindt in beginsel plaats via hetzelfde betaalmiddel als waarmee de oorspronkelijke bestelling is betaald, tenzij anders overeengekomen.</p>
+  <div class="mt-10 pt-8 border-t border-ink/10">
+    <h2 class="text-xl">Hulp nodig?</h2>
+    <p class="mt-3 text-ink/65">
+      <a href="mailto:info@miral-official.com" class="underline-hover">info@miral-official.com</a> ·
+      <a href="tel:+31683296802" class="underline-hover">+31 6 83296802</a>
+    </p>
+    <p class="mt-1 text-sm text-ink/50">Maandag t/m vrijdag, 09:00–17:00 uur.</p>
+  </div>
+</section>
+
+<!-- FOOTER — quiet, newsletter + columns -->
+<footer class="bg-ink text-white">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 pt-20 pb-10">
+    <div class="grid md:grid-cols-2 gap-10 pb-16 border-b border-white/10">
+      <p class="text-2xl md:text-3xl font-700 max-w-sm">Blijf op de hoogte van Miral.</p>
+      <form class="flex items-end gap-3 max-w-md md:justify-self-end w-full" onsubmit="return false">
+        <div class="flex-1">
+          <label class="text-xs text-white/50" for="nl-email">E-mailadres</label>
+          <input id="nl-email" type="email" required placeholder="naam@voorbeeld.nl" class="w-full bg-transparent border-b border-white/30 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white" />
+        </div>
+        <button type="submit" class="text-sm underline-hover pb-2 shrink-0">Inschrijven</button>
+      </form>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 py-14">
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Producten</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="producten.html" class="hover:text-white transition-colors">Alle producten</a></li>
+          <li><a href="advies.html" class="hover:text-white transition-colors">Advies</a></li>
+          <li><a href="over-miral.html" class="hover:text-white transition-colors">Over Miral</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Klantenservice</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="bestelling-volgen.html" class="hover:text-white transition-colors">Bestelling volgen</a></li>
+          <li><a href="veelgestelde-vragen.html" class="hover:text-white transition-colors">Veelgestelde vragen</a></li>
+          <li><a href="algemene-voorwaarden.html" class="hover:text-white transition-colors">Algemene voorwaarden</a></li>
+          <li><a href="verzendbeleid.html" class="hover:text-white transition-colors">Verzendbeleid</a></li>
+          <li><a href="retourneren.html" class="hover:text-white transition-colors">Retour- en restitutiebeleid</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacybeleid</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Volg ons</p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" aria-label="Instagram" class="hover:text-white/70 transition-colors"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="Facebook" class="hover:text-white/70 transition-colors"><i class="ph ph-facebook-logo"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-white/40 pt-6 border-t border-white/10">© Miral. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // demo herroeping flow: no real order backend, purely illustrative
+  document.getElementById('revokeForm').addEventListener('submit', () => {
+    document.getElementById('foundOrder').textContent = document.getElementById('rOrder').value || '—';
+    document.getElementById('revokeStep1').classList.remove('active');
+    document.getElementById('revokeStep2').classList.add('active');
+  });
+  document.getElementById('confirmRevoke').addEventListener('click', () => {
+    document.getElementById('revokeStep2').classList.remove('active');
+    document.getElementById('revokeStep3').classList.add('active');
+  });
+</script>
+</body>
+</html>

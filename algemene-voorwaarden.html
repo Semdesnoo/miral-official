@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algemene voorwaarden — Miral</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23141311'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='19' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+        colors: { ink: '#141311', red: '#c0261f', trust: '#00b67a' },
+        maxWidth: { '8xl': '1440px' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; letter-spacing: -0.035em; }
+  body, p, a, button { font-family: "Manrope", sans-serif; font-weight: 400; }
+  button { font-weight: 600; }
+  button, a.inline-flex, a.inline-block { border-radius: 8px; }
+  .underline-hover { position: relative; }
+  .underline-hover::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px; background: currentColor; transition: width .3s ease; }
+  .underline-hover:hover::after { width: 100%; background: #c0261f; }
+
+  .reveal { opacity: 0; transform: translateY(15px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  .toc-link { color: #14131160; border-left: 2px solid transparent; transition: color .2s ease, border-color .2s ease; }
+  .toc-link.active { color: #141311; border-color: #c0261f; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased font-sans">
+
+<!-- UTILITY BAR -->
+<div class="bg-[#f7f6f4] border-b border-black/5 text-xs">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-9 flex items-center justify-end gap-3 text-ink/70">
+    <a href="#" class="hover:text-ink transition-colors">Klantenservice</a>
+    <span class="text-ink/20">|</span>
+    <span>Nederland (EUR €)</span>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT -->
+<div class="bg-red text-white text-center text-xs font-medium tracking-wide py-2.5">
+  MIRAL-ACTIE: TOT 30% KORTING OP BUNDELS &nbsp;|&nbsp; <a href="producten.html" class="underline">BEKIJK NU</a>
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-30 bg-white border-b border-black/10">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 h-16 grid grid-cols-3 items-center">
+    <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium uppercase tracking-wide">
+      <a href="producten.html" class="underline-hover hover:text-red transition-colors">Producten</a>
+      <a href="advies.html" class="underline-hover hover:text-red transition-colors">Advies</a>
+      <a href="over-miral.html" class="underline-hover hover:text-red transition-colors whitespace-nowrap">Over Miral</a>
+    </nav>
+    <a href="index.html" class="flex justify-center"><img src="logo.png" alt="Miral" class="h-8 w-auto" /></a>
+    <div class="flex items-center justify-end gap-5 text-lg">
+      <button aria-label="Account" class="hover:opacity-60 transition-opacity"><i class="ph ph-user"></i></button>
+      <button aria-label="Zoeken" class="hover:opacity-60 transition-opacity"><i class="ph ph-magnifying-glass"></i></button>
+      <button aria-label="Winkelmand" class="hover:opacity-60 transition-opacity"><i class="ph ph-shopping-cart"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pt-16 md:pt-20 pb-8">
+  <h1 class="text-3xl md:text-5xl">Algemene voorwaarden</h1>
+  <p class="mt-3 text-ink/50 text-sm">Laatst bijgewerkt: 25 september 2026</p>
+  <p class="mt-4 text-ink/65 max-w-2xl leading-relaxed">Deze algemene voorwaarden zijn van toepassing op bestellingen die consumenten plaatsen via de Miral-webshop. De juridische verkoper is RALF spanvloeren en schoonmaak B.V.</p>
+</section>
+
+<!-- TOC + CONTENT -->
+<section class="max-w-8xl mx-auto px-6 md:px-10 pb-24 md:pb-32 grid md:grid-cols-12 gap-10 md:gap-16">
+  <nav class="hidden md:block md:col-span-3">
+    <div class="sticky top-24 space-y-1 text-sm">
+      <a href="#bedrijfsgegevens" class="toc-link block pl-4 py-1.5">1. Bedrijfsgegevens</a>
+      <a href="#toepasselijkheid" class="toc-link block pl-4 py-1.5">2. Toepasselijkheid</a>
+      <a href="#aanbod" class="toc-link block pl-4 py-1.5">3. Ons aanbod</a>
+      <a href="#prijzen" class="toc-link block pl-4 py-1.5">4. Prijzen</a>
+      <a href="#overeenkomst" class="toc-link block pl-4 py-1.5">5. Totstandkoming</a>
+      <a href="#betaling" class="toc-link block pl-4 py-1.5">6. Betaling</a>
+      <a href="#levering" class="toc-link block pl-4 py-1.5">7. Levering</a>
+      <a href="#gratis-verzending" class="toc-link block pl-4 py-1.5">8. Gratis verzending</a>
+      <a href="#herroepingsrecht" class="toc-link block pl-4 py-1.5">9. Herroepingsrecht</a>
+      <a href="#retourkosten" class="toc-link block pl-4 py-1.5">10. Retourkosten</a>
+      <a href="#retouradres" class="toc-link block pl-4 py-1.5">11. Retouradres</a>
+      <a href="#geopend" class="toc-link block pl-4 py-1.5">12. Geopende producten</a>
+      <a href="#terugbetaling" class="toc-link block pl-4 py-1.5">13. Terugbetaling</a>
+      <a href="#garantie" class="toc-link block pl-4 py-1.5">14. Garantie</a>
+      <a href="#gebruik" class="toc-link block pl-4 py-1.5">15. Gebruik van Miral</a>
+      <a href="#klachten" class="toc-link block pl-4 py-1.5">16. Klachten</a>
+      <a href="#persoonsgegevens" class="toc-link block pl-4 py-1.5">17. Persoonsgegevens</a>
+      <a href="#ie" class="toc-link block pl-4 py-1.5">18. Intellectueel eigendom</a>
+      <a href="#recht" class="toc-link block pl-4 py-1.5">19. Nederlands recht</a>
+    </div>
+  </nav>
+
+  <div class="md:col-span-9 space-y-14 text-ink/70 leading-relaxed [&_h2]:text-ink [&_h2]:text-xl [&_h2]:mb-3 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:list-inside [&_ul]:mb-3">
+
+    <article id="bedrijfsgegevens" class="reveal chapter">
+      <h2>1. Bedrijfsgegevens</h2>
+      <p><strong class="text-ink">RALF spanvloeren en schoonmaak B.V.</strong> — Besloten vennootschap<br/>Discusstraat 30, 3078 XE Rotterdam, Nederland</p>
+      <p>KvK-nummer: 42007192<br/>Vestigingsnummer: 000065107063<br/>Btw-identificatienummer: [BTW-nummer invullen]</p>
+      <p>E-mail: <a href="mailto:info@miral-official.com" class="underline-hover text-ink">info@miral-official.com</a><br/>Telefoon: <a href="tel:+31683296802" class="underline-hover text-ink">+31 6 83296802</a></p>
+      <p>Telefonisch bereikbaar: maandag t/m vrijdag van 09:00 tot 17:00 uur.</p>
+      <p>Miral is een merk van RALF spanvloeren en schoonmaak B.V.</p>
+    </article>
+
+    <article id="toepasselijkheid" class="reveal chapter">
+      <h2>2. Toepasselijkheid</h2>
+      <p>Deze voorwaarden zijn van toepassing op ieder aanbod via de Miral-webshop en iedere overeenkomst die via deze webshop tussen RALF spanvloeren en schoonmaak B.V. en een consument tot stand komt. Dwingende wettelijke consumentenrechten blijven altijd van toepassing.</p>
+    </article>
+
+    <article id="aanbod" class="reveal chapter">
+      <h2>3. Ons aanbod</h2>
+      <p>Wij proberen ieder Miral-product zo duidelijk mogelijk te presenteren. Op de productpagina vermelden wij waar relevant onder andere:</p>
+      <ul><li>de belangrijkste eigenschappen</li><li>inhoud</li><li>prijs</li><li>toepassing</li><li>gebruiksinformatie</li><li>relevante waarschuwingen</li></ul>
+      <p>Afbeeldingen zijn bedoeld om een zo realistisch mogelijke indruk te geven. Kleine visuele verschillen die geen invloed hebben op de eigenschappen van het product kunnen voorkomen. Kennelijke schrijf-, technische of prijsfouten kunnen worden gecorrigeerd voor zover wettelijk toegestaan.</p>
+    </article>
+
+    <article id="prijzen" class="reveal chapter">
+      <h2>4. Prijzen</h2>
+      <p>De prijzen die in onze consumentenwebshop worden weergegeven zijn inclusief toepasselijke btw, tenzij uitdrukkelijk anders wordt vermeld. Verzending naar Nederland, België en Duitsland is momenteel gratis. Eventuele andere kosten worden altijd vóór het plaatsen van de bestelling weergegeven.</p>
+    </article>
+
+    <article id="overeenkomst" class="reveal chapter">
+      <h2>5. Totstandkoming van de overeenkomst</h2>
+      <p>De klant kan via onze webshop producten selecteren en een bestelling plaatsen. Voordat de bestelling definitief wordt geplaatst, krijgt de klant de mogelijkheid om de bestelling en ingevoerde gegevens te controleren. Na ontvangst van de bestelling sturen wij elektronisch een orderbevestiging.</p>
+    </article>
+
+    <article id="betaling" class="reveal chapter">
+      <h2>6. Betaling</h2>
+      <p>De beschikbare betaalmethoden worden tijdens het afrekenen weergegeven. De klant ziet vóór het definitief plaatsen van de bestelling welk bedrag verschuldigd is.</p>
+    </article>
+
+    <article id="levering" class="reveal chapter">
+      <h2>7. Levering</h2>
+      <p>Wij leveren momenteel aan Nederland, België en Duitsland. Bestellingen worden in beginsel binnen 1 werkdag verzonden. Voor Nederland en België bedraagt de verwachte bezorgtijd na verzending doorgaans 1–3 werkdagen. Voor Duitsland wordt de actuele verwachte bezorgtijd vóór het afronden van de bestelling en waar beschikbaar via trackinginformatie weergegeven. Wij verzenden via PostNL of DHL. Een genoemde bezorgtermijn is een verwachte termijn. Wettelijke rechten bij te late levering blijven onverminderd van toepassing.</p>
+    </article>
+
+    <article id="gratis-verzending" class="reveal chapter">
+      <h2>8. Gratis verzending</h2>
+      <p>Voor bestellingen naar Nederland, België en Duitsland worden geen standaard verzendkosten in rekening gebracht.</p>
+    </article>
+
+    <article id="herroepingsrecht" class="reveal chapter">
+      <h2>9. Wettelijk herroepingsrecht</h2>
+      <p>Bij een online aankoop heeft een consument in beginsel het wettelijke recht de overeenkomst binnen de toepasselijke bedenktijd zonder opgave van reden te herroepen. Voor goederen bedraagt deze bedenktijd doorgaans 14 dagen vanaf de wettelijke start van de termijn na ontvangst. De consument kan het herroepingsrecht onder andere uitoefenen via onze online herroepingsfunctie.</p>
+      <a href="retourneren.html" class="inline-flex items-center gap-1.5 text-sm underline-hover text-ink">Aankoop herroepen <i class="ph ph-arrow-right"></i></a>
+      <p class="mt-3">Ook kan contact worden opgenomen via <a href="mailto:info@miral-official.com" class="underline-hover text-ink">info@miral-official.com</a>. Nadat de herroeping tijdig is gemeld, moet het product binnen de toepasselijke wettelijke retourtermijn worden teruggestuurd.</p>
+    </article>
+
+    <article id="retourkosten" class="reveal chapter">
+      <h2>10. Retourkosten</h2>
+      <p>Bij een normale herroeping zijn de directe kosten voor het terugsturen van de producten voor rekening van de klant. Bij een verkeerd, beschadigd of niet-conform geleverd product verzoeken wij de klant eerst contact op te nemen voordat het product wordt teruggestuurd.</p>
+    </article>
+
+    <article id="retouradres" class="reveal chapter">
+      <h2>11. Retouradres</h2>
+      <p>Na het aanmelden van een retour kan deze worden gestuurd naar:<br/>RALF spanvloeren en schoonmaak B.V., Discusstraat 30, 3078 XE Rotterdam, Nederland.</p>
+      <p>Wij adviseren de klant een verzendbewijs te bewaren totdat de retour volledig is verwerkt.</p>
+    </article>
+
+    <article id="geopend" class="reveal chapter">
+      <h2>12. Geopende en gebruikte producten</h2>
+      <p>Tijdens de bedenktijd mag een consument een product beoordelen voor zover dat nodig is om de aard, kenmerken en werking ervan vast te stellen. Wanneer een product verder wordt gebruikt dan daarvoor noodzakelijk is en hierdoor in waarde vermindert, kan Miral voor zover wettelijk toegestaan deze waardevermindering in rekening brengen.</p>
+      <p>Voor specifieke verzegelde producten waarvoor een wettelijke uitzondering op het herroepingsrecht geldt vanwege gezondheidsbescherming of hygiëne, kan het herroepingsrecht na verbreking van de verzegeling vervallen. Wanneer die uitzondering voor een Miral-product van toepassing is, wordt dit vóór aankoop duidelijk aangegeven en wordt het product op de daarvoor vereiste wijze verzegeld geleverd.</p>
+    </article>
+
+    <article id="terugbetaling" class="reveal chapter">
+      <h2>13. Terugbetaling na herroeping</h2>
+      <p>Na een rechtsgeldige herroeping worden de bedragen waarop de consument wettelijk recht heeft binnen de wettelijke termijn terugbetaald. Wij mogen met de terugbetaling wachten totdat wij de goederen hebben ontvangen of totdat de consument aantoont dat deze zijn teruggestuurd, afhankelijk van wat zich het eerst voordoet. Terugbetaling vindt in beginsel plaats via dezelfde betaalmethode als waarmee de oorspronkelijke betaling is verricht, tenzij anders overeengekomen.</p>
+    </article>
+
+    <article id="garantie" class="reveal chapter">
+      <h2>14. Wettelijke garantie en conformiteit</h2>
+      <p>Een product moet voldoen aan wat de consument op grond van de overeenkomst redelijkerwijs mag verwachten. Heeft u een product ontvangen dat defect, verkeerd, beschadigd of anderszins niet conform is? Neem contact op via <a href="mailto:info@miral-official.com" class="underline-hover text-ink">info@miral-official.com</a>. Uw wettelijke garantierechten worden niet beperkt door deze voorwaarden.</p>
+    </article>
+
+    <article id="gebruik" class="reveal chapter">
+      <h2>15. Gebruik van Miral-producten</h2>
+      <p>Gebruik ieder Miral-product volgens het etiket en de bijbehorende gebruiks- en veiligheidsinformatie. Gebruik het product alleen voor toepassingen waarvoor het geschikt is. Meng Miral niet met andere reinigingsmiddelen tenzij bij het betreffende product uitdrukkelijk wordt aangegeven dat dit veilig kan.</p>
+      <p>RALF spanvloeren en schoonmaak B.V. is, voor zover wettelijk toegestaan, niet verantwoordelijk voor schade die uitsluitend ontstaat doordat een product aantoonbaar in strijd met de verstrekte gebruiks- of veiligheidsinstructies wordt gebruikt. Dit beperkt geen dwingende wettelijke rechten of aansprakelijkheid die wettelijk niet kan worden uitgesloten.</p>
+    </article>
+
+    <article id="klachten" class="reveal chapter">
+      <h2>16. Klachten</h2>
+      <p>Heeft u een klacht? Neem contact op via <a href="mailto:info@miral-official.com" class="underline-hover text-ink">info@miral-official.com</a> of <a href="tel:+31683296802" class="underline-hover text-ink">+31 6 83296802</a>. Vermeld indien mogelijk uw bestelnummer en een duidelijke omschrijving van uw klacht. Wij behandelen klachten zorgvuldig en zo spoedig mogelijk.</p>
+    </article>
+
+    <article id="persoonsgegevens" class="reveal chapter">
+      <h2>17. Persoonsgegevens</h2>
+      <p>Wij verwerken persoonsgegevens volgens ons Privacybeleid.</p>
+      <a href="#" class="inline-flex items-center gap-1.5 text-sm underline-hover text-ink">Bekijk Privacybeleid <i class="ph ph-arrow-right"></i></a>
+    </article>
+
+    <article id="ie" class="reveal chapter">
+      <h2>18. Intellectuele eigendom</h2>
+      <p>Voor zover wettelijk beschermd, mogen teksten, afbeeldingen, productpresentaties, logo's, ontwerpen en andere materialen van Miral niet zonder toestemming commercieel worden gekopieerd of gebruikt.</p>
+    </article>
+
+    <article id="recht" class="reveal chapter">
+      <h2>19. Nederlands recht</h2>
+      <p>Op overeenkomsten met RALF spanvloeren en schoonmaak B.V. is Nederlands recht van toepassing voor zover dit wettelijk is toegestaan. Wanneer een consument in een ander EU-land woont, tast deze keuze geen dwingende consumentenbescherming aan die op grond van toepasselijk recht niet contractueel kan worden uitgesloten.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- FOOTER — quiet, newsletter + columns -->
+<footer class="bg-ink text-white">
+  <div class="max-w-8xl mx-auto px-6 md:px-10 pt-20 pb-10">
+    <div class="grid md:grid-cols-2 gap-10 pb-16 border-b border-white/10">
+      <p class="text-2xl md:text-3xl font-700 max-w-sm">Blijf op de hoogte van Miral.</p>
+      <form class="flex items-end gap-3 max-w-md md:justify-self-end w-full" onsubmit="return false">
+        <div class="flex-1">
+          <label class="text-xs text-white/50" for="nl-email">E-mailadres</label>
+          <input id="nl-email" type="email" required placeholder="naam@voorbeeld.nl" class="w-full bg-transparent border-b border-white/30 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white" />
+        </div>
+        <button type="submit" class="text-sm underline-hover pb-2 shrink-0">Inschrijven</button>
+      </form>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 py-14">
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Producten</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="producten.html" class="hover:text-white transition-colors">Alle producten</a></li>
+          <li><a href="advies.html" class="hover:text-white transition-colors">Advies</a></li>
+          <li><a href="over-miral.html" class="hover:text-white transition-colors">Over Miral</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Klantenservice</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="bestelling-volgen.html" class="hover:text-white transition-colors">Bestelling volgen</a></li>
+          <li><a href="veelgestelde-vragen.html" class="hover:text-white transition-colors">Veelgestelde vragen</a></li>
+          <li><a href="algemene-voorwaarden.html" class="hover:text-white transition-colors">Algemene voorwaarden</a></li>
+          <li><a href="verzendbeleid.html" class="hover:text-white transition-colors">Verzendbeleid</a></li>
+          <li><a href="retourneren.html" class="hover:text-white transition-colors">Retour- en restitutiebeleid</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacybeleid</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] uppercase tracking-widest text-white/50 mb-4">Volg ons</p>
+        <div class="flex gap-4 text-lg">
+          <a href="#" aria-label="Instagram" class="hover:text-white/70 transition-colors"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="Facebook" class="hover:text-white/70 transition-colors"><i class="ph ph-facebook-logo"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-white/40 pt-6 border-t border-white/10">© Miral. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const tocLinks = document.querySelectorAll('.toc-link');
+  const chapters = document.querySelectorAll('.chapter');
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { threshold: 0, rootMargin: '-20% 0px -70% 0px' });
+  chapters.forEach(c => spy.observe(c));
+</script>
+</body>
+</html>
